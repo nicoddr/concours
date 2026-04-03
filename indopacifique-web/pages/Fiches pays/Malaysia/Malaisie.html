@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaisie : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating blobs matching index.html dark theme */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(0, 0, 145, 0.3);
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(0, 210, 255, 0.1);
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatanim {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(0.9); }
+        }
+
+        /* MEAE Header – identical to index.html */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: #000091; font-weight: bold; font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 176, 240, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 210, 255, 0.12);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #00b0f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        /* Accent helpers */
+        .accent-cyan { color: #00b0f0; }
+        .accent-blue { color: #000091; }
+        .accent-red { color: #E1000F; }
+        .bg-accent-cyan { background-color: #00b0f0; }
+        .bg-accent-blue { background-color: #000091; }
+        .bg-accent-red { background-color: #E1000F; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- MEAE Header – identical to index.html -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../index.html">
+                <div class="logo-icon">IP</div>
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiche pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-meae-blue opacity-20 blur-[100px] animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-meae-red opacity-10 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-meae-cyan uppercase bg-meae-cyan/10 border border-meae-cyan/20 rounded-full">
+                Puissance d'Asie du Sud-Est
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Malaisie
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Analyse géopolitique, économique et historique de la Fédération de Malaisie — de l'Urgence malaise à une économie numérique moderne.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- Summary Bento Grid -->
+        <div class="bento-grid mb-24">
+            <!-- Capitals -->
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="accent-cyan font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Capitale</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Kuala Lumpur</div>
+                            <p class="text-slate-400 text-sm">Capitale constitutionnelle & nationale</p>
+                        </div>
+                        <div class="border-l border-white/10 pl-12 hidden md:block"></div>
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Putrajaya</div>
+                            <p class="text-slate-400 text-sm">Centre administratif & judiciaire</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">330 803 km²</span>
+                </div>
+            </div>
+
+            <!-- Political Type -->
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-meae-blue/20 to-transparent">
+                <h3 class="accent-cyan font-display font-bold text-xs uppercase tracking-widest mb-4">Régime</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-6">Monarchie constitutionnelle élective fédérale parlementaire</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Le système unique de la Malaisie repose sur une monarchie tournante, le <span class="text-white">Yang di-Pertuan Agong</span>, élu tous les 5 ans parmi neuf souverains malais.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section: Governance & Leaders -->
+        <section id="governance" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Chronologie du Pouvoir</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- British Era -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Administration coloniale (1945–1957)</h3>
+                    <div class="space-y-4">
+                        <div class="glass-card rounded-2xl p-6">
+                            <p class="text-xs accent-cyan font-bold mb-1">Ère militaire & Union</p>
+                            <p class="text-white font-medium">Mountbatten, Hone & Edward Gent</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-6">
+                            <p class="text-xs text-slate-500 font-bold mb-1">Hauts-commissaires</p>
+                            <ul class="text-sm space-y-2 text-white/80">
+                                <li>Sir Henry Gurney (1948–1951)</li>
+                                <li>Sir Gerald Templer (1952–1954)</li>
+                                <li>Sir Donald MacGillivray (1954–1957)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modern Era -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Premiers Ministres de Malaisie</h3>
+                    <div class="h-[400px] overflow-y-auto pr-4 space-y-3 custom-scrollbar">
+                        <div class="p-4 border-l-2 border-meae-cyan bg-white/5 rounded-r-xl">
+                            <p class="text-xs accent-cyan font-bold">1957–1970</p>
+                            <p class="text-white font-bold">Tunku Abdul Rahman</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-70">
+                            <p class="text-xs text-slate-400 font-bold">1970–1976</p>
+                            <p class="text-white font-bold">Abdul Razak Hussein</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-70">
+                            <p class="text-xs text-slate-400 font-bold">1976–1981</p>
+                            <p class="text-white font-bold">Hussein Onn</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-meae-blue bg-white/5 rounded-r-xl">
+                            <p class="text-xs font-bold" style="color: #6366f1;">1981–2003</p>
+                            <p class="text-white font-bold">Mahathir Mohamad</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-70">
+                            <p class="text-xs text-slate-400 font-bold">2003–2009</p>
+                            <p class="text-white font-bold">Abdullah Ahmad Badawi</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-meae-red bg-white/5 rounded-r-xl">
+                            <p class="text-xs accent-red font-bold">2009–2018</p>
+                            <p class="text-white font-bold">Najib Razak</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl">
+                            <p class="text-xs text-slate-400 font-bold">2022–Présent</p>
+                            <p class="text-white font-bold">Anwar Ibrahim</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Économique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB <span class="text-slate-500 font-normal text-sm">(2026 est.)</span></h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services</span>
+                                <span class="text-white font-bold">58,2 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-blue w-[58.2%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie</span>
+                                <span class="text-white font-bold">23,4 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-red w-[23.4%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Mines</span>
+                                <span class="text-white font-bold">6,6 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-cyan w-[6.6%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture</span>
+                                <span class="text-white font-bold">6,1 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[6.1%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal total</div>
+                        <div class="text-4xl font-display font-extrabold text-white">485 Md$ <span class="text-lg font-normal text-slate-400">USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-slate-600">
+                        <h4 class="accent-cyan font-bold text-sm mb-2">1945–1960</h4>
+                        <p class="text-white font-bold mb-1">Économie de matières premières</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Le caoutchouc naturel et l'étain sont les principaux moteurs de la croissance initiale.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-red">
+                        <h4 class="accent-cyan font-bold text-sm mb-2">1970–1980</h4>
+                        <p class="text-white font-bold mb-1">Nouvelle Politique Économique (NEP)</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Virage vers l'industrialisation orientée vers l'exportation (IOE) et la manufacture.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-blue">
+                        <h4 class="accent-cyan font-bold text-sm mb-2">Années 1990</h4>
+                        <p class="text-white font-bold mb-1">Ère du Tigre Asiatique</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Industrialisation rapide ; la Malaisie devient un hub mondial de fabrication électronique.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-cyan">
+                        <h4 class="accent-cyan font-bold text-sm mb-2">2000–Présent</h4>
+                        <p class="text-white font-bold mb-1">Technologies à haute valeur</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Finance islamique, services numériques et tourisme médical visant le statut de pays à revenu élevé.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Currency & Wages -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Min. (2026)</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">RM 1 700</div>
+                    <p class="text-sm accent-cyan">~361 USD / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center border-t-2 border-t-meae-cyan bg-meae-cyan/5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Moy. (Brut)</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">RM 3 900</div>
+                    <p class="text-sm accent-cyan">~830 USD / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 overflow-hidden relative group">
+                    <div class="absolute -right-4 -bottom-4 text-white/5 group-hover:text-white/10 transition-colors transform rotate-12">
+                        <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.82v-1.91c-1.35-.16-2.58-.69-3.48-1.54l1.37-1.37c.64.6 1.48 1 2.37 1.11v-2.8c-1.63-.44-3.09-1.2-3.09-3.01 0-1.57 1.25-2.72 3.09-3.01V5.5h2.82v1.94c1.23.2 2.29.74 3.04 1.54l-1.35 1.4c-.53-.48-1.18-.8-1.9-.91v2.66c1.86.47 3.39 1.14 3.39 3.09 0 1.93-1.54 2.89-3.44 3.07zM11.23 10.4c-.6.15-1.01.44-1.01.88 0 .42.34.72 1.01.91v-1.79zm2.4 4.54c0 .48-.42.82-1.21.98v-2.02c.8.21 1.21.52 1.21 1.04z"/></svg>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 block">Évolution du change (vs USD)</span>
+                    <div class="flex items-end gap-2 text-2xl font-display font-bold text-white">
+                        4,70 <span class="text-xs text-slate-400 pb-1">MYR (2026)</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2">depuis 3,08 MYR en 1970</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Demographics & History -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            
+            <!-- Conflict Timeline -->
+            <section id="history" class="xl:col-span-7">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Conflits Historiques</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1948-1960')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-meae-red to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-meae-red shadow-[0_0_10px_rgba(225,0,15,0.8)] group-hover:scale-150 transition-transform"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-red/30 transition-all group-hover:bg-meae-red/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1948–1960 | Urgence Malaise</h4>
+                            <p class="text-sm text-slate-400">Guerre de guérilla contre le Parti Communiste Malais (MCP).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1963-1966')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1963–1966 | Konfrontasi</h4>
+                            <p class="text-sm text-slate-400">Conflit Indonésie-Malaisie autour de la formation de la Fédération.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1968-1989')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1968–1989 | Insurrection Communiste</h4>
+                            <p class="text-sm text-slate-400">Seconde période de conflit de basse intensité avec le CPM.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('2013')">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">2013 | Crise de Lahad Datu</h4>
+                            <p class="text-sm text-slate-400">Conflit militaire à Sabah impliquant les revendications de Sulu.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religious Breakdown -->
+            <section id="demographics" class="xl:col-span-5">
+                <div class="glass-card rounded-3xl p-8 h-full">
+                    <h2 class="text-2xl font-display font-bold text-white mb-8">Mosaïque Religieuse</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold accent-cyan">63,5 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Islam <span class="text-[10px] text-slate-500 ml-2">OFFICIELLE</span></span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-meae-blue h-full rounded-full" style="width: 63.5%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">18,7 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Bouddhisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 18.7%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">9,1 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Christianisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 9.1%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">6,1 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Hindouisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 6.1%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Global Trade Relations -->
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Hub Commercial Mondial</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">1er partenaire export</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Singapour</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">1er partenaire import</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Chine</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Partenaire de rang 1</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">États-Unis</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Partenaire de rang 1</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Japon</p>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 border-l-4 border-l-meae-blue">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">Relations Économiques Franco-Malaisiennes</h3>
+                        <p class="text-slate-400 max-w-2xl text-sm leading-relaxed">
+                            La France occupe une place significative en tant que <span class="text-white font-bold">21ᵉ partenaire commercial mondial</span> de la Malaisie et <span class="text-white font-bold">4ᵉ au sein de l'UE</span>. Les secteurs d'investissement clés incluent l'aéronautique et les systèmes de défense avancés.
+                        </p>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="px-6 py-4 bg-white/5 rounded-2xl text-center">
+                            <span class="text-xs text-slate-500 uppercase font-bold">Rang UE</span>
+                            <div class="text-2xl font-display font-extrabold text-white">#4</div>
+                        </div>
+                        <div class="px-6 py-4 bg-white/5 rounded-2xl text-center">
+                            <span class="text-xs text-slate-500 uppercase font-bold">Rang mondial</span>
+                            <div class="text-2xl font-display font-extrabold text-white">#21</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demographics Pop Chart -->
+        <section class="mt-24" id="demography-chart">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Trajectoire Démographique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                <span class="text-xs font-bold text-slate-500 tracking-widest uppercase">1945 – 2026</span>
+            </div>
+
+            <style>
+                /* ===== DEMOGRAPHIC CHART V2 ===== */
+                .dc-card {
+                    border-top: 2px solid rgba(0,176,240,0.2);
+                }
+                .dc-chart {
+                    position: relative;
+                    height: 320px;
+                    padding-left: 52px;
+                }
+                .dc-gridline {
+                    position: absolute;
+                    left: 48px;
+                    right: 0;
+                    height: 1px;
+                    background: linear-gradient(90deg, rgba(255,255,255,0.07), rgba(255,255,255,0.01));
+                }
+                .dc-ylabel {
+                    position: absolute;
+                    left: 0;
+                    width: 44px;
+                    text-align: right;
+                    font-size: 10px;
+                    font-weight: 600;
+                    color: #475569;
+                    transform: translateY(-50%);
+                }
+                .dc-baseline {
+                    position: absolute;
+                    left: 48px;
+                    right: 0;
+                    bottom: 0;
+                    height: 2px;
+                    background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.03));
+                }
+                /* Bars row — key fix: explicit height so children can use % */
+                .dc-bars {
+                    display: flex;
+                    gap: 8px;
+                    height: 100%;
+                    padding-left: 4px;
+                    align-items: stretch; /* children get full height */
+                }
+                /* Each column: full height, with bar pushed to bottom */
+                .dc-col {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: center;
+                    position: relative;
+                    min-width: 0;
+                }
+                /* The bar itself */
+                .dc-bar {
+                    width: 80%;
+                    max-width: 52px;
+                    min-width: 20px;
+                    border-radius: 8px 8px 2px 2px;
+                    position: relative;
+                    cursor: pointer;
+                    border: 1px solid rgba(255,255,255,0.08);
+                    border-bottom: none;
+                    transition: filter 0.3s ease, box-shadow 0.3s ease;
+                    transform-origin: bottom center;
+                    animation: dcGrow 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+                }
+                .dc-bar:hover {
+                    filter: brightness(1.35);
+                    box-shadow: 0 0 16px rgba(100,150,255,0.25);
+                }
+                @keyframes dcGrow {
+                    from { transform: scaleY(0); opacity: 0.3; }
+                    to   { transform: scaleY(1); opacity: 1; }
+                }
+                /* Gradient per bar — progressive blue → cyan */
+                .dc-b0 { background: linear-gradient(to top, #1e3570, #3b5998); animation-delay: .05s; }
+                .dc-b1 { background: linear-gradient(to top, #1e3a80, #4060a8); animation-delay: .10s; }
+                .dc-b2 { background: linear-gradient(to top, #2040a0, #4568b8); animation-delay: .15s; }
+                .dc-b3 { background: linear-gradient(to top, #2248b5, #4a70c8); animation-delay: .20s; }
+                .dc-b4 { background: linear-gradient(to top, #2850c8, #5078d8); animation-delay: .25s; }
+                .dc-b5 { background: linear-gradient(to top, #2e58dd, #5580e8); animation-delay: .30s; }
+                .dc-b6 { background: linear-gradient(to top, #3460ee, #5a88f0); animation-delay: .35s; }
+                .dc-b7 { background: linear-gradient(to top, #3a68ff, #6090ff); animation-delay: .40s; }
+                .dc-b8 { background: linear-gradient(to top, #4070ff, #78b0ff); animation-delay: .45s; }
+                .dc-b9 {
+                    background: linear-gradient(to top, #0088cc, #00d4ff);
+                    animation-delay: .50s;
+                    border-color: rgba(0,210,255,0.3);
+                    box-shadow: 0 0 24px rgba(0,176,240,0.3), 0 -4px 30px rgba(0,210,255,0.15);
+                }
+                /* Tooltip */
+                .dc-tip {
+                    position: absolute;
+                    top: -50px;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(6px);
+                    background: rgba(8, 8, 28, 0.96);
+                    border: 1px solid rgba(255,255,255,0.12);
+                    border-radius: 10px;
+                    padding: 6px 10px;
+                    white-space: nowrap;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity .25s ease, transform .25s ease;
+                    backdrop-filter: blur(8px);
+                    z-index: 10;
+                }
+                .dc-bar:hover .dc-tip {
+                    opacity: 1;
+                    transform: translateX(-50%) translateY(0);
+                }
+                .dc-tip-pop {
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 14px;
+                    font-weight: 800;
+                    color: #fff;
+                }
+                .dc-tip-growth {
+                    font-size: 9px;
+                    font-weight: 700;
+                    margin-top: 1px;
+                    color: #22c55e;
+                }
+                .dc-tip-growth.neutral { color: #94a3b8; }
+                /* Year label */
+                .dc-year {
+                    margin-top: 10px;
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #475569;
+                    letter-spacing: 0.02em;
+                    transition: color 0.3s;
+                    flex-shrink: 0;
+                }
+                .dc-col:hover .dc-year { color: #e2e8f0; }
+                .dc-year.hl { color: #00b0f0; font-weight: 800; font-size: 12px; }
+                /* Inline value on tall bars */
+                .dc-val {
+                    position: absolute;
+                    top: 8px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 9px;
+                    font-weight: 800;
+                    color: rgba(255,255,255,0.7);
+                    writing-mode: vertical-lr;
+                    text-orientation: mixed;
+                    pointer-events: none;
+                }
+                /* Growth badge on hover */
+                .dc-badge {
+                    position: absolute;
+                    top: -16px;
+                    right: -12px;
+                    background: rgba(34,197,94,0.15);
+                    border: 1px solid rgba(34,197,94,0.25);
+                    border-radius: 6px;
+                    padding: 1px 5px;
+                    font-size: 8px;
+                    font-weight: 800;
+                    color: #22c55e;
+                    z-index: 5;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                    white-space: nowrap;
+                }
+                .dc-col:hover .dc-badge { opacity: 1; }
+                /* Summary cards */
+                .dc-summary {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1rem;
+                    margin-top: 1.5rem;
+                    padding-top: 1.5rem;
+                    border-top: 1px solid rgba(255,255,255,0.06);
+                }
+                .dc-scard {
+                    text-align: center;
+                    padding: 16px;
+                    border-radius: 16px;
+                    background: rgba(255,255,255,0.03);
+                    border: 1px solid rgba(255,255,255,0.05);
+                    transition: background 0.3s;
+                }
+                .dc-scard:hover { background: rgba(255,255,255,0.06); }
+                .dc-slabel {
+                    font-size: 9px;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    letter-spacing: 0.12em;
+                    color: #64748b;
+                    margin-bottom: 6px;
+                }
+                .dc-sval {
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 24px;
+                    font-weight: 800;
+                    color: #fff;
+                }
+                .dc-ssub {
+                    font-size: 11px;
+                    color: #64748b;
+                    margin-top: 2px;
+                }
+                @media (max-width: 640px) {
+                    .dc-val { display: none; }
+                    .dc-badge { display: none; }
+                    .dc-summary { grid-template-columns: 1fr; }
+                    .dc-bar { width: 90%; min-width: 14px; }
+                }
+            </style>
+
+            <div class="glass-card rounded-3xl p-8 overflow-hidden dc-card">
+                <div class="dc-chart">
+                    <!-- Y-axis -->
+                    <div class="dc-ylabel" style="bottom:100%;">35M</div>
+                    <div class="dc-gridline" style="bottom:100%;"></div>
+                    <div class="dc-ylabel" style="bottom:71.4%;">25M</div>
+                    <div class="dc-gridline" style="bottom:71.4%;"></div>
+                    <div class="dc-ylabel" style="bottom:42.9%;">15M</div>
+                    <div class="dc-gridline" style="bottom:42.9%;"></div>
+                    <div class="dc-ylabel" style="bottom:14.3%;">5M</div>
+                    <div class="dc-gridline" style="bottom:14.3%;"></div>
+                    <div class="dc-baseline"></div>
+
+                    <!-- Bars -->
+                    <div class="dc-bars">
+                        <!-- 1945 — 5,0 M  (14.5% of 34.5) -->
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b0" style="height:14.5%;">
+                                <div class="dc-tip">
+                                    <div class="dc-tip-pop">5,0 M</div>
+                                    <div class="dc-tip-growth neutral">— Année de référence</div>
+                                </div>
+                            </div>
+                            <span class="dc-year">1945</span>
+                        </div>
+                        <!-- 1950 — 6,1 M -->
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b1" style="height:17.7%;">
+                                <div class="dc-tip">
+                                    <div class="dc-tip-pop">6,1 M</div>
+                                    <div class="dc-tip-growth">+22 % / 5 ans</div>
+                                </div>
+                                <div class="dc-badge">+22 %</div>
+                            </div>
+                            <span class="dc-year">1950</span>
+                        </div>
+                        <!-- 1960 — 8,1 M -->
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b2" style="height:23.5%;">
+                                <div class="dc-tip">
+                                    <div class="dc-tip-pop">8,1 M</div>
+                                    <div class="dc-tip-growth">+33 % / 10 ans</div>
+                                </div>
+                                <div class="dc-badge">+33 %</div>
+                            </div>
+                            <span class="dc-year">1960</span>
+                        </div>
+                        <!-- 1970 — 10,9 M -->
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b3" style="height:31.6%;">
+                                <div class="dc-tip">
+                                    <div class="dc-tip-pop">10,9 M</div>
+                                    <div class="dc-tip-growth">+35 % / 10 ans</div>
+                                </div>
+                                <div class="dc-badge">+35 %</div>
+                            </div>
+                            <span class="dc-year">1970</span>
+                        </div>
+                        <!-- 1980 — 13,8 M -->
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b4" style="height:40.0%;">
+                                <div class="dc-tip">
+                                    <div class="dc-tip-pop">13,8 M</div>
+                                    <div class="dc-tip-growth">+27 % / 10 ans</div>
+                                </div>
+                                <div class="dc-badge">+27 %</div>
+                            </div>
+                            <span class="dc-year">1980</span>
+                        </div>
+                        <!-- 1990 — 18,2 M -->
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b5" style="height:52.8%;">
+                                <div class="dc-val">18,2M</div>
+                                <div class="dc-tip">
+                                    <div class="dc-tip-pop">18,2 M</div>
+                                    <div class="dc-tip-growth">+32 % / 10 ans</div>
+                                </div>
+                                <div class="dc-badge">+32 %</div>
+                            </div>
+                            <span class="dc-year">1990</span>
+                        </div>
+                        <!-- 2000 — 23,3 M -->
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b6" style="height:67.5%;">
+                                <div class="dc-val">23,3M</div>
+                                <div class="dc-tip">
+                                    <div class="dc-tip-pop">23,3 M</div>
+                                    <div class="dc-tip-growth">+28 % / 10 ans</div>
+                                </div>
+                                <div class="dc-badge">+28 %</div>
+                            </div>
+                            <span class="dc-year">2000</span>
+                        </div>
+                        <!-- 2010 — 28,3 M -->
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b7" style="height:82.0%;">
+                                <div class="dc-val">28,3M</div>
+                                <div class="dc-tip">
+                                    <div class="dc-tip-pop">28,3 M</div>
+                                    <div class="dc-tip-growth">+21 % / 10 ans</div>
+                                </div>
+                                <div class="dc-badge">+21 %</div>
+                            </div>
+                            <span class="dc-year">2010</span>
+                        </div>
+                        <!-- 2020 — 32,4 M -->
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b8" style="height:93.9%;">
+                                <div class="dc-val">32,4M</div>
+                                <div class="dc-tip">
+                                    <div class="dc-tip-pop">32,4 M</div>
+                                    <div class="dc-tip-growth">+14 % / 10 ans</div>
+                                </div>
+                                <div class="dc-badge">+14 %</div>
+                            </div>
+                            <span class="dc-year">2020</span>
+                        </div>
+                        <!-- 2026 — 34,5 M ★ -->
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b9" style="height:100%;">
+                                <div class="dc-val" style="color:rgba(0,220,255,0.9);">34,5M</div>
+                                <div class="dc-tip" style="border-color:rgba(0,176,240,0.3);">
+                                    <div class="dc-tip-pop" style="color:#00b0f0;">34,5 M</div>
+                                    <div class="dc-tip-growth">+6,5 % / 6 ans (est.)</div>
+                                </div>
+                            </div>
+                            <span class="dc-year hl">2026*</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary stats -->
+                <div class="dc-summary">
+                    <div class="dc-scard">
+                        <div class="dc-slabel">Croissance totale</div>
+                        <div class="dc-sval" style="color:#22c55e;">×6,9</div>
+                        <div class="dc-ssub">depuis 1945</div>
+                    </div>
+                    <div class="dc-scard" style="border-color:rgba(0,176,240,0.15);">
+                        <div class="dc-slabel">Décennie record</div>
+                        <div class="dc-sval">1960<span style="font-size:14px;color:#64748b;">s</span></div>
+                        <div class="dc-ssub">+35 % de croissance</div>
+                    </div>
+                    <div class="dc-scard">
+                        <div class="dc-slabel">Taux actuel</div>
+                        <div class="dc-sval" style="color:#00b0f0;">1,1 %</div>
+                        <div class="dc-ssub">croissance annuelle</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Smooth show on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700', 'ease-out');
+            observer.observe(section);
+        });
+    </script>
+    <script src="./data.js"></script>
+    
+    <!-- Modal Structure -->
+    <div id="conflictModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeConflictModal()"></div>
+        <div class="relative w-full max-w-4xl max-h-[90vh] glass-card rounded-3xl overflow-hidden flex flex-col transform scale-95 transition-transform duration-300 border border-white/10 shadow-[0_0_50px_-12px_rgba(0,0,0,1)]" id="conflictModalContent">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-meae-blue/20 to-meae-red/20 opacity-50"></div>
+                <h3 id="modalTitle" class="text-2xl font-display font-bold text-white relative z-10 drop-shadow-md">Titre du conflit</h3>
+                <button onclick="closeConflictModal()" class="relative z-10 text-slate-300 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10 cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-4 bg-[#0a0a1a] border-b border-white/5 shadow-inner">
+               <audio id="modalAudio" controls class="w-full h-10 rounded-full" controlsList="nodownload">
+                   <source src="" type="audio/mp4">
+                   Votre navigateur ne supporte pas l'élément audio.
+               </audio>
+            </div>
+            <div id="modalBody" class="p-8 overflow-y-auto custom-scrollbar prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-[#00b0f0] prose-h1:text-[#00b0f0] prose-a:text-[#00b0f0] hover:prose-a:text-white prose-strong:text-white prose-table:border-collapse prose-th:border prose-th:border-white/20 prose-th:p-3 prose-th:bg-white/10 prose-td:border prose-td:border-white/10 prose-td:p-3 bg-[#0a0a1a]/90">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openConflictModal(id) {
+            const modal = document.getElementById('conflictModal');
+            const modalContent = document.getElementById('conflictModalContent');
+            const title = document.getElementById('modalTitle');
+            const audio = document.getElementById('modalAudio');
+            const body = document.getElementById('modalBody');
+            
+            const data = conflictData[id];
+            if (!data) return;
+            
+            title.innerHTML = data.title;
+            audio.innerHTML = '<source src="' + data.audio + '" type="audio/mp4">';
+            audio.load();
+            
+            body.innerHTML = marked.parse(data.content);
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // small delay for transition
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConflictModal() {
+            const modal = document.getElementById('conflictModal');
+            const modalContent = document.getElementById('conflictModalContent');
+            const audio = document.getElementById('modalAudio');
+            
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            audio.pause();
+            audio.currentTime = 0;
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
