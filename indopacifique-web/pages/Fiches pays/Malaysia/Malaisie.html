@@ -187,6 +187,36 @@
         .bg-accent-cyan { background-color: #00b0f0; }
         .bg-accent-blue { background-color: #000091; }
         .bg-accent-red { background-color: #E1000F; }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0.8rem 1rem;
+            }
+            .logo-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.85rem;
+            }
+            .logo-container span {
+                font-size: 0.8rem;
+            }
+            .btn-glass {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -194,14 +224,15 @@
     <!-- MEAE Header – identical to index.html -->
     <header class="site-header">
         <div class="logo-container">
-            <a href="../../../index.html">
+            <a href="../../../../index.html">
                 <div class="logo-icon">IP</div>
                 <span>Portail Indopacifique</span>
             </a>
-            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiche pays</a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
         </div>
         <div class="controls">
             <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
         </div>
     </header>
 

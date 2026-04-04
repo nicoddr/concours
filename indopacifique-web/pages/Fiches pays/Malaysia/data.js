@@ -1,6 +1,6 @@
 const conflictData = {
   '1948-1960': {
-    title: '1948–1960 | Malayan Emergency',
+    title: '1948–1960 | Urgence malaise',
     audio: '1948-1960.m4a',
     content: `
 Rapport Stratégique : L'Insurrection Malaisienne (1948–1960)
@@ -179,7 +179,7 @@ En conclusion, la résolution de la *Konfrontasi* a marqué le passage de l'Asie
 `
   },
   '1968-1989': {
-    title: '1968–1989 | Communist Insurgency',
+    title: '1968–1989 | Insurrection communiste',
     audio: '1968-1989.m4a',
     content: `
 # **Rapport de Synthèse : La Seconde Insurrection Communiste en Malaisie (1968–1989)**
@@ -263,7 +263,7 @@ En conclusion, la victoire malaisienne ne fut pas seulement militaire, mais « a
 `
   },
   '2013': {
-    title: '2013 | Lahad Datu Standoff',
+    title: '2013 | Incident de Lahad Datu',
     audio: '2013.m4a',
     content: `
 # **Rapport Stratégique : Le Conflit de Lahad Datu (2013) et ses Implications Globales**

@@ -422,3 +422,178 @@ main {
   background: rgba(255,255,255,0.02); display: flex; justify-content: center; align-items: center;
   border: 2px dashed var(--meae-cyan); position: relative; overflow: hidden;
 }
+
+/* ================================================
+   RESPONSIVE — MOBILE (max-width: 768px)
+   ================================================ */
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0.8rem 1rem;
+  }
+  .logo-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+  }
+  .logo-container span {
+    font-size: 0.8rem;
+  }
+  .logo-container .btn-glass {
+    font-size: 0.75rem !important;
+    padding: 6px 10px;
+    margin-left: 0 !important;
+  }
+  .controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .controls .btn-glass {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  /* Main Container */
+  main {
+    padding: 0 12px;
+    margin: 1rem auto;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  /* Glass Panels */
+  .glass-panel {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  /* Module Grid */
+  .modules-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* Module Cards */
+  .module-card {
+    padding: 1.2rem;
+  }
+  .card-title {
+    font-size: 1.15rem;
+  }
+  .card-desc {
+    font-size: 0.85rem;
+  }
+  .card-header {
+    margin-bottom: 1rem;
+    gap: 10px;
+  }
+
+  /* Tabs Nav */
+  .tabs-nav {
+    gap: 6px !important;
+  }
+  .tabs-nav .btn-glass {
+    font-size: 0.7rem;
+    padding: 6px 10px;
+  }
+
+  /* Formatted Lesson */
+  .formatted-lesson {
+    padding: 1rem;
+    font-size: 14px;
+  }
+  .formatted-lesson h2 {
+    font-size: 16px;
+  }
+  .formatted-lesson h3 {
+    font-size: 14px;
+  }
+  .lesson-section-title {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
+
+  /* Quiz */
+  .quiz-btn {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  /* Country Directory */
+  .pays-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .country-card {
+    padding: 1rem;
+  }
+  .country-header {
+    font-size: 1rem;
+  }
+
+  /* Dictionary */
+  .dict-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Filters section */
+  .filters-section .tabs-nav {
+    gap: 6px !important;
+  }
+
+  /* Lesson content inside article */
+  .lesson-content {
+    padding: 1rem;
+  }
+  .lesson-content h1 {
+    font-size: 1.25rem;
+  }
+
+  /* Status indicator inline */
+  .content-wrapper article > div:first-child {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Activity container */
+  .activity-container {
+    height: 200px;
+  }
+}
+
+/* Extra-small screens */
+@media (max-width: 420px) {
+  header {
+    padding: 0.6rem 0.8rem;
+  }
+  .logo-icon {
+    width: 32px; height: 32px;
+    font-size: 1rem;
+  }
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+  .btn-glass {
+    font-size: 0.7rem;
+    padding: 5px 8px;
+  }
+  .btn-primary {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
