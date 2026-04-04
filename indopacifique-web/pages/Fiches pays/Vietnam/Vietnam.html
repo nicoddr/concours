@@ -1,513 +1,766 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vietnam Geopolitical Dossier</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Viêt Nam : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#f0f4f8',
-                            100: '#d9e2ec',
-                            200: '#bcccdc',
-                            300: '#9fb3c8',
-                            400: '#829ab1',
-                            500: '#627d98',
-                            600: '#486581',
-                            700: '#334e68',
-                            800: '#243b53',
-                            900: '#102a43',
-                        },
-                        accent: '#1F3A60',
-                        neutral: {
-                            50: '#F9FAFB',
-                            100: '#F3F4F6',
-                            800: '#1F2937',
-                            900: '#111827',
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
                     },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
                 }
             }
         }
     </script>
     <style>
         body {
-            background-color: #F9FAFB;
-            color: #333333;
-            line-height: 1.6;
-        }
-        .content-container {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-        .glass-header {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        .section-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            border: 1px solid #edf2f7;
-            transition: transform 0.2s ease;
-        }
-        .section-card:hover {
-            transform: translateY(-2px);
-        }
-        h1 {
-            letter-spacing: -0.025em;
-        }
-        h2 {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
             position: relative;
-            padding-bottom: 0.75rem;
-            margin-bottom: 1.5rem;
-            color: #1F3A60;
-            font-weight: 700;
+            overflow-x: hidden;
         }
-        h2::after {
+
+        /* Floating blobs matching index.html dark theme */
+        body::before, body::after {
             content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 3px;
-            background-color: #627d98;
-            border-radius: 2px;
-        }
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #e5e7eb;
-        }
-        th {
-            background-color: #f8fafc;
-            color: #475569;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        td {
-            padding: 1rem;
-            border-bottom: 1px solid #f1f5f9;
-            font-size: 0.95rem;
-        }
-        tr:last-child td {
-            border-bottom: none;
-        }
-        tr:nth-child(even) {
-            background-color: #fafbfc;
-        }
-        .numerical {
-            text-align: right;
-            font-family: 'Inter', monospace;
-        }
-        .table-container {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        ul li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        ul li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #627d98;
-            font-weight: bold;
-        }
-        .timeline-item {
-            border-left: 2px solid #e2e8f0;
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: -7px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: #1F3A60;
+            position: fixed;
             border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
         }
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: #eef2f6;
-            color: #334e68;
-            border-radius: 9999px;
-            font-size: 0.8rem;
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(0, 0, 145, 0.3);
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(0, 210, 255, 0.1);
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatanim {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(0.9); }
+        }
+
+        /* MEAE Header – identical to index.html */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: #000091; font-weight: bold; font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 176, 240, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 210, 255, 0.12);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #00b0f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        .accent-cyan { color: #00b0f0; }
+        .accent-blue { color: #000091; }
+        .accent-red { color: #E1000F; }
+        .bg-accent-cyan { background-color: #00b0f0; }
+        .bg-accent-blue { background-color: #000091; }
+        .bg-accent-red { background-color: #E1000F; }
+
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0.8rem 1rem;
+            }
+            .logo-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.85rem;
+            }
+            .logo-container span {
+                font-size: 0.8rem;
+            }
+            .btn-glass {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="glass-header sticky top-0 z-50 py-6 px-4 mb-8">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-brand-500 font-semibold tracking-widest text-xs uppercase mb-2">Research Dossier</p>
-            <h1 class="font-serif text-5xl md:text-6xl text-neutral-900">Vietnam</h1>
-            <div class="mt-4 flex justify-center gap-4 text-sm text-brand-600 font-medium">
-                <span>Geopolitical</span>
-                <span>•</span>
-                <span>Economic</span>
-                <span>•</span>
-                <span>Historical</span>
-            </div>
+    <!-- MEAE Header – identical to index.html -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <div class="logo-icon">IP</div>
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
         </div>
     </header>
 
-    <main class="content-container">
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-meae-blue opacity-20 blur-[100px] animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-meae-red opacity-10 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-meae-cyan uppercase bg-meae-cyan/10 border border-meae-cyan/20 rounded-full">
+                Puissance d'Asie du Sud-Est
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Viêt Nam
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Analyse géopolitique, économique et historique de la République Socialiste du Viêt Nam.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
         
-        <!-- Summary Section -->
-        <section class="section-card">
-            <h2 class="font-display text-2xl">Basic Info</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+        <!-- Summary Bento Grid -->
+        <div class="bento-grid mb-24">
+            <!-- Capitals -->
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
                 <div>
-                    <h3 class="text-xs font-bold uppercase text-brand-400 mb-2">Capital City</h3>
-                    <p class="text-xl font-semibold text-brand-900">Hanoi (Hà Nội)</p>
+                    <h3 class="accent-cyan font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Capitale</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Hanoï</div>
+                            <p class="text-slate-400 text-sm">Capitale nationale et centre politique</p>
+                        </div>
+                        <div class="border-l border-white/10 pl-12 hidden md:block"></div>
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Hô Chi Minh-Ville</div>
+                            <p class="text-slate-400 text-sm">Centre économique et poumon financier</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-xs font-bold uppercase text-brand-400 mb-2">Total Land Area</h3>
-                    <p class="text-xl font-semibold text-brand-900">331,210 km² <span class="text-sm font-normal text-brand-500">(127,881 sq miles)</span></p>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">331 210 km²</span>
                 </div>
             </div>
-        </section>
 
-        <!-- Political Landscape -->
-        <section class="section-card">
-            <h2 class="font-display text-2xl">Political Landscape</h2>
-            <div class="bg-brand-50 p-6 rounded-lg mb-6 border border-brand-100">
-                <h3 class="text-brand-800 font-bold mb-2">Regime Type</h3>
-                <p class="text-brand-900">Socialist Republic; a one-party state led by the Communist Party of Vietnam (CPV). The system is defined by the <strong>"Four Pillars"</strong> structure.</p>
+            <!-- Political Type -->
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-meae-red/20 to-transparent">
+                <h3 class="accent-red font-display font-bold text-xs uppercase tracking-widest mb-4">Régime</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-6">République Socialiste, État à parti unique</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Dirigé par le Parti communiste vietnamien (PCV), le système repose sur une structure dite des <span class="text-white">« Quatre Piliers »</span> (Secrétaire général, Président, Premier ministre, Président de l'Assemblée).
+                </p>
             </div>
-            
-            <div class="space-y-6">
-                <div>
-                    <h3 class="font-display text-lg font-bold text-accent mb-4">General Secretaries (Highest Office)</h3>
-                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4">
-                        <li>Ho Chi Minh <span class="text-brand-500">(1956–1960)</span></li>
-                        <li>Le Duan <span class="text-brand-500">(1960–1986)</span></li>
-                        <li>Truong Chinh <span class="text-brand-500">(1986)</span></li>
-                        <li>Nguyen Van Linh <span class="text-brand-500">(1986–1991)</span></li>
-                        <li>Do Muoi <span class="text-brand-500">(1991–1997)</span></li>
-                        <li>Le Kha Phieu <span class="text-brand-500">(1997–2001)</span></li>
-                        <li>Nong Duc Manh <span class="text-brand-500">(2001–2011)</span></li>
-                        <li>Nguyen Phu Trong <span class="text-brand-500">(2011–2024)</span></li>
-                        <li class="font-bold">To Lam <span class="text-brand-500 font-normal">(2024–Present)</span></li>
-                    </ul>
-                </div>
+        </div>
 
-                <div class="pt-6 border-t border-gray-100">
-                    <h3 class="font-display text-lg font-bold text-accent mb-4">Presidents (Head of State)</h3>
-                    <div class="table-container">
-                        <table class="text-sm">
-                            <thead>
-                                <tr>
-                                    <th>Leader</th>
-                                    <th>Period</th>
-                                    <th>Note</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Ho Chi Minh</td><td>1945–1969</td><td>First President</td></tr>
-                                <tr><td>Ton Duc Thang</td><td>1969–1980</td><td>-</td></tr>
-                                <tr><td>Nguyen Huu Tho</td><td>1980–1981</td><td>Acting</td></tr>
-                                <tr><td>Truong Chinh</td><td>1981–1987</td><td>Council Chairman</td></tr>
-                                <tr><td>Vo Chi Cong</td><td>1987–1992</td><td>Council Chairman</td></tr>
-                                <tr><td>Le Duc Anh</td><td>1992–1997</td><td>-</td></tr>
-                                <tr><td>Tran Duc Luong</td><td>1997–2006</td><td>-</td></tr>
-                                <tr><td>Nguyen Minh Triet</td><td>2006–2011</td><td>-</td></tr>
-                                <tr><td>Truong Tan Sang</td><td>2011–2016</td><td>-</td></tr>
-                                <tr><td>Tran Dai Quang</td><td>2016–2018</td><td>Deceased</td></tr>
-                                <tr><td>Nguyen Phu Trong</td><td>2018–2021</td><td>-</td></tr>
-                                <tr><td>Nguyen Xuan Phuc</td><td>2021–2023</td><td>Resigned</td></tr>
-                                <tr><td>Vo Van Thuong</td><td>2023–2024</td><td>Resigned</td></tr>
-                                <tr><td>To Lam</td><td>2024–Present</td><td>Incumbent</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                    <div class="border rounded-lg p-4 bg-gray-50">
-                        <p class="text-xs text-gray-500 uppercase font-bold">Recent Election</p>
-                        <p class="font-medium">May 23, 2021</p>
-                    </div>
-                    <div class="border rounded-lg p-4 bg-gray-50">
-                        <p class="text-xs text-gray-500 uppercase font-bold">Next Election</p>
-                        <p class="font-medium">May 2026</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- History & Conflicts -->
-        <section class="section-card">
-            <h2 class="font-display text-2xl">History & Major Conflicts</h2>
-            <div class="space-y-2 mt-6">
-                <div class="timeline-item">
-                    <span class="badge">1945–1954</span>
-                    <h4 class="font-bold text-brand-900">First Indochina War</h4>
-                    <p class="text-gray-600 text-sm">Against French colonial forces; led to Geneva Accords and division.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="badge">1955–1975</span>
-                    <h4 class="font-bold text-brand-900">Vietnam War (Second Indochina War)</h4>
-                    <p class="text-gray-600 text-sm">North vs. South; ended with reunification in 1976.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="badge">1978–1989</span>
-                    <h4 class="font-bold text-brand-900">Cambodian–Vietnamese War</h4>
-                    <p class="text-gray-600 text-sm">Intervention to remove Khmer Rouge.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="badge">1979</span>
-                    <h4 class="font-bold text-brand-900">Sino-Vietnamese War</h4>
-                    <p class="text-gray-600 text-sm">Brief border conflict with China.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="badge">1988</span>
-                    <h4 class="font-bold text-brand-900">Johnson South Reef Skirmish</h4>
-                    <p class="text-gray-600 text-sm">Naval conflict with China in Spratly Islands.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="badge">Present</span>
-                    <h4 class="font-bold text-brand-900">Maritime Tensions</h4>
-                    <p class="text-gray-600 text-sm">Territorial claims in the South China Sea (East Sea).</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Demographics -->
-        <section class="section-card">
-            <h2 class="font-display text-2xl">Demographic Evolution</h2>
-            <p class="text-gray-600 mb-4">Vietnam's population has more than quadrupled since 1945, reaching a historic milestone in 2023.</p>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Year</th>
-                            <th class="numerical">Population (Millions)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1945</td><td class="numerical">~23.0</td></tr>
-                        <tr><td>1960</td><td class="numerical">~32.0</td></tr>
-                        <tr><td>1975</td><td class="numerical">~48.0</td></tr>
-                        <tr><td>1990</td><td class="numerical">~67.0</td></tr>
-                        <tr><td>2010</td><td class="numerical">~88.0</td></tr>
-                        <tr class="font-bold bg-brand-50"><td>2023</td><td class="numerical">100.0</td></tr>
-                        <tr class="font-bold bg-brand-50"><td>2024</td><td class="numerical">100.3</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Economy -->
-        <section class="section-card">
-            <h2 class="font-display text-2xl">Economy & Currency</h2>
-            
-            <div class="mb-8">
-                <h3 class="font-display text-lg font-bold text-accent mb-4">Economic Transformation</h3>
-                <div class="space-y-4">
-                    <div class="p-4 bg-gray-50 border-l-4 border-brand-400">
-                        <strong class="block text-brand-900">1945–1986: Command Economy</strong>
-                        <p class="text-sm text-gray-600">Central planning and rigid state control post-reunification.</p>
-                    </div>
-                    <div class="p-4 bg-brand-50 border-l-4 border-brand-800">
-                        <strong class="block text-brand-900">1986: Doi Moi (Renovation)</strong>
-                        <p class="text-sm text-gray-600">Transition toward a "socialist-oriented market economy."</p>
-                    </div>
-                    <div class="p-4 bg-green-50 border-l-4 border-green-600">
-                        <strong class="block text-brand-900">Modern Era</strong>
-                        <p class="text-sm text-gray-600">Global manufacturing hub; WTO member since 2007; dynamic export-driven growth.</p>
-                    </div>
-                </div>
+        <!-- Section: Governance & Leaders -->
+        <section id="governance" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Chronologie du Pouvoir</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="font-display text-md font-bold text-accent mb-2">Currency Evolution (VND per 1 USD)</h3>
-                    <div class="table-container">
-                        <table class="text-sm">
-                            <thead>
-                                <tr><th>Year</th><th class="numerical">Value</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>1990</td><td class="numerical">~6,500</td></tr>
-                                <tr><td>2000</td><td class="numerical">~14,000</td></tr>
-                                <tr><td>2010</td><td class="numerical">~19,000</td></tr>
-                                <tr><td>2024</td><td class="numerical">~25,400</td></tr>
-                            </tbody>
-                        </table>
+                <!-- General Secretaries -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Secrétaires Généraux (Fonction Suprême)</h3>
+                    <div class="h-[400px] overflow-y-auto pr-4 space-y-3 custom-scrollbar">
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-70">
+                            <p class="text-xs text-slate-400 font-bold">1956–1960</p>
+                            <p class="text-white font-bold">Hô Chi Minh</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-70">
+                            <p class="text-xs text-slate-400 font-bold">1960–1986</p>
+                            <p class="text-white font-bold">Lê Duẩn</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-70">
+                            <p class="text-xs text-slate-400 font-bold">1986–1991</p>
+                            <p class="text-white font-bold">Nguyễn Văn Linh</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-70">
+                            <p class="text-xs text-slate-400 font-bold">1991–1997</p>
+                            <p class="text-white font-bold">Đỗ Mười</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-70">
+                            <p class="text-xs text-slate-400 font-bold">1997–2001</p>
+                            <p class="text-white font-bold">Lê Khả Phiêu</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-70">
+                            <p class="text-xs text-slate-400 font-bold">2001–2011</p>
+                            <p class="text-white font-bold">Nông Đức Mạnh</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-meae-red bg-white/5 rounded-r-xl">
+                            <p class="text-xs accent-red font-bold">2011–2024</p>
+                            <p class="text-white font-bold">Nguyễn Phú Trọng</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-meae-cyan bg-white/5 rounded-r-xl text-white">
+                            <p class="text-xs accent-cyan font-bold">2024–Présent</p>
+                            <p class="text-white font-bold">Tô Lâm</p>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <h3 class="font-display text-md font-bold text-accent mb-2">2024 GDP Breakdown</h3>
-                    <p class="text-xs text-gray-500 mb-2">Total Nominal GDP: <span class="font-bold">$476.3 Billion</span></p>
-                    <div class="table-container">
-                        <table class="text-sm">
-                            <thead>
-                                <tr><th>Sector</th><th class="numerical">Share</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Services</td><td class="numerical">42.36%</td></tr>
-                                <tr><td>Industry</td><td class="numerical">37.64%</td></tr>
-                                <tr><td>Agriculture</td><td class="numerical">11.86%</td></tr>
-                                <tr><td>Product Taxes</td><td class="numerical">8.14%</td></tr>
-                            </tbody>
-                        </table>
+
+                <!-- Presidents / Modern Era -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Présidents (Chefs d'État Récents)</h3>
+                    <div class="space-y-4">
+                        <div class="glass-card rounded-2xl p-6">
+                            <p class="text-xs text-slate-500 font-bold mb-1">Tran Dai Quang</p>
+                            <p class="text-white font-medium text-sm">2016–2018 (Décédé en fonction)</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-6">
+                            <p class="text-xs text-slate-500 font-bold mb-1">Nguyen Phu Trong</p>
+                            <p class="text-white font-medium text-sm">2018–2021</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-6">
+                            <p class="text-xs text-slate-500 font-bold mb-1">Nguyen Xuan Phuc</p>
+                            <p class="text-white font-medium text-sm">2021–2023 (Démissionnaire)</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-6 border-l-2 border-meae-cyan bg-white/5">
+                            <p class="text-xs text-slate-500 font-bold mb-1">To Lam</p>
+                            <p class="text-white font-medium text-sm">2024–Présent</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mt-6">
+                            <div class="glass-card rounded-xl p-4">
+                                <p class="text-[10px] text-slate-500 uppercase font-bold">Dernière élection</p>
+                                <p class="font-medium text-white text-sm">23 Mai 2021</p>
+                            </div>
+                            <div class="glass-card rounded-xl p-4">
+                                <p class="text-[10px] text-slate-500 uppercase font-bold">Prochaine élection</p>
+                                <p class="font-medium text-white text-sm">Mai 2026</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Income & Wages -->
-        <section class="section-card">
-            <h2 class="font-display text-2xl">Income & Labor (2024)</h2>
-            <div class="grid grid-cols-1 gap-6">
-                <div>
-                    <h3 class="font-display text-lg font-bold text-accent mb-4">Monthly Minimum Wage by Region</h3>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Region</th>
-                                    <th>VND Amount</th>
-                                    <th class="numerical">USD Approx.</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Region I (Hanoi, HCMC)</td><td>4,960,000</td><td class="numerical">~$195</td></tr>
-                                <tr><td>Region II</td><td>4,410,000</td><td class="numerical">~$174</td></tr>
-                                <tr><td>Region III</td><td>3,860,000</td><td class="numerical">~$152</td></tr>
-                                <tr><td>Region IV (Rural)</td><td>3,450,000</td><td class="numerical">~$136</td></tr>
-                            </tbody>
-                        </table>
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Économique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="md:col-span-1 glass-card rounded-3xl p-8">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB <span class="text-slate-500 font-normal text-sm">(2024)</span></h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services</span>
+                                <span class="text-white font-bold">42,3 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-blue w-[42.3%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie</span>
+                                <span class="text-white font-bold">37,6 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-red w-[37.6%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture</span>
+                                <span class="text-white font-bold">11,9 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[11.9%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Taxes sur produits</span>
+                                <span class="text-white font-bold">8,2 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-500 w-[8.2%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal total</div>
+                        <div class="text-4xl font-display font-extrabold text-white">476,3 Md$ <span class="text-lg font-normal text-slate-400">USD</span></div>
                     </div>
                 </div>
-                <div class="bg-brand-900 text-white p-6 rounded-lg text-center">
-                    <p class="text-brand-300 uppercase tracking-widest text-xs font-bold mb-1">National Average Salary</p>
-                    <p class="text-3xl font-bold">7.5M – 8.2M VND</p>
-                    <p class="text-brand-300 text-sm">Approximately $295 – $322 USD per month</p>
+
+                <!-- Economic Eras -->
+                <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-slate-600 sm:col-span-2">
+                        <h4 class="text-slate-400 font-bold text-sm mb-2">1945–1986</h4>
+                        <p class="text-white font-bold mb-1">Économie Planifiée</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Planification centrale et contrôle strict de l'État après la réunification.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-red">
+                        <h4 class="accent-red font-bold text-sm mb-2">1986</h4>
+                        <p class="text-white font-bold mb-1">Đổi Mới (Renouveau)</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Transition historique vers une « économie de marché à orientation socialiste ».</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-green-500">
+                        <h4 class="text-green-500 font-bold text-sm mb-2">Ère Actuelle</h4>
+                        <p class="text-white font-bold mb-1">Hub Mondial Manufacturier</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Membre de l'OMC (2007) ; croissance dynamique portée par les exportations industrielles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Currency & Wages -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Min. (Région I)</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">4,96M VND</div>
+                    <p class="text-sm accent-cyan">~195 USD / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center border-t-2 border-t-meae-red bg-meae-red/5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Moyen Brut (Nat.)</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">~8,0M VND</div>
+                    <p class="text-sm accent-red">~310 USD / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 overflow-hidden relative group">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 block">Évolution du change (vs USD)</span>
+                    <div class="flex items-end gap-2 text-2xl font-display font-bold text-white">
+                        25 400 <span class="text-xs text-slate-400 pb-1">VND (2024)</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2">depuis ~6 500 VND en 1990</p>
                 </div>
             </div>
         </section>
 
-        <!-- Religion -->
-        <section class="section-card">
-            <h2 class="font-display text-2xl">Religion</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr><th>Belief System</th><th class="numerical">Share</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>No Religion / Folk / Ancestor</td><td class="numerical">73.0%</td></tr>
-                            <tr><td>Buddhism</td><td class="numerical">14.9%</td></tr>
-                            <tr><td>Catholicism</td><td class="numerical">7.4%</td></tr>
-                            <tr><td>Cao Dai / Hoa Hao</td><td class="numerical">2.5%</td></tr>
-                            <tr><td>Protestantism</td><td class="numerical">1.1%</td></tr>
-                            <tr><td>Others</td><td class="numerical">&lt;1.0%</td></tr>
-                        </tbody>
-                    </table>
+        <!-- Section: Demographics & History -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            
+            <!-- Conflict Timeline -->
+            <section id="history" class="xl:col-span-7">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Conflits Historiques</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <h4 class="font-bold text-brand-900 mb-2">Cultural Context</h4>
-                    <p class="text-sm text-gray-600 italic">While a large majority identify as having "no religion" in a formal sense, the vast majority of Vietnamese participate in syncretic folk religions and ancestor worship practices that form the backbone of national cultural identity.</p>
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4 group cursor-pointer" onclick="openConflictModal('1945-1954')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent transition-all hover:bg-white/10 hover:border-white/20">
+                            <h4 class="text-white font-bold leading-none mb-2">1945–1954 | Première Guerre d'Indochine</h4>
+                            <p class="text-sm text-slate-400">Guerre contre les forces coloniales françaises ; entraîne les Accords de Genève et la partition du pays.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 group cursor-pointer" onclick="openConflictModal('1955-1975')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-meae-red to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-meae-red shadow-[0_0_10px_rgba(225,0,15,0.8)]"></div>
+                        <div class="glass-card rounded-2xl p-6 border-meae-red/30 bg-meae-red/5 transition-all hover:bg-meae-red/10 hover:border-meae-red/50">
+                            <h4 class="text-white font-bold leading-none mb-2">1955–1975 | Guerre du Viêt Nam (2e G. d'Indochine)</h4>
+                            <p class="text-sm text-slate-400">Nord contre Sud (soutenu par les US) ; s’achève par la réunification en 1976.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group cursor-pointer" onclick="openConflictModal('1978-1989')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent transition-all hover:bg-white/10 hover:border-white/20">
+                            <h4 class="text-white font-bold leading-none mb-2">1978–1989 | Guerre Cambodge-Viêt Nam</h4>
+                            <p class="text-sm text-slate-400">Intervention pour renverser les Khmers Rouges, suivie d'une occupation prolongée.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group cursor-pointer" onclick="openConflictModal('1979')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent transition-all hover:bg-white/10 hover:border-white/20">
+                            <h4 class="text-white font-bold leading-none mb-2">1979 | Guerre Sino-Vietnamienne</h4>
+                            <p class="text-sm text-slate-400">Bref mais intense conflit frontalier initié par la Chine ("leçon au Viêt Nam").</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group cursor-pointer" onclick="openConflictModal('1988')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent transition-all hover:bg-white/10 hover:border-white/20">
+                            <h4 class="text-white font-bold leading-none mb-2">1988 | Escarmouche du Récif Johnson South</h4>
+                            <p class="text-sm text-slate-400">Conflit naval tragique face à la marine chinoise concernant la souveraineté dans les Spratleys.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group cursor-pointer" onclick="openConflictModal('Present')">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-meae-cyan"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent transition-all hover:bg-white/10 hover:border-white/20">
+                            <h4 class="text-white font-bold leading-none mb-2">Présent | Tensions Maritimes & Récifs</h4>
+                            <p class="text-sm text-slate-400">Revendications territoriales face à la Chine en mer de Chine méridionale y compris les escarmouches passées (ex. Récif de Johnson du Sud en 1988).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religious Breakdown / Demographics -->
+            <section id="demographics" class="xl:col-span-5">
+                <div class="glass-card rounded-3xl p-8 h-full">
+                    <h2 class="text-2xl font-display font-bold text-white mb-8">Composition Religieuse</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-300">73,0 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Sans religion / Croyances pop.</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 73.0%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">14,9 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Bouddhisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-500 h-full rounded-full" style="width: 14.9%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">7,4 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Catholicisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-500 h-full rounded-full" style="width: 7.4%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">2,5 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Cao Đài / Hòa Hảo</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-500 h-full rounded-full" style="width: 2.5%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">1,1 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Protestantisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-500 h-full rounded-full" style="width: 1.1%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <p class="text-xs text-slate-400 italic">
+                            Bien que la majorité se déclare "sans religion" au sens strict, une très large proportion de la population participe activement aux cultes des ancêtres et religions folkloriques syncrétiques.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Global Trade Relations -->
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Hub Commercial Mondial</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">1er partenaire global</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Chine</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">1er client export</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">États-Unis</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Investissement/Tech</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Corée du Sud</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Partenaire export/ODA</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Japon</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Commerce ASEAN</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Thaïlande</p>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 border-l-4 border-l-meae-blue">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">Relations Économiques Franco-Vietnamiennes</h3>
+                        <p class="text-slate-400 max-w-2xl text-sm leading-relaxed">
+                            La France conserve des liens historiques et économiques forts avec le Viêt Nam. Les échanges bilatéraux représentent environ <span class="text-white font-bold">5,4 Mds USD</span>.
+                        </p>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="px-6 py-4 bg-white/5 rounded-2xl text-center">
+                            <span class="text-xs text-slate-500 uppercase font-bold">Rang UE</span>
+                            <div class="text-2xl font-display font-extrabold text-white">#4</div>
+                        </div>
+                        <div class="px-6 py-4 bg-white/5 rounded-2xl text-center">
+                            <span class="text-xs text-slate-500 uppercase font-bold">Client mondial</span>
+                            <div class="text-2xl font-display font-extrabold text-white">#24</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Trade -->
-        <section class="section-card">
-            <h2 class="font-display text-2xl">Trade & Partnerships</h2>
-            <div class="space-y-6">
-                <div>
-                    <h3 class="font-display text-lg font-bold text-accent mb-4">Principal Trade Partners</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="p-4 border rounded shadow-sm">
-                            <span class="text-xs font-bold text-brand-500">#1</span>
-                            <p class="font-bold">China</p>
-                            <p class="text-xs text-gray-500">Imports & Raw Materials</p>
-                        </div>
-                        <div class="p-4 border rounded shadow-sm">
-                            <span class="text-xs font-bold text-brand-500">#2</span>
-                            <p class="font-bold">United States</p>
-                            <p class="text-xs text-gray-500">Largest Export Destination</p>
-                        </div>
-                        <div class="p-4 border rounded shadow-sm">
-                            <span class="text-xs font-bold text-brand-500">#3</span>
-                            <p class="font-bold">South Korea</p>
-                            <p class="text-xs text-gray-500">Tech & Investment</p>
-                        </div>
-                        <div class="p-4 border rounded shadow-sm">
-                            <span class="text-xs font-bold text-brand-500">#4</span>
-                            <p class="font-bold">Japan</p>
-                            <p class="text-xs text-gray-500">Exports & ODA</p>
-                        </div>
-                        <div class="p-4 border rounded shadow-sm">
-                            <span class="text-xs font-bold text-brand-500">#5</span>
-                            <p class="font-bold">Thailand</p>
-                            <p class="text-xs text-gray-500">Regional ASEAN Trade</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- Demographics Chart Table Fallback -->
+        <section class="mt-24" id="demography-chart">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Trajectoire Démographique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                <span class="text-xs font-bold text-slate-500 tracking-widest uppercase">1945 – 2024</span>
+            </div>
 
-                <div class="mt-8 p-6 bg-brand-50 rounded-lg">
-                    <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Focus: France-Vietnam Relations</h3>
-                    <p class="text-brand-800 text-sm mb-4">France remains a key European partner, maintaining strong historical and economic ties.</p>
-                    <ul class="text-sm space-y-2">
-                        <li><strong>EU Ranking:</strong> 4th largest trade partner within the European Union.</li>
-                        <li><strong>Global Ranking:</strong> 24th largest export destination; 21st largest supplier.</li>
-                        <li><strong>Total Bilateral Turnover:</strong> Approximately $5.4 Billion USD.</li>
-                    </ul>
+            <div class="glass-card rounded-3xl p-8 max-w-2xl">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+                    <span class="text-white font-bold">Année</span>
+                    <span class="text-white font-bold">Population (Millions)</span>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex justify-between text-slate-400 text-sm"><span>1945</span><span>~23,0 M</span></div>
+                    <div class="flex justify-between text-slate-400 text-sm"><span>1960</span><span>~32,0 M</span></div>
+                    <div class="flex justify-between text-slate-400 text-sm"><span>1975</span><span>~48,0 M</span></div>
+                    <div class="flex justify-between text-slate-400 text-sm"><span>1990</span><span>~67,0 M</span></div>
+                    <div class="flex justify-between text-slate-400 text-sm"><span>2010</span><span>~88,0 M</span></div>
+                    <div class="flex justify-between text-meae-cyan font-bold text-lg mt-4 pt-4 border-t border-white/5"><span>2023</span><span>100,0 M</span></div>
+                    <div class="flex justify-between text-white font-bold text-lg"><span>2024</span><span>100,3 M</span></div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="mt-20 py-10 border-t border-gray-200">
-        <div class="content-container text-center text-gray-400 text-xs">
-            <p class="uppercase tracking-widest font-semibold mb-2">End of Report • Vietnam Geopolitical Analysis</p>
-            <p>Data compiled for research purposes • Updated August 2024</p>
+    <footer class="mt-20 py-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-xs">
+            <p class="uppercase tracking-widest font-bold mb-2">Fin du Rapport • Analyse Viêt Nam</p>
+            <p>Données compilées à des fins de recherche • Août 2024</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="data.js"></script>
+    
+    <!-- Modal Structure -->
+    <div id="conflictModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeConflictModal()"></div>
+        <div class="relative w-full max-w-4xl max-h-[90vh] glass-card rounded-3xl overflow-hidden flex flex-col transform scale-95 transition-transform duration-300 border border-white/10 shadow-[0_0_50px_-12px_rgba(0,0,0,1)]" id="conflictModalContent">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-meae-blue/20 to-meae-red/20 opacity-50"></div>
+                <h3 id="modalTitle" class="text-2xl font-display font-bold text-white relative z-10 drop-shadow-md">Titre du conflit</h3>
+                <button onclick="closeConflictModal()" class="relative z-10 text-slate-300 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10 cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-4 bg-[#0a0a1a] border-b border-white/5 shadow-inner">
+               <audio id="modalAudio" controls class="w-full h-10 rounded-full" controlsList="nodownload">
+                   <source src="" type="audio/mp4">
+                   Votre navigateur ne supporte pas l'élément audio.
+               </audio>
+            </div>
+            <div id="modalBody" class="p-8 overflow-y-auto custom-scrollbar prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-[#00b0f0] prose-h1:text-[#00b0f0] prose-a:text-[#00b0f0] hover:prose-a:text-white prose-strong:text-white prose-table:border-collapse prose-th:border prose-th:border-white/20 prose-th:p-3 prose-th:bg-white/10 prose-td:border prose-td:border-white/10 prose-td:p-3 bg-[#0a0a1a]/90">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openConflictModal(id) {
+            const modal = document.getElementById('conflictModal');
+            const modalContent = document.getElementById('conflictModalContent');
+            const title = document.getElementById('modalTitle');
+            const audio = document.getElementById('modalAudio');
+            const body = document.getElementById('modalBody');
+            
+            const data = conflictData[id];
+            if (!data) return;
+            
+            title.innerHTML = data.title;
+            audio.innerHTML = '<source src="' + data.audio + '" type="audio/mp4">';
+            audio.load();
+            
+            body.innerHTML = marked.parse(data.content);
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConflictModal() {
+            const modal = document.getElementById('conflictModal');
+            const modalContent = document.getElementById('conflictModalContent');
+            const audio = document.getElementById('modalAudio');
+            
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            audio.pause();
+            audio.currentTime = 0;
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
 </body>
 </html>
