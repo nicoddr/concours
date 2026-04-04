@@ -1,0 +1,662 @@
+[
+    {
+        "term": "ACFTA",
+        "def": "(*ASEAN-China Free Trade Area*) : Accord de libre-échange entre l'ASEAN et la Chine. Sa version 3.0 (2025) se concentre sur le numérique et l'économie verte."
+    },
+    {
+        "term": "AEC",
+        "def": "(*ASEAN Economic Community*) : Communauté Économique de l'ASEAN, visant l'intégration des marchés en Asie du Sud-Est."
+    },
+    {
+        "term": "AFD",
+        "def": "(*Agence Française de Développement*) : Institution financière publique française qui pilote notamment des projets environnementaux et climatiques comme l'Initiative Kiwa dans le Pacifique."
+    },
+    {
+        "term": "AIE",
+        "def": "(*Agence Internationale de l'Énergie*) : Organisation mondiale émettant des recommandations sur la transition énergétique et les politiques climatiques."
+    },
+    {
+        "term": "AIEA",
+        "def": "(*Agence Internationale de l'Énergie Atomique*) : Organisme de l'ONU qui a validé le rejet des eaux traitées de la centrale de Fukushima, malgré l'opposition chinoise."
+    },
+    {
+        "term": "AIIMS",
+        "def": "(*All India Institute of Medical Sciences*) : Institut médical indien majeur, partenaire de la France pour la création d'un centre de recherche sur l'Intelligence Artificielle en santé."
+    },
+    {
+        "term": "AKFTA",
+        "def": "(*ASEAN-Korea Free Trade Agreement*) : Accord de libre-échange entre l'ASEAN et la Corée du Sud, central dans la stratégie de Séoul."
+    },
+    {
+        "term": "ALINDIEN",
+        "def": "Amiral commandant la zone maritime océan Indien et les forces françaises aux Émirats arabes unis (FFEAU)."
+    },
+    {
+        "term": "ALPACI",
+        "def": "(*Amiral commandant la zone Asie-Pacifique*) : Commandement militaire français pour l'Indopacifique."
+    },
+    {
+        "term": "ALPS",
+        "def": "(*Advanced Liquid Processing System*) : Système de traitement des eaux contaminées de la centrale nucléaire de Fukushima."
+    },
+    {
+        "term": "AMCA",
+        "def": "(*Advanced Medium Combat Aircraft*) : Projet d'avion de combat furtif de 5ème génération développé par l'Inde."
+    },
+    {
+        "term": "AMP",
+        "def": "(*Aires Marines Protégées*) : Zones océaniques définies pour protéger la biodiversité, au cœur de l'objectif mondial \"30x30\"."
+    },
+    {
+        "term": "AMR",
+        "def": "(*Advanced Modular Reactors*) : Réacteurs nucléaires modulaires avancés, développés conjointement par la France et l'Inde."
+    },
+    {
+        "term": "AOIP",
+        "def": "(*ASEAN Outlook on the Indo-Pacific*) : Vision géopolitique de l'ASEAN prônant la coopération, le dialogue inclusif et refusant la logique de blocs."
+    },
+    {
+        "term": "APE",
+        "def": "(*Accords de Partenariat Économique*) : Outils commerciaux privilégiés par la diplomatie économique japonaise pour étendre le libre-échange."
+    },
+    {
+        "term": "API",
+        "def": "(*Active Pharmaceutical Ingredients*) : Principes actifs pharmaceutiques, composants de base des médicaments dont la Chine détient un quasi-monopole mondial."
+    },
+    {
+        "term": "APL",
+        "def": "(*Armée Populaire de Libération*) : Les forces armées de la République Populaire de Chine."
+    },
+    {
+        "term": "ARAS",
+        "def": "(*Armed Robbery Against Ships*) : Vols à main armée contre les navires (commis dans les eaux territoriales, contrairement à la piraterie)."
+    },
+    {
+        "term": "ARF",
+        "def": "(*ASEAN Regional Forum*) : Forum de l'ASEAN dédié à la sécurité régionale et au dialogue."
+    },
+    {
+        "term": "ART",
+        "def": "(*Agreement on Reciprocal Trade*) : Accord bilatéral de commerce signé entre la Malaisie et les États-Unis."
+    },
+    {
+        "term": "ASEAN",
+        "def": "(*Association des Nations de l'Asie du Sud-Est*) : Organisation politique et économique regroupant 10 pays d'Asie du Sud-Est."
+    },
+    {
+        "term": "ASEAN Way",
+        "def": "Règle de conduite informelle de l'ASEAN basée sur le consensus, la diplomatie discrète, la non-ingérence et le règlement pacifique des conflits."
+    },
+    {
+        "term": "ASG",
+        "def": "(*Abou Sayyaf Group*) : Groupe terroriste islamiste opérant dans le sud des Philippines (mer de Sulu-Celebes)."
+    },
+    {
+        "term": "ASML",
+        "def": "Entreprise technologique néerlandaise détenant un monopole sur les machines de lithographie nécessaires pour graver les puces électroniques les plus avancées."
+    },
+    {
+        "term": "ATSM",
+        "def": "(*Automatic Trigger Safeguard Mechanism*) : Mécanisme de sauvegarde automatique (protection commerciale) réclamé par l'Inde avant son refus d'intégrer le RCEP."
+    },
+    {
+        "term": "AUKUS",
+        "def": "Pacte de sécurité militaire trilatéral entre l'**A**ustralie, le **U**nited **K**ingdom (Royaume-Uni) et les **U**nited **S**tates (États-Unis)."
+    },
+    {
+        "term": "BAD",
+        "def": "(*Banque Asiatique de Développement*) : Institution financière régionale finançant le développement et l'adaptation climatique en Asie."
+    },
+    {
+        "term": "BBNJ",
+        "def": "(*Biodiversity Beyond National Jurisdiction*) : Traité de l'ONU (\"Traité sur les hautes mers\") protégeant la biodiversité dans les eaux internationales."
+    },
+    {
+        "term": "BDN",
+        "def": "(*Blue Dot Network*) : Initiative menée par les USA, le Japon et l'Australie pour certifier la qualité et la transparence des projets d'infrastructures."
+    },
+    {
+        "term": "BEL",
+        "def": "(*Bharat Electronics Ltd*) : Entreprise d'État indienne produisant de l'électronique de défense, partenaire du français Safran."
+    },
+    {
+        "term": "BIG",
+        "def": "(*Baku Initiative Group*) : Organisation azerbaïdjanaise accusée d'ingérence, de désinformation et d'attiser les tensions en Nouvelle-Calédonie en représailles au soutien français à l'Arménie."
+    },
+    {
+        "term": "BRI",
+        "def": "(*Belt and Road Initiative*) : L'initiative chinoise des \"Nouvelles Routes de la Soie\" visant à construire des infrastructures logistiques mondiales."
+    },
+    {
+        "term": "BRI (Belt and Road Initiative)",
+        "def": "Les \"Nouvelles routes de la soie\". Stratégie mondiale de développement des infrastructures promue par la Chine depuis 2013 pour relier l'Asie, l'Europe et l'Afrique."
+    },
+    {
+        "term": "BRICS",
+        "def": "Regroupement géopolitique de pays émergents initialement fondé par le **B**résil, la **R**ussie, l'**I**nde, la **C**hine et la **S**outh Africa (Afrique du Sud)."
+    },
+    {
+        "term": "C-DAC",
+        "def": "(*Centre for Development of Advanced Computing*) : Institut de recherche indien ayant conçu le microprocesseur souverain DHRUV64."
+    },
+    {
+        "term": "CAT",
+        "def": "(*Categories*) : Niveaux de classification (de 1 à 4\\) utilisés par le ReCAAP pour évaluer la gravité des incidents de piraterie."
+    },
+    {
+        "term": "CBAM",
+        "def": "(*Carbon Border Adjustment Mechanism*) : Voir **MACF**."
+    },
+    {
+        "term": "CCAT",
+        "def": "(*Cellule de Coordination des Actions de Terrain*) : Regroupement militant indépendantiste de Nouvelle-Calédonie impliqué dans les émeutes de 2024\\."
+    },
+    {
+        "term": "CCG",
+        "def": "(*China Coast Guard* ou *Conseil de Coopération du Golfe*) : Garde côtière chinoise, très active en mer de Chine méridionale. Désigne aussi le groupe de pays du Golfe négociant avec le Japon."
+    },
+    {
+        "term": "CCUS",
+        "def": "(*Carbon Capture, Utilization, and Storage*) : Technologies de captage, stockage et utilisation du carbone pour limiter les émissions des usines et centrales à charbon."
+    },
+    {
+        "term": "CEA",
+        "def": "(*Commissariat à l'énergie atomique et aux énergies alternatives*) : Organisme de recherche français partenaire de l'Inde sur les petits réacteurs nucléaires."
+    },
+    {
+        "term": "CIJ",
+        "def": "(*Cour Internationale de Justice*) : Organe judiciaire principal de l'ONU, basé à La Haye."
+    },
+    {
+        "term": "CLMV",
+        "def": "Sous-groupe de l'ASEAN comprenant le **C**ambodge, le **L**aos, le **M**yanmar et le **V**ietnam, particulièrement dépendant économiquement de la Chine."
+    },
+    {
+        "term": "CNES",
+        "def": "(*Centre National d'Études Spatiales*) : Agence spatiale française, partenaire de l'ISRO (Inde) sur des missions comme TRISHNA."
+    },
+    {
+        "term": "CNUDM",
+        "def": "(*Convention des Nations Unies sur le Droit de la Mer*) : Cadre juridique international régissant l'utilisation des océans et des ressources marines (UNCLOS en anglais)."
+    },
+    {
+        "term": "COI",
+        "def": "(*Commission de l'Océan Indien*) : Organisation intergouvernementale régionale dont la France prend la présidence en 2026\\."
+    },
+    {
+        "term": "COMPACT",
+        "def": "(*Catalyzing Opportunities for Military Partnership, Accelerated Commerce & Technology*) : Accord stratégique entre les États-Unis et l'Inde pour booster le commerce et la co-production militaire."
+    },
+    {
+        "term": "COP",
+        "def": "(*Conference of the Parties*) : Conférences internationales de l'ONU sur le changement climatique (ex: COP31)."
+    },
+    {
+        "term": "CPA",
+        "def": "(*Cour Permanente d'Arbitrage*) : Juridiction internationale qui a invalidé les revendications territoriales chinoises en Mer de Chine en 2016\\."
+    },
+    {
+        "term": "CPS / STEPS",
+        "def": "(*Current/Stated Policies Scenario*) : Scénario climatique basé uniquement sur les politiques environnementales actuellement en place."
+    },
+    {
+        "term": "CPTPP",
+        "def": "(*Comprehensive and Progressive Agreement for Trans-Pacific Partnership*) : Mégatraité de libre-échange transpacifique aux standards très élevés, rejoint par le Royaume-Uni en 2024\\."
+    },
+    {
+        "term": "CSNU",
+        "def": "(*Conseil de Sécurité des Nations Unies*) : Organe exécutif de l'ONU, pour lequel la France soutient l'obtention d'un siège permanent pour l'Inde."
+    },
+    {
+        "term": "DAE",
+        "def": "(*Department of Atomic Energy*) : Département indien de l'énergie atomique."
+    },
+    {
+        "term": "DDoS",
+        "def": "(*Distributed Denial of Service*) : Attaque informatique par déni de service visant à saturer un réseau (très utilisée par la Chine contre Taïwan)."
+    },
+    {
+        "term": "DGSE",
+        "def": "(*Direction Générale de la Sécurité Extérieure*) : Service de renseignement français."
+    },
+    {
+        "term": "Diplomatie du Loup Guerrier",
+        "def": "Style diplomatique chinois récent, caractérisé par une posture agressive et décomplexée pour défendre les intérêts nationaux et l'image de la Chine."
+    },
+    {
+        "term": "DMA",
+        "def": "(*Digital Markets Act*) : Règlement européen conçu pour limiter la domination des géants du net (\"gatekeepers\") et réguler la concurrence numérique."
+    },
+    {
+        "term": "DPI",
+        "def": "(*Digital Public Infrastructure*) : Biens publics numériques (systèmes de paiement, identité numérique), cœur de l'offre diplomatique indienne pour le Sud Global."
+    },
+    {
+        "term": "DPP",
+        "def": "(*Democratic Progressive Party*) : Parti Démocrate Progressiste, parti politique indépendantiste et souverainiste actuellement au pouvoir à Taïwan."
+    },
+    {
+        "term": "DROM-COM",
+        "def": "(*Départements, Régions et Collectivités d'Outre-Mer*) : Territoires français situés hors de la métropole européenne."
+    },
+    {
+        "term": "DX",
+        "def": "(*Digital Transformation*) : Transformation numérique (acronyme très utilisé dans la stratégie japonaise)."
+    },
+    {
+        "term": "EAS",
+        "def": "(*East Asia Summit*) : Sommet de l'Asie de l'Est, un forum régional de dirigeants géré par l'ASEAN."
+    },
+    {
+        "term": "EDCA",
+        "def": "(*Enhanced Defense Cooperation Agreement*) : Accord renforcé de coopération de défense entre les États-Unis et les Philippines."
+    },
+    {
+        "term": "EPR",
+        "def": "(*European Pressurized Reactor*) : Réacteur nucléaire pressurisé de conception française (projet de Jaitapur en Inde)."
+    },
+    {
+        "term": "EUDR",
+        "def": "(*European Union Deforestation Regulation*) : Règlement de l'UE interdisant l'importation de produits issus de la déforestation."
+    },
+    {
+        "term": "FAL",
+        "def": "(*Final Assembly Line*) : Ligne d'assemblage final (ex: usine d'hélicoptères Airbus/Tata en Inde)."
+    },
+    {
+        "term": "FANC",
+        "def": "(*Forces Armées de la Nouvelle-Calédonie*) : Forces militaires françaises positionnées en Nouvelle-Calédonie."
+    },
+    {
+        "term": "FAPF",
+        "def": "(*Forces Armées en Polynésie Française*) : Forces militaires françaises positionnées en Polynésie."
+    },
+    {
+        "term": "FAZSOI",
+        "def": "(*Forces Armées dans la Zone Sud de l'Océan Indien*) : Troupes françaises basées principalement à La Réunion et Mayotte."
+    },
+    {
+        "term": "FDI / IDE",
+        "def": "(*Foreign Direct Investment*) : Investissements directs à l'étranger."
+    },
+    {
+        "term": "FLNKS",
+        "def": "(*Front de Libération Nationale Kanak et Socialiste*) : Principale coalition politique indépendantiste de Nouvelle-Calédonie."
+    },
+    {
+        "term": "FMI",
+        "def": "(*Fonds Monétaire International*) : Institution mondiale promouvant la stabilité financière internationale."
+    },
+    {
+        "term": "FOIP",
+        "def": "(*Free and Open Indo-Pacific*) : Stratégie (initiée par le Japon, reprise par les USA) visant à garantir la liberté de navigation et le droit international dans la région indopacifique face à la Chine."
+    },
+    {
+        "term": "FSR",
+        "def": "(*Foreign Subsidies Regulation*) : Outil européen permettant de bloquer ou d'enquêter sur des entreprises bénéficiant de subventions d'États étrangers (non-européens) qui faussent la concurrence."
+    },
+    {
+        "term": "G7",
+        "def": "(*Groupe des Sept*) : Forum politique et économique des pays les plus industrialisés."
+    },
+    {
+        "term": "GAN",
+        "def": "(*Groupe Aéronaval*) : Flotte de navires de guerre organisée autour d'un porte-avions (ex: la Mission Clemenceau avec le Charles de Gaulle)."
+    },
+    {
+        "term": "GATT",
+        "def": "(*General Agreement on Tariffs and Trade*) : Ancien accord mondial sur le commerce, ancêtre de l'OMC."
+    },
+    {
+        "term": "GDI",
+        "def": "(*Global Development Initiative*) : Projet diplomatique chinois visant à orienter le développement mondial, souvent par des prêts en infrastructures."
+    },
+    {
+        "term": "GNL",
+        "def": "(*Gaz Naturel Liquéfié*) : Source d'énergie critique pour les économies asiatiques (Japon, Corée du Sud)."
+    },
+    {
+        "term": "GW",
+        "def": "(*Gigawatt*) : Unité de mesure de puissance électrique (1 milliard de watts)."
+    },
+    {
+        "term": "GX",
+        "def": "(*Green Transformation*) : Stratégie de transformation écologique japonaise relançant notamment le nucléaire."
+    },
+    {
+        "term": "HAL",
+        "def": "(*Hindustan Aeronautics Limited*) : Leader public de l'industrie aérospatiale indienne."
+    },
+    {
+        "term": "IA",
+        "def": "(*Intelligence Artificielle*) : Champ technologique stratégique majeur."
+    },
+    {
+        "term": "iCET",
+        "def": "(*Initiative on Critical and Emerging Technology*) : Ancien partenariat technologique Inde-USA, remplacé en 2025\\."
+    },
+    {
+        "term": "IDE",
+        "def": "(*Investissements Directs Étrangers*) : Mouvements internationaux de capitaux réalisés pour créer ou développer une filiale à l'étranger."
+    },
+    {
+        "term": "IFC-IOR",
+        "def": "(*Information Fusion Centre \\- Indian Ocean Region*) : Centre indien de surveillance et de sécurité maritime."
+    },
+    {
+        "term": "IMEC",
+        "def": "(*India-Middle East-Europe Economic Corridor*) : Projet de corridor économique reliant l'Inde à l'Europe via le Moyen-Orient."
+    },
+    {
+        "term": "IMRH",
+        "def": "(*Indian Multi Role Helicopter*) : Projet d'hélicoptère militaire de conception indienne, motorisé par Safran."
+    },
+    {
+        "term": "INR",
+        "def": "(*Indian Rupee*) : Roupie, la monnaie officielle de l'Inde."
+    },
+    {
+        "term": "INSTN",
+        "def": "(*Institut national des sciences et techniques nucléaires*) : Établissement français formant des experts en énergie nucléaire."
+    },
+    {
+        "term": "IONS",
+        "def": "(*Indian Ocean Naval Symposium*) : Forum de coopération entre les marines des pays riverains de l'Océan Indien."
+    },
+    {
+        "term": "IORA",
+        "def": "(*Indian Ocean Rim Association*) : Association régionale favorisant la coopération économique dans l'océan Indien."
+    },
+    {
+        "term": "IPEF",
+        "def": "(*Indo-Pacific Economic Framework for Prosperity*) : Cadre économique américain en Indopacifique axé sur la résilience et les normes plutôt que sur les tarifs douaniers."
+    },
+    {
+        "term": "ISM",
+        "def": "(*India Semiconductor Mission*) : Programme stratégique indien visant à créer une industrie souveraine des semi-conducteurs."
+    },
+    {
+        "term": "ISRO",
+        "def": "(*Indian Space Research Organisation*) : Agence spatiale indienne."
+    },
+    {
+        "term": "IWT",
+        "def": "(*Indus Water Treaty*) : Traité de partage des eaux du fleuve Indus entre l'Inde et le Pakistan."
+    },
+    {
+        "term": "JOAPP",
+        "def": "(*Japan-OECD-ASEAN Partnership Programme*) : Initiative diplomatique japonaise pour renforcer les liens avec l'Asie du Sud-Est via l'OCDE."
+    },
+    {
+        "term": "JPY",
+        "def": "(*Japanese Yen*) : Yen, la monnaie officielle du Japon."
+    },
+    {
+        "term": "KMT",
+        "def": "(*Kuomintang*) : Parti politique nationaliste historique de Taïwan, souvent plus enclin au dialogue avec Pékin que le DPP."
+    },
+    {
+        "term": "KNS",
+        "def": "(*Koniambo Nickel SAS*) : Grande entreprise métallurgique opérant dans le nord de la Nouvelle-Calédonie."
+    },
+    {
+        "term": "KRW",
+        "def": "(*Korean Won*) : Won, monnaie de la Corée du Sud."
+    },
+    {
+        "term": "LAC",
+        "def": "(*Line of Actual Control*) : Ligne de démarcation militaire non officielle séparant les territoires contrôlés par l'Inde et la Chine."
+    },
+    {
+        "term": "LGFV",
+        "def": "(*Local Government Financing Vehicles*) : Véhicules financiers opaques créés par les villes chinoises pour contourner les règles d'emprunt et financer des chantiers, générant une dette massive."
+    },
+    {
+        "term": "Ligne à Neuf Traits",
+        "def": "Ligne de démarcation utilisée par la Chine pour revendiquer la majeure partie de la mer de Chine méridionale, contestée par le droit international (CNUDM)."
+    },
+    {
+        "term": "LLM",
+        "def": "(*Large Language Models*) : Grands modèles de langage, cœur des intelligences artificielles génératives modernes."
+    },
+    {
+        "term": "LPM",
+        "def": "(*Loi de Programmation Militaire*) : Loi française fixant les budgets et objectifs de la défense sur plusieurs années."
+    },
+    {
+        "term": "MACF",
+        "def": "(*Mécanisme d'Ajustement Carbone aux Frontières*) : Taxe environnementale imposée par l'Union Européenne sur les produits très polluants importés."
+    },
+    {
+        "term": "MAE",
+        "def": "(*Ministère des Affaires Étrangères*) : Organe diplomatique de l'État."
+    },
+    {
+        "term": "MDL",
+        "def": "(*Mazagon Dock Shipbuilders Limited*) : Chantier naval d'État indien, construisant les sous-marins français Scorpène."
+    },
+    {
+        "term": "MNT",
+        "def": "(*Mesures Non Tarifaires*) : Barrières commerciales administratives, sanitaires ou de quotas (contrairement aux taxes douanières)."
+    },
+    {
+        "term": "MoE",
+        "def": "(*Mixture of Experts*) : Architecture logicielle pour puces IA qui optimise le calcul en n'activant que les sous-réseaux nécessaires."
+    },
+    {
+        "term": "MOFA",
+        "def": "(*Ministry of Foreign Affairs*) : Ministère des Affaires étrangères du Japon."
+    },
+    {
+        "term": "MRC",
+        "def": "(*Mekong River Commission*) : Commission intergouvernementale chargée de gérer les ressources du fleuve Mékong."
+    },
+    {
+        "term": "MRFA",
+        "def": "(*Multi-Role Fighter Aircraft*) : Programme militaire indien pour l'acquisition de plus de 100 avions de chasse (où le Rafale est candidat)."
+    },
+    {
+        "term": "NPI",
+        "def": "(*Nickel Pig Iron*) : Format de nickel bas de gamme produit massivement par l'Indonésie, responsable de la crise du nickel calédonien."
+    },
+    {
+        "term": "NPU",
+        "def": "(*Neural Processing Unit*) : Puce informatique spécifiquement conçue pour accélérer les calculs des réseaux de neurones (IA)."
+    },
+    {
+        "term": "NSB",
+        "def": "(*National Security Bureau*) : Principale agence de renseignement de Taïwan."
+    },
+    {
+        "term": "NSS",
+        "def": "(*National Security Strategy*) : Document cadre de la sécurité nationale des États-Unis."
+    },
+    {
+        "term": "NZE",
+        "def": "(*Net Zero Emissions*) : Scénario climatique (AIE) visant la neutralité carbone mondiale."
+    },
+    {
+        "term": "OCDE",
+        "def": "(*Organisation de Coopération et de Développement Économiques*) : Organisation internationale regroupant les pays développés pour promouvoir la croissance et le commerce."
+    },
+    {
+        "term": "OCS",
+        "def": "(*Organisation de Coopération de Shanghai*) : Organisation intergouvernementale asiatique (dominée par la Chine et la Russie) axée sur la sécurité régionale."
+    },
+    {
+        "term": "OMC",
+        "def": "(*Organisation Mondiale du Commerce*) : Institution gérant les règles du commerce international."
+    },
+    {
+        "term": "ONU",
+        "def": "(*Organisation des Nations Unies*) : Organisation mondiale œuvrant pour la paix et la sécurité."
+    },
+    {
+        "term": "OTAN",
+        "def": "(*Organisation du Traité de l'Atlantique Nord*) : Alliance politico-militaire atlantique."
+    },
+    {
+        "term": "PCC",
+        "def": "(*Parti Communiste Chinois*) : Le parti unique dirigeant la République Populaire de Chine."
+    },
+    {
+        "term": "PEID",
+        "def": "(*Petits États Insulaires en Développement*) : Groupe de pays, notamment du Pacifique, très vulnérables au changement climatique."
+    },
+    {
+        "term": "PGM",
+        "def": "(*Precision-Guided Munitions*) : Munitions intelligentes à guidage de précision (visées par la logistique américaine à Taïwan)."
+    },
+    {
+        "term": "PIB",
+        "def": "(*Produit Intérieur Brut*) : Indicateur mesurant la richesse économique créée par un pays."
+    },
+    {
+        "term": "PIDT",
+        "def": "Fonds d'innovation franco-indien dédié au développement de technologies vertes dans la région Indopacifique."
+    },
+    {
+        "term": "PLI",
+        "def": "(*Production Linked Incentive*) : Programme de subventions du gouvernement indien pour inciter la production industrielle locale (ex: les batteries)."
+    },
+    {
+        "term": "PME",
+        "def": "(*Petites et Moyennes Entreprises*) : Entreprises de taille modeste, très impactées par les nouvelles normes internationales."
+    },
+    {
+        "term": "POM",
+        "def": "(*Patrouilleurs Outre-Mer*) : Navires militaires français récents destinés à surveiller les ZEE d'outre-mer."
+    },
+    {
+        "term": "PRF",
+        "def": "(*Pacific Resilience Facility*) : Premier fonds souverain conçu et géré par les nations du Pacifique pour financer leur adaptation au changement climatique."
+    },
+    {
+        "term": "QUAD",
+        "def": "(*Quadrilateral Security Dialogue*) : Dialogue de sécurité réunissant les États-Unis, le Japon, l'Inde et l'Australie, servant de \"soft balancing\" face à la Chine."
+    },
+    {
+        "term": "RCEP",
+        "def": "(*Regional Comprehensive Economic Partnership*) : Le plus vaste accord de libre-échange au monde, incluant 15 pays d'Asie-Pacifique (dont la Chine, mais sans l'Inde ni les USA)."
+    },
+    {
+        "term": "ReCAAP ISC",
+        "def": "(*Regional Cooperation Agreement on Combating Piracy and Armed Robbery against Ships in Asia*) : Centre d'information intergouvernemental de lutte contre la piraterie asiatique."
+    },
+    {
+        "term": "RKAB",
+        "def": "Système indonésien de quotas de production et de plans de travail annuels imposés aux compagnies minières."
+    },
+    {
+        "term": "RoO",
+        "def": "(*Rules of Origin*) : Règles d'origine définissant la \"nationalité\" économique d'un produit pour les droits de douane."
+    },
+    {
+        "term": "RPC",
+        "def": "(*République Populaire de Chine*) : Nom officiel de l'État chinois."
+    },
+    {
+        "term": "RVC",
+        "def": "(*Regional Value Content*) : Seuil de valeur (ex: 40 % dans le RCEP) qu'un produit doit acquérir dans la zone de libre-échange pour ne pas payer de droits de douane."
+    },
+    {
+        "term": "Sanaenomics",
+        "def": "Terme inventé pour décrire les politiques économiques potentielles de Sanae Takaichi (Japon), axées sur la sécurité économique, l'assouplissement monétaire et les dépenses de défense stratégiques."
+    },
+    {
+        "term": "SCPA",
+        "def": "(*Supply Chain Partnership Agreement*) : Accord entre la Corée du Sud et le Japon pour sécuriser leurs chaînes d'approvisionnement en minéraux."
+    },
+    {
+        "term": "SCS",
+        "def": "(*South China Sea*) : Mer de Chine Méridionale, épicentre des tensions territoriales asiatiques."
+    },
+    {
+        "term": "SfN",
+        "def": "(*Solutions fondées sur la Nature*) : Approches de protection environnementale s'appuyant sur les écosystèmes naturels (ex: mangroves) face au climat."
+    },
+    {
+        "term": "SLN",
+        "def": "(*Société Le Nickel*) : Exploitant minier et métallurgique historique en Nouvelle-Calédonie (groupe Eramet)."
+    },
+    {
+        "term": "SLOC",
+        "def": "(*Sea Lines of Communication*) : Voies de communication maritimes, routes commerciales vitales sur les océans."
+    },
+    {
+        "term": "SMR",
+        "def": "(*Small Modular Reactors*) : Petits réacteurs nucléaires modulaires, plus faciles à déployer que les centrales classiques."
+    },
+    {
+        "term": "SNA",
+        "def": "(*Sous-Marin Nucléaire d'Attaque*) : Navire furtif à propulsion nucléaire utilisé par la marine française."
+    },
+    {
+        "term": "SOMS",
+        "def": "(*Straits of Malacca and Singapore*) : Détroits de Malacca et de Singapour, la zone la plus touchée par les vols à main armée sur navires en Asie."
+    },
+    {
+        "term": "SSBN",
+        "def": "(*Ship Submersible Ballistic Nuclear*) : Acronyme militaire pour les sous-marins nucléaires lanceurs d'engins (balistiques), développés par la Corée du Nord."
+    },
+    {
+        "term": "STEM",
+        "def": "(*Science, Technology, Engineering, and Mathematics*) : Acronyme désignant les disciplines et les visas universitaires scientifiques et technologiques."
+    },
+    {
+        "term": "STEPS",
+        "def": "Voir **CPS**."
+    },
+    {
+        "term": "Stratégie du Collier de Perles",
+        "def": "Théorie décrivant la stratégie chinoise d'acquisitions et d'installations portuaires (civiles puis duales/militaires) le long de ses routes d'approvisionnement maritimes vers le Moyen-Orient."
+    },
+    {
+        "term": "THAAD",
+        "def": "(*Terminal High Altitude Area Defense*) : Système américain de missiles antibalistiques déployé pour la défense de la Corée du Sud."
+    },
+    {
+        "term": "TRUST",
+        "def": "(*Transforming the Relationship Utilizing Strategic Technology*) : Initiative stratégique canado/indo-américaine centrée sur l'IA, les semi-conducteurs et la technologie."
+    },
+    {
+        "term": "TSMC",
+        "def": "(*Taiwan Semiconductor Manufacturing Company*) : Entreprise taïwanaise leader absolu de la fabrication mondiale de semi-conducteurs (puces électroniques)."
+    },
+    {
+        "term": "UE",
+        "def": "(*Union Européenne*) : Organisation politico-économique européenne actrice majeure de la régulation géopolitique (effet Bruxelles)."
+    },
+    {
+        "term": "UHI",
+        "def": "(*Urban Heat Island*) : Effet d'îlot de chaleur urbain aggravant le réchauffement climatique dans les villes d'Asie."
+    },
+    {
+        "term": "UICN",
+        "def": "(*Union Internationale pour la Conservation de la Nature*) : ONG environnementale mondiale gérant notamment des projets de l'Initiative Kiwa."
+    },
+    {
+        "term": "UNCLOS",
+        "def": "Voir **CNUDM**."
+    },
+    {
+        "term": "USA / EU",
+        "def": "(*United States of America*) : Les États-Unis d'Amérique."
+    },
+    {
+        "term": "USD",
+        "def": "(*United States Dollar*) : Dollar américain, monnaie de référence mondiale."
+    },
+    {
+        "term": "WWD",
+        "def": "(*Wolf Warrior Diplomacy*) : \"Diplomatie du loup guerrier\", caractérisant la posture assertive et agressive des diplomates chinois sous Xi Jinping."
+    },
+    {
+        "term": "ZEE",
+        "def": "(*Zone Économique Exclusive*) : Espace maritime s'étendant jusqu'à 200 milles nautiques des côtes, sur lequel un État a le droit exclusif d'exploiter les ressources."
+    },
+    {
+        "term": "ZOPFAN",
+        "def": "(*Zone of Peace, Freedom and Neutrality*) : Déclaration fondatrice de l'ASEAN visant à garder la région libre d'ingérence étrangère."
+    }
+]
