@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brunei Darussalam : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
+                            gold: '#f99607',
+                            cyan: '#00b0f0',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating blobs matching index.html dark theme */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(249, 150, 7, 0.15); /* Tinted gold for Brunei */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(0, 210, 255, 0.1);
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatanim {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(0.9); }
+        }
+
+        /* MEAE Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(249, 150, 7, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(249, 150, 7, 0.12);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #00b0f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f99607; }
+
+        .accent-gold { color: #f99607; }
+        .accent-cyan { color: #00b0f0; }
+        .accent-blue { color: #000091; }
+        .accent-red { color: #E1000F; }
+
+        @media (max-width: 768px) {
+            .site-header { flex-direction: column; gap: 10px; padding: 0.8rem 1rem; }
+            .logo-container { flex-wrap: wrap; justify-content: center; gap: 8px; font-size: 0.85rem; }
+            .controls { flex-wrap: wrap; justify-content: center; gap: 8px; }
+            .bento-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-meae-gold opacity-10 blur-[100px] animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-meae-blue opacity-10 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-meae-gold uppercase bg-meae-gold/10 border border-meae-gold/20 rounded-full">
+                Sultanat de Bornéo
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Brunei
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Dossier géopolitique, économique et historique du Sultanat de Brunei Darussalam — "La Demeure de la Paix".
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <div class="bento-grid mb-24">
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="accent-cyan font-display font-bold text-xs uppercase tracking-widest mb-4">Identité Capitale</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Bandar Seri Begawan</div>
+                            <p class="text-slate-400 text-sm">Centre politique & culturel</p>
+                        </div>
+                        <div class="border-l border-white/10 pl-12 hidden md:block"></div>
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">5 765 km²</div>
+                            <p class="text-slate-400 text-sm">Superficie terrestre</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Population estimée (2024)</span>
+                    <span class="text-white font-display font-bold text-xl">463 000 habitants</span>
+                </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-meae-blue/20 to-transparent">
+                <h3 class="accent-cyan font-display font-bold text-xs uppercase tracking-widest mb-4">Régime</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-6">Monarchie Absolue Islamique (Melayu Islam Beraja)</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Le système repose sur une fusion de la culture malaise, de l'islam et de l'autorité suprême du Sultan, garant de l'unité nationale.
+                </p>
+            </div>
+        </div>
+
+        <section id="governance" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Chronologie de la Souveraineté</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Autorité Suprême</h3>
+                    <div class="glass-card rounded-3xl p-8 border-l-4 border-l-meae-gold">
+                        <div class="flex items-center gap-6 mb-6">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-meae-blue to-meae-cyan flex items-center justify-center text-white shadow-xl shadow-meae-blue/20">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l4 5-10 13L2 8z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">Maison Bolkiah</h4>
+                                <p class="text-xs text-meae-cyan font-mono tracking-widest uppercase">Dynastie Régnante</p>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <p class="text-slate-400 text-xs font-bold uppercase mb-1">Monarque Actuel</p>
+                            <p class="font-bold text-white">Sultan Hassanal Bolkiah</p>
+                            <p class="text-xs text-slate-500 italic">Sur le trône depuis 1967</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Sultans de l'Ère Moderne</h3>
+                    <div class="space-y-3">
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-70">
+                            <p class="text-xs text-slate-400 font-bold">1924–1950</p>
+                            <p class="text-white font-bold">Sultan Ahmad Tajuddin</p>
+                            <p class="text-[10px] text-slate-500">Transition d'après-guerre</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-80">
+                            <p class="text-xs text-slate-400 font-bold">1950–1967</p>
+                            <p class="text-white font-bold">Sultan Omar Ali Saifuddien III</p>
+                            <p class="text-[10px] text-slate-500">Architecte du Brunei moderne</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-meae-gold bg-meae-gold/5 rounded-r-xl">
+                            <p class="text-xs text-meae-gold font-bold">1967–Présent</p>
+                            <p class="text-white font-bold text-lg">Sultan Hassanal Bolkiah</p>
+                            <p class="text-[10px] text-meae-gold">Indépendance et expansion économique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Économie des Hydrocarbures</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB <span class="text-slate-500 font-normal text-sm">(2024 est.)</span></h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie (Pétrole & Gaz)</span>
+                                <span class="text-white font-bold">56,5 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-gold w-[56.5%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services (Banque, Tourisme)</span>
+                                <span class="text-white font-bold">42,3 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-blue w-[42.3%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture & Pêche</span>
+                                <span class="text-white font-bold">1,2 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[1.2%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal (BND)</div>
+                        <div class="text-4xl font-display font-extrabold text-white">20,6 Md$ <span class="text-lg font-normal text-slate-400">BND</span></div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-gold">
+                        <h4 class="accent-gold font-bold text-sm mb-2">Monnaie</h4>
+                        <p class="text-white font-bold mb-1">Dollar de Brunei (BND)</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Parité fixe de 1:1 avec le dollar de Singapour (SGD). Environ 1,35 BND pour 1 USD.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-cyan">
+                        <h4 class="accent-cyan font-bold text-sm mb-2">Salaires</h4>
+                        <p class="text-white font-bold mb-1">Moyenne mensuelle</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Environ 2 500 BND (~1 830 USD), soutenu par un secteur public fort.</p>
+                    </div>
+                    <div class="glass-card col-span-1 md:col-span-2 rounded-2xl p-6 bg-gradient-to-r from-meae-gold/5 to-transparent">
+                        <h4 class="accent-gold font-bold text-sm mb-2">Stratégie Wawasan 2035</h4>
+                        <p class="text-white font-bold mb-1">Diversification Économique</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Plan national visant à réduire la dépendance aux hydrocarbures via le tourisme écologique, l'industrie halal et la finance islamique.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            <section id="history" class="xl:col-span-7">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Jalons Historiques</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1941-1945')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-meae-gold to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-meae-red shadow-[0_0_10px_rgba(225,0,15,0.8)] group-hover:scale-150 transition-transform"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-red/30 transition-all group-hover:bg-meae-red/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1941–1945 | Occupation Japonaise</h4>
+                            <p class="text-sm text-slate-400">Période critique de la Seconde Guerre mondiale sous administration militaire nippone.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1962')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1962 | Révolte de Brunei</h4>
+                            <p class="text-sm text-slate-400">Insurrection armée menée par le Parti Populaire contre le projet de fusion avec la Malaisie.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1984')">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1984 | Souveraineté Totale</h4>
+                            <p class="text-sm text-slate-400">Indépendance vis-à-vis du Royaume-Uni et intégration au Commonwealth et à l'ASEAN.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="demographics" class="xl:col-span-5">
+                <div class="glass-card rounded-3xl p-8 h-full border-t-2 border-t-meae-gold/20">
+                    <h2 class="text-2xl font-display font-bold text-white mb-8">Mosaïque Religieuse</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold accent-cyan">82,1 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Islam <span class="text-[10px] text-slate-500 ml-2">RELIGION D'ÉTAT</span></span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-meae-blue h-full rounded-full" style="width: 82.1%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">6,7 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Christianisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 6.7%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">6,3 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Bouddhisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 6.3%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Échanges & Partenariats</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Exportations Clés</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Australie, Chine, Japon</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Importations Clés</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Malaisie, Russie, Chine</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Hub Régional</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">ASEAN Member</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Rang France</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">40ème Partenaire Global</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demographic Evolution Chart -->
+        <section class="mt-24" id="demography-chart">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Démographique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                <span class="text-xs font-bold text-slate-500 tracking-widest uppercase">1950 – 2024</span>
+            </div>
+
+            <style>
+                .dc-card { border-top: 2px solid rgba(249,150,7,0.2); }
+                .dc-chart { position: relative; height: 320px; padding-left: 52px; }
+                .dc-gridline { position: absolute; left: 48px; right: 0; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.07), rgba(255,255,255,0.01)); }
+                .dc-ylabel { position: absolute; left: 0; width: 44px; text-align: right; font-size: 10px; font-weight: 600; color: #475569; transform: translateY(-50%); }
+                .dc-baseline { position: absolute; left: 48px; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.03)); }
+                .dc-bars { display: flex; gap: 12px; height: 100%; padding-left: 4px; align-items: stretch; }
+                .dc-col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative; min-width: 0; }
+                .dc-bar { width: 80%; max-width: 52px; min-width: 25px; border-radius: 8px 8px 2px 2px; position: relative; cursor: pointer; border: 1px solid rgba(255,255,255,0.08); border-bottom: none; transition: all 0.3s ease; transform-origin: bottom center; animation: dcGrow 1s cubic-bezier(0.22, 1, 0.36, 1) both; }
+                .dc-bar:hover { filter: brightness(1.35); box-shadow: 0 0 16px rgba(249,150,7,0.25); }
+                @keyframes dcGrow { from { transform: scaleY(0); opacity: 0; } to { transform: scaleY(1); opacity: 1; } }
+                .dc-b0 { background: linear-gradient(to top, #1e3570, #00b0f0); animation-delay: .1s; }
+                .dc-tip { position: absolute; top: -50px; left: 50%; transform: translateX(-50%) translateY(6px); background: rgba(8, 8, 28, 0.96); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 6px 10px; white-space: nowrap; opacity: 0; transition: all .25s ease; backdrop-filter: blur(8px); z-index: 10; pointer-events: none; }
+                .dc-bar:hover .dc-tip { opacity: 1; transform: translateX(-50%) translateY(0); }
+                .dc-tip-pop { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 800; color: #fff; }
+                .dc-year { margin-top: 10px; font-size: 11px; font-weight: 700; color: #475569; }
+                .dc-col:hover .dc-year { color: #f99607; }
+                .dc-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
+                .dc-scard { text-align: center; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); }
+                .dc-slabel { font-size: 9px; font-weight: 800; text-transform: uppercase; color: #64748b; margin-bottom: 4px; }
+                .dc-sval { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; color: #fff; }
+            </style>
+
+            <div class="glass-card rounded-3xl p-8 overflow-hidden dc-card">
+                <div class="dc-chart">
+                    <div class="dc-ylabel" style="bottom:100%;">500k</div>
+                    <div class="dc-gridline" style="bottom:100%;"></div>
+                    <div class="dc-ylabel" style="bottom:60%;">300k</div>
+                    <div class="dc-gridline" style="bottom:60%;"></div>
+                    <div class="dc-ylabel" style="bottom:20%;">100k</div>
+                    <div class="dc-gridline" style="bottom:20%;"></div>
+                    <div class="dc-baseline"></div>
+
+                    <div class="dc-bars">
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b0" style="height:10.4%;">
+                                <div class="dc-tip"><div class="dc-tip-pop">48k</div><div class="text-[10px] text-slate-400">1950</div></div>
+                            </div>
+                            <span class="dc-year">1950</span>
+                        </div>
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b0" style="height:19.1%;">
+                                <div class="dc-tip"><div class="dc-tip-pop">88k</div><div class="text-[10px] text-slate-400">1960</div></div>
+                            </div>
+                            <span class="dc-year">1960</span>
+                        </div>
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b0" style="height:41.7%;">
+                                <div class="dc-tip"><div class="dc-tip-pop">193k</div><div class="text-[10px] text-slate-400">1980</div></div>
+                            </div>
+                            <span class="dc-year">1980</span>
+                        </div>
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b0" style="height:72%;">
+                                <div class="dc-tip"><div class="dc-tip-pop">333k</div><div class="text-[10px] text-slate-400">2000</div></div>
+                            </div>
+                            <span class="dc-year">2000</span>
+                        </div>
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b0" style="height:88%;">
+                                <div class="dc-tip"><div class="dc-tip-pop">408k</div><div class="text-[10px] text-slate-400">2010</div></div>
+                            </div>
+                            <span class="dc-year">2010</span>
+                        </div>
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b0" style="height:96.7%;">
+                                <div class="dc-tip"><div class="dc-tip-pop">447k</div><div class="text-[10px] text-slate-400">2020</div></div>
+                            </div>
+                            <span class="dc-year">2020</span>
+                        </div>
+                        <div class="dc-col">
+                            <div class="dc-bar dc-b0" style="height:100%; border-color: rgba(249,150,7,0.5);">
+                                <div class="dc-tip" style="border-color:#f99607;"><div class="dc-tip-pop" style="color:#f99607;">463k</div><div class="text-[10px] text-slate-400">2024 (Est.)</div></div>
+                            </div>
+                            <span class="dc-year" style="color:#f99607; font-weight:800;">2024*</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dc-summary">
+                    <div class="dc-scard">
+                        <div class="dc-slabel">Croissance totale</div>
+                        <div class="dc-sval" style="color:#22c55e;">×9,6</div>
+                        <div class="text-[10px] text-slate-500 mt-1">Depuis 1950</div>
+                    </div>
+                    <div class="dc-scard">
+                        <div class="dc-slabel">Pic Pétrolier</div>
+                        <div class="dc-sval">1980s</div>
+                        <div class="text-[10px] text-slate-500 mt-1">Expansion industrielle</div>
+                    </div>
+                    <div class="dc-scard">
+                        <div class="dc-slabel">Taux 2024</div>
+                        <div class="dc-sval" style="color:#f99607;">0,8 %</div>
+                        <div class="text-[10px] text-slate-500 mt-1">Croissance annuelle</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Smooth show on scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700', 'ease-out');
+            observer.observe(section);
+        });
+    </script>
+    <script src="./data.js"></script>
+    
+    <!-- Modal Structure -->
+    <div id="conflictModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeConflictModal()"></div>
+        <div class="relative w-full max-w-4xl max-h-[90vh] glass-card rounded-3xl overflow-hidden flex flex-col transform scale-95 transition-transform duration-300 border border-white/10 shadow-[0_0_50px_-12px_rgba(0,0,0,1)]" id="conflictModalContent">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-meae-gold/20 to-meae-blue/20 opacity-50"></div>
+                <h3 id="modalTitle" class="text-2xl font-display font-bold text-white relative z-10 drop-shadow-md">Titre du conflit</h3>
+                <button onclick="closeConflictModal()" class="relative z-10 text-slate-300 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10 cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-4 bg-[#0a0a1a] border-b border-white/5 shadow-inner">
+               <audio id="modalAudio" controls class="w-full h-10 rounded-full" controlsList="nodownload">
+                   <source src="" type="audio/mp4">
+                   Votre navigateur ne supporte pas l'élément audio.
+               </audio>
+            </div>
+            <div id="modalBody" class="p-8 overflow-y-auto custom-scrollbar prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-[#f99607] prose-h1:text-[#f99607] prose-a:text-[#f99607] hover:prose-a:text-white prose-strong:text-white prose-table:border-collapse prose-th:border prose-th:border-white/20 prose-th:p-3 prose-th:bg-white/10 prose-td:border prose-td:border-white/10 prose-td:p-3 bg-[#0a0a1a]/90">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openConflictModal(id) {
+            const modal = document.getElementById('conflictModal');
+            const modalContent = document.getElementById('conflictModalContent');
+            const title = document.getElementById('modalTitle');
+            const audio = document.getElementById('modalAudio');
+            const body = document.getElementById('modalBody');
+            
+            const data = conflictData[id];
+            if (!data) return;
+            
+            title.innerHTML = data.title;
+            audio.innerHTML = '<source src="' + data.audio + '" type="audio/mp4">';
+            audio.load();
+            
+            body.innerHTML = marked.parse(data.content);
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConflictModal() {
+            const modal = document.getElementById('conflictModal');
+            const modalContent = document.getElementById('conflictModalContent');
+            const audio = document.getElementById('modalAudio');
+            
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            audio.pause();
+            audio.currentTime = 0;
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
