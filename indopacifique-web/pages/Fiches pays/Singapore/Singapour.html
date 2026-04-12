@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapour : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating blobs matching index.html dark theme */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(0, 0, 145, 0.3);
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(0, 210, 255, 0.1);
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatanim {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(0.9); }
+        }
+
+        /* MEAE Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 176, 240, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 210, 255, 0.12);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #00b0f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        .accent-cyan { color: #00b0f0; }
+        .accent-blue { color: #000091; }
+        .accent-red { color: #E1000F; }
+        .bg-accent-cyan { background-color: #00b0f0; }
+        .bg-accent-blue { background-color: #000091; }
+        .bg-accent-red { background-color: #E1000F; }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal.show {
+            display: flex;
+            opacity: 1;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: linear-gradient(to bottom right, #1e293b, #0f172a);
+            border: 1px solid rgba(0, 176, 240, 0.2);
+            border-radius: 24px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            color: #f1f5f9;
+        }
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 176, 240, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #00b0f0;
+            font-size: 24px;
+        }
+        .close-modal:hover {
+            background: #00b0f0;
+            color: #0f172a;
+            transform: rotate(90deg);
+        }
+        #modal-body h1 { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: #00b0f0; margin-bottom: 20px; }
+        #modal-body h2 { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: #bae6fd; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid rgba(0,176,240,0.3); padding-bottom: 5px; }
+        #modal-body h3 { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 600; color: #7dd3fc; margin-top: 25px; margin-bottom: 10px; }
+        #modal-body p { margin-bottom: 15px; color: #cbd5e1; line-height: 1.8; }
+        #modal-body ul { margin-bottom: 15px; padding-left: 20px; color: #cbd5e1; }
+        #modal-body li { margin-bottom: 8px; list-style-type: disc; }
+        #modal-body strong { color: #f0f9ff; font-weight: 700; }
+        .audio-player-container {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(0, 176, 240, 0.2);
+            border-radius: 16px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .audio-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 176, 240, 0.3);
+        }
+        audio {
+            width: 100%;
+            height: 40px;
+            outline: none;
+            filter: invert(0.8) hue-rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0.8rem 1rem;
+            }
+            .logo-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.85rem;
+            }
+            .logo-container span {
+                font-size: 0.8rem;
+            }
+            .btn-glass {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <!-- MEAE Header -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-meae-blue opacity-20 blur-[100px] animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-meae-red opacity-10 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-meae-cyan uppercase bg-meae-cyan/10 border border-meae-cyan/20 rounded-full">
+                Cité-État Stratégique
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Singapour
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Une analyse complète de l'évolution de la Cité-État, de ses dynamiques socio-économiques et de son positionnement géopolitique stratégique.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- Summary Bento Grid -->
+        <div class="bento-grid mb-24">
+            <!-- Capitals -->
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="accent-cyan font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Capitale</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Singapour</div>
+                            <p class="text-slate-400 text-sm">Cité-État</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie estimée (2026)</span>
+                    <span class="text-white font-display font-bold text-xl">744,3 km²</span>
+                </div>
+            </div>
+
+            <!-- Political Type -->
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-meae-blue/20 to-transparent">
+                <h3 class="accent-cyan font-display font-bold text-xs uppercase tracking-widest mb-4">Régime</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-6">République unitaire à parti dominant</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Un régime performant dominé par le Parti d'action populaire (PAP) depuis son indépendance.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section: Governance & Leaders -->
+        <section id="governance" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Chronologie du Pouvoir</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- PMs -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Premiers Ministres de Singapour</h3>
+                    <div class="h-[300px] overflow-y-auto pr-4 space-y-3 custom-scrollbar">
+                        <div class="p-4 border-l-2 border-meae-red bg-white/5 rounded-r-xl">
+                            <p class="text-xs accent-red font-bold">1959–1990</p>
+                            <p class="text-white font-bold">Lee Kuan Yew</p>
+                            <p class="text-xs text-slate-400">PAP - Père fondateur</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-meae-cyan bg-white/5 rounded-r-xl opacity-80">
+                            <p class="text-xs text-slate-400 font-bold">1990–2004</p>
+                            <p class="text-white font-bold">Goh Chok Tong</p>
+                            <p class="text-xs text-slate-400">PAP</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl opacity-80">
+                            <p class="text-xs text-slate-400 font-bold">2004–2024</p>
+                            <p class="text-white font-bold">Lee Hsien Loong</p>
+                            <p class="text-xs text-slate-400">PAP</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-meae-blue bg-white/5 rounded-r-xl">
+                            <p class="text-xs font-bold" style="color: #6366f1;">2024–Présent</p>
+                            <p class="text-white font-bold">Lawrence Wong</p>
+                            <p class="text-xs text-slate-400">PAP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Presidents -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Présidents de Huitième et Neuvième Mandats</h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="glass-card rounded-2xl p-4 flex justify-between items-center bg-white/5">
+                            <div><p class="text-xs text-slate-400 font-bold">1999–2011</p><p class="text-white font-medium">S. R. Nathan</p></div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-4 flex justify-between items-center bg-white/5">
+                            <div><p class="text-xs text-slate-400 font-bold">2011–2017</p><p class="text-white font-medium">Tony Tan Keng Yam</p></div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-4 flex justify-between items-center bg-white/5">
+                            <div><p class="text-xs text-slate-400 font-bold">2017–2023</p><p class="text-white font-medium">Halimah Yacob</p></div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-4 flex justify-between items-center border-l-2 border-meae-cyan bg-meae-cyan/10">
+                            <div><p class="text-xs accent-cyan font-bold">2023–Présent</p><p class="text-white font-bold">Tharman Shanmugaratnam</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Économique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB</h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services</span>
+                                <span class="text-white font-bold">~72,5 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-blue w-[72.5%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Manufacturier</span>
+                                <span class="text-white font-bold">~22,5 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-red w-[22.5%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Construction & Autres</span>
+                                <span class="text-white font-bold">~5,0 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-500 w-[5%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal estimé</div>
+                        <div class="text-4xl font-display font-extrabold text-white">572 Md$ <span class="text-lg font-normal text-slate-400">USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Stats/Salaries -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center">
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Revenu Mensuel Médian</span>
+                        <div class="text-4xl font-display font-extrabold text-white mb-1">SGD 6 442</div>
+                        <p class="text-sm accent-cyan">~4 950 USD</p>
+                    </div>
+                    <div class="glass-card rounded-3xl p-8 border-t-2 border-t-meae-cyan bg-meae-cyan/5">
+                        <span class="text-xs font-bold text-meae-cyan uppercase tracking-widest mb-4 block">Modèle de Salaire</span>
+                        <h4 class="text-xl font-bold text-white mb-2">Modèle de Salaire Progressif (PWM)</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Plutôt qu'un salaire minimum universel, Singapour s'appuie sur le PWM pour cibler les secteurs à bas salaires via le développement des compétences.
+                        </p>
+                    </div>
+                    <div class="md:col-span-2 glass-card rounded-3xl p-8 overflow-hidden relative group">
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 block">Évolution du change (vs USD)</span>
+                        <div class="flex items-end gap-6 text-2xl font-display font-bold text-white flex-wrap">
+                            <div><span class="text-sm text-slate-400 mr-2">1965</span>3,06 <span class="text-xs font-sans font-normal text-slate-500">SGD</span></div>
+                            <div class="h-8 w-px bg-white/10 hidden sm:block"></div>
+                            <div><span class="text-sm text-slate-400 mr-2">1990</span>1,81 <span class="text-xs font-sans font-normal text-slate-500">SGD</span></div>
+                            <div class="h-8 w-px bg-white/10 hidden sm:block"></div>
+                            <div class="accent-cyan drop-shadow-[0_0_8px_rgba(0,176,240,0.5)]"><span class="text-sm text-meae-cyan mr-2">2026</span>1,34 <span class="text-xs font-sans font-normal opacity-80">SGD</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Demographics & History -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            
+            <!-- Conflict Timeline -->
+            <section id="history" class="xl:col-span-7">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Jalons Géopolitiques & Militaires</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openModal('1948-1960')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-meae-red to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-meae-red shadow-[0_0_10px_rgba(225,0,15,0.8)] group-hover:scale-150 transition-transform"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-red/30 transition-all group-hover:bg-meae-red/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1948 – 1960 | Insurrection Malaise</h4>
+                            <p class="text-sm text-slate-400">Guerre de guérilla impliquant les forces du Commonwealth et l'Armée de libération nationale malaise.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openModal('1963-1966')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1963 – 1966 | Konfrontasi</h4>
+                            <p class="text-sm text-slate-400">Confrontation Indonésienne ; inclut l'attentat de MacDonald House en 1965.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openModal('1965')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1965 | Séparation Nationale & SAF</h4>
+                            <p class="text-sm text-slate-400">Séparation avec la Malaisie et développement rapide des Forces Armées de Singapour.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openModal('1971')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1971 | Accords FPDA</h4>
+                            <p class="text-sm text-slate-400">Défense liant la Malaisie, l'Australie, la Nouvelle-Zélande et le Royaume-Uni.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openModal('1991')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1991 | Opération Snatch</h4>
+                            <p class="text-sm text-slate-400">Libération d'otages lors du détournement du vol 117 de Singapore Airlines.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openModal('2000-Present')">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">Années 2000 – Présent | Maintien de la paix</h4>
+                            <p class="text-sm text-slate-400">Déploiements internationaux (Timor, anti-piraterie, coalition anti-EI).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religious & Demographics -->
+            <section id="demographics" class="xl:col-span-5">
+                <div class="glass-card rounded-3xl p-8 h-full space-y-12">
+                    <!-- Religion -->
+                    <div>
+                        <h2 class="text-2xl font-display font-bold text-white mb-8">Paysage Religieux</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 text-right text-xs font-bold accent-cyan">31,1 %</div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm text-white font-medium">Bouddhisme</span>
+                                    </div>
+                                    <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-meae-cyan h-full rounded-full" style="width: 31.1%"></div></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 text-right text-xs font-bold text-slate-400">20,0 %</div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm text-white font-medium">Sans religion</span>
+                                    </div>
+                                    <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 20%"></div></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 text-right text-xs font-bold text-slate-400">18,9 %</div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm text-white font-medium">Christianisme</span>
+                                    </div>
+                                    <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 18.9%"></div></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 text-right text-xs font-bold text-slate-400">15,6 %</div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm text-white font-medium">Islam</span>
+                                    </div>
+                                    <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 15.6%"></div></div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 pt-2 border-t border-slate-700/50">Taoïsme : 8,8 % | Hindouisme : 5,0 %</p>
+                        </div>
+                    </div>
+
+                    <!-- Population -->
+                    <div>
+                        <h2 class="text-2xl font-display font-bold text-white mb-6">Population</h2>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                                <span class="text-xs text-slate-500 uppercase font-bold">1950</span>
+                                <div class="text-lg font-bold text-white mt-1">~1,02 M</div>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                                <span class="text-xs text-slate-500 uppercase font-bold">1980</span>
+                                <div class="text-lg font-bold text-white mt-1">~2,41 M</div>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                                <span class="text-xs text-slate-500 uppercase font-bold">2010</span>
+                                <div class="text-lg font-bold text-white mt-1">~5,07 M</div>
+                            </div>
+                            <div class="bg-meae-cyan/10 p-4 rounded-xl border border-meae-cyan/20">
+                                <span class="text-xs accent-cyan uppercase font-bold">2026 Est.</span>
+                                <div class="text-2xl font-bold text-white mt-1">~6,11 M</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Global Trade Relations -->
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Hub Commercial Mondial</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Partenaires Majeurs</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Chine & US</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Partenaire Régional</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Malaisie</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Prochaine Élection</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">2030</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Dossier</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">SG-2026-GEO</p>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 border-l-4 border-l-meae-red">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">Contexte France-Singapour</h3>
+                        <p class="text-slate-400 max-w-2xl text-sm leading-relaxed">
+                            La France se positionne au rang <span class="text-white font-bold">20ᵉ-25ᵉ national</span>, représentant <span class="text-white font-bold">0,6 % à 1,2 %</span> du commerce de Singapour. La balance commerciale est favorable à la France (aéronautique, circuits intégrés, luxe).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Conceptuel -->
+    <div id="conflictModal" class="modal" onclick="if(event.target === this) closeModal()">
+        <div class="modal-content">
+            <div class="close-modal" onclick="closeModal()">×</div>
+            <div id="modal-audio-container" class="audio-player-container" style="display: none;">
+                <div class="audio-icon">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5 19h4l5 5V0L9 5H5v14z"></path></svg>
+                </div>
+                <div class="flex-grow flex flex-col justify-center w-full">
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 text-left">Archive Sonore</p>
+                    <audio id="modalAudio" controls style="width: 100%;">
+                        <source src="" type="audio/mp4">
+                        Votre navigateur ne supporte pas l'élément audio.
+                    </audio>
+                </div>
+            </div>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="data.js"></script>
+    <script>
+        function openModal(id) {
+            const data = conflictData[id];
+            if (!data) return;
+            
+            document.getElementById('modal-body').innerHTML = marked.parse(data.content);
+            
+            const audioContainer = document.getElementById('modal-audio-container');
+            const audioElement = document.getElementById('modalAudio');
+            
+            if (data.audio) {
+                audioElement.src = data.audio;
+                audioContainer.style.display = 'flex';
+                audioElement.load();
+            } else {
+                audioElement.src = '';
+                audioContainer.style.display = 'none';
+            }
+            
+            const modal = document.getElementById('conflictModal');
+            modal.style.display = 'flex';
+            void modal.offsetWidth;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('conflictModal');
+            const audioElement = document.getElementById('modalAudio');
+            
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                audioElement.pause();
+                audioElement.currentTime = 0;
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
