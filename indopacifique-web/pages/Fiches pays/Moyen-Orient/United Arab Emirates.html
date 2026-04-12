@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier Géopolitique : Émirats arabes unis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#0b1121',
+                            accent: '#0D9488', // Teal
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'floatanim': 'floatanim 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0b1121;
+            color: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(13, 148, 136, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(16, 42, 67, 0.1) 0%, transparent 20%);
+            background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 1.5rem;
+        }
+
+        .glass-header {
+            background: rgba(11, 17, 33, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .bento-col-span-12 { grid-column: span 12; }
+        .bento-col-span-8 { grid-column: span 8; }
+        .bento-col-span-4 { grid-column: span 4; }
+        .bento-col-span-6 { grid-column: span 6; }
+        .bento-col-span-7 { grid-column: span 7; }
+        .bento-col-span-5 { grid-column: span 5; }
+
+        @media (max-width: 1024px) {
+            .bento-col-span-8, .bento-col-span-4, .bento-col-span-6, .bento-col-span-7, .bento-col-span-5 {
+                grid-column: span 12;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        h2.section-title {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            color: #f8fafc;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #0D9488;
+            border-radius: 2px;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 1rem;
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: rgba(15, 23, 42, 0.5);
+            color: #94a3b8;
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem 1.25rem;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            color: #cbd5e1;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .numeric {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .timeline-container {
+            position: relative;
+            border-left: 2px solid rgba(13, 148, 136, 0.2);
+            margin-left: 1rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.55rem;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #0D9488;
+            border: 3px solid #0b1121;
+            box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.3);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(13, 148, 136, 0.15);
+            border: 1px solid rgba(13, 148, 136, 0.3);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #0D9488;
+            letter-spacing: 0.05em;
+        }
+        
+        .stat-value {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Sticky Header -->
+    <header class="glass-header sticky top-0 z-50 w-full">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-accent to-slate-800 flex items-center justify-center shadow-lg border border-white/10 text-white font-bold font-display">
+                    ME
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-white leading-tight">Moyen-Orient</h1>
+                    <p class="text-xs text-brand-accent uppercase tracking-widest font-semibold">Dossier Pays</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex gap-6">
+                <a href="#overview" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Aperçu</a>
+                <a href="#politics" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Politique</a>
+                <a href="#demographics" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Démographie</a>
+                <a href="#economy" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Économie</a>
+                <a href="#history" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Histoire</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        
+        <!-- Hero Section -->
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 animate-floatanim">
+            <div>
+                <span class="badge mb-4">Dossier National Officiel</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-2">Émirats arabes unis</h1>
+                <p class="text-xl text-slate-400 font-light max-w-2xl">
+                    Rapport exhaustif sur l'histoire, l'économie et la géopolitique d'une fédération en rapide diversification.
+                </p>
+            </div>
+            <div class="mt-6 md:mt-0 text-right">
+                <div class="text-sm text-slate-400 uppercase tracking-widest font-semibold mb-1">Mise à jour</div>
+                <div class="text-lg text-white font-medium">2026</div>
+            </div>
+        </div>
+
+        <!-- Section: Aperçu (Overview) -->
+        <section id="overview" class="mb-16">
+            <div class="bento-grid">
+                <div class="bento-col-span-7 glass-panel p-8">
+                    <h2 class="section-title">Informations de Base</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                        <div>
+                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Capitale</h3>
+                            <p class="text-3xl font-semibold text-white">Abou Dabi</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Superficie Totale</h3>
+                            <p class="text-3xl font-semibold text-white">~83 600 km²</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-col-span-5 glass-panel p-8 relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-accent/20 rounded-full blur-2xl"></div>
+                    <h3 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-4">Régime Politique</h3>
+                    <p class="text-lg font-bold text-white mb-3 leading-tight">Monarchie semi-constitutionnelle élective parlementaire islamique fédérale.</p>
+                    <p class="text-slate-400 text-sm">Les Émirats arabes unis sont une fédération de 7 émirats, chacun gouverné par un monarque absolu. Le Président est le chef de l'État (traditionnellement le dirigeant d'Abou Dabi).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Politique (Politics) -->
+        <section id="politics" class="mb-16">
+            <h2 class="section-title">Paysage Politique & Élections</h2>
+            
+            <div class="bento-grid">
+                <!-- Historical Leaders -->
+                <div class="bento-col-span-12 glass-panel p-8">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Dirigeants Politiques (Post-1945)</h3>
+                    <p class="text-xs text-brand-accent mb-6 italic">Avant la formation des E.A.U. en 1971, la région était constituée des États de la Trêve sous protectorat britannique.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-5 rounded-xl bg-slate-800/30 border border-slate-700/50">
+                            <span class="text-xs text-slate-400 font-mono mb-2 block">1971 – 2004</span>
+                            <h4 class="font-bold text-lg text-white mb-2">Cheikh Zayed ben Sultan Al Nahyane</h4>
+                            <p class="text-xs font-bold text-brand-accent">(Famille royale d'Abou Dabi)</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-slate-800/30 border border-slate-700/50">
+                            <span class="text-xs text-slate-400 font-mono mb-2 block">2004 – 2022</span>
+                            <h4 class="font-bold text-lg text-white mb-2">Cheikh Khalifa ben Zayed Al Nahyane</h4>
+                            <p class="text-xs font-bold text-brand-accent">(Famille royale d'Abou Dabi)</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 border border-brand-accent/30 relative overflow-hidden">
+                            <div class="absolute right-0 top-0 w-1 h-full bg-brand-accent"></div>
+                            <span class="text-xs text-brand-accent font-mono mb-2 block font-bold">2022 – Présent</span>
+                            <h4 class="font-bold text-lg text-white mb-2">Cheikh Mohammed ben Zayed Al Nahyane</h4>
+                            <p class="text-xs font-bold text-white">(Famille royale d'Abou Dabi)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elections -->
+                <div class="bento-col-span-12 glass-panel p-6 bg-slate-800/50 flex flex-col md:flex-row gap-8 items-center border-l-4 border-brand-accent text-center md:text-left justify-around">
+                    <div>
+                        <h4 class="text-xs text-brand-accent font-bold uppercase tracking-widest mb-2">Élections du Conseil National Fédéral</h4>
+                        <p class="text-slate-300 text-sm max-w-xl">Organe législatif avec un système électoral mixte (partiellement élu, partiellement nommé).</p>
+                    </div>
+                    <div class="flex gap-8">
+                        <div>
+                            <p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Plus récente</p>
+                            <p class="text-lg font-bold text-white">7 Oct 2023</p>
+                        </div>
+                        <div class="w-px bg-slate-700"></div>
+                        <div>
+                            <p class="text-[10px] text-brand-accent uppercase font-bold mb-1">Prochaine Prévue</p>
+                            <p class="text-lg font-bold text-white">Octobre 2027</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Histoire & Conflits -->
+        <section id="history" class="mb-16">
+            <h2 class="section-title">Guerres et Conflits Majeurs</h2>
+            <div class="glass-panel p-8">
+                <div class="timeline-container mt-4">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-white text-lg">1990–1991 : Guerre du Golfe</h4>
+                        <p class="text-slate-400 mt-2 text-sm leading-relaxed">Participation à la coalition internationale pour libérer le Koweït.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-white text-lg">1992–1993 : ONUSOM II (Somalie)</h4>
+                        <p class="text-slate-400 mt-2 text-sm leading-relaxed">Mission de maintien de la paix et humanitaire.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-white text-lg">1999 : Guerre du Kosovo</h4>
+                        <p class="text-slate-400 mt-2 text-sm leading-relaxed">Participation à la mission de la KFOR dirigée par l'OTAN.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-white text-lg">2001–2014 : Guerre en Afghanistan</h4>
+                        <p class="text-slate-400 mt-2 text-sm leading-relaxed">Contribution à la Force internationale d'assistance et de sécurité (FIAS).</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-white text-lg">2011 : Première Guerre Civile Libyenne</h4>
+                        <p class="text-slate-400 mt-2 text-sm leading-relaxed">Soutien pour l'application de la zone d'exclusion aérienne (Opération Unified Protector).</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot !border-blue-500"></div>
+                        <h4 class="font-bold text-blue-400 text-lg">2014–Présent : Intervention contre Daech</h4>
+                        <p class="text-slate-400 mt-2 text-sm leading-relaxed">Participation à la Coalition mondiale contre Daech.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot !border-brand-accent !bg-white"></div>
+                        <h4 class="font-bold text-brand-accent text-lg">2015–Présent : Guerre civile yéménite</h4>
+                        <p class="text-slate-300 mt-2 text-sm leading-relaxed font-medium">Membre actif de la coalition dirigée par l'Arabie saoudite ; présence des troupes considérablement réduite en 2019-2020.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Démographie & Économie (Mixed Bento) -->
+        <section id="demographics" class="mb-16">
+            <div class="bento-grid">
+                
+                <!-- Demographics -->
+                <div class="bento-col-span-5 glass-panel p-8 flex flex-col justify-between">
+                    <div>
+                        <h2 class="section-title !mb-6">Démographie</h2>
+                        <div class="table-container mb-8">
+                            <table>
+                                <tbody>
+                                    <tr><td class="text-slate-400">1950</td><td class="numeric text-white">74 591</td></tr>
+                                    <tr><td class="text-slate-400">1980</td><td class="numeric text-white">1 015 700</td></tr>
+                                    <tr><td class="text-slate-400">2000</td><td class="numeric text-white">3 493 575</td></tr>
+                                    <tr><td class="text-slate-400">2020</td><td class="numeric text-white">9 401 038</td></tr>
+                                    <tr class="bg-brand-accent/10"><td class="font-bold text-brand-accent">2026 (Est.)</td><td class="numeric font-bold text-white">~11 574 682</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Religions</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <div class="flex-1 bg-slate-800/50 p-4 rounded-xl text-center border border-white/5">
+                                <span class="block text-2xl font-bold text-brand-accent">~76%</span>
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider">Islam</span>
+                            </div>
+                            <div class="flex-1 bg-slate-800/50 p-4 rounded-xl text-center border border-white/5">
+                                <span class="block text-xl font-bold text-white">~9%</span>
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider">Chrétien</span>
+                            </div>
+                            <div class="flex-1 bg-slate-800/50 p-4 rounded-xl text-center border border-white/5">
+                                <span class="block text-xl font-bold text-slate-400">~15%</span>
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider">Autres</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Economy Base -->
+                <div class="bento-col-span-7 flex flex-col gap-6">
+                    <div class="glass-panel p-8 flex-1">
+                        <h2 class="section-title !mb-6">Économie & Devise</h2>
+                        
+                        <div class="bg-slate-800/50 p-5 rounded-xl border-l-4 border-brand-accent mb-6">
+                            <p class="text-xs font-bold text-slate-400 uppercase mb-2">Peg de la Devise (AED) au USD</p>
+                            <p class="text-sm text-slate-300 mb-1">Ancrage fixe depuis novembre 1997 :</p>
+                            <p class="text-3xl font-extrabold text-white">1 $ = 3,6725 AED</p>
+                        </div>
+                        
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Évolution Historique</h3>
+                        <ul class="space-y-4 text-sm text-slate-300">
+                            <li class="border-l border-slate-700 pl-4 py-1"><strong class="text-white block mb-1">Avant 1950 : Difficultés Post-Perles</strong> L'économie repose sur la pêche et le commerce traditionnel.</li>
+                            <li class="border-l border-slate-700 pl-4 py-1"><strong class="text-white block mb-1">Années 1950-1970 : Avènement du Pétrole</strong> Découverte du pétrole (Abou Dabi 1958, Dubaï 1966), lancement des infrastructures.</li>
+                            <li class="border-l border-slate-700 pl-4 py-1"><strong class="text-white block mb-1">1971-2000 : Unification et Investissements</strong> Investissement stratégique des revenus pétroliers (Jebel Ali, Emirates).</li>
+                            <li class="border-l border-brand-accent pl-4 py-1"><strong class="text-brand-accent block mb-1">2000-Présent : Diversification Agressive</strong> "UAE Vision 2021", "We the UAE 2031" : tourisme, finance, énergies renouvelables et tech.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Economy Stats -->
+                <div class="bento-col-span-12 glass-panel p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Répartition du PIB (Est. 2025/26)</h3>
+                            <div class="mb-6">
+                                <p class="text-[10px] uppercase font-bold text-brand-accent">PIB Total Estimé</p>
+                                <p class="text-3xl font-bold text-white">~537 - 569 Milliards $</p>
+                            </div>
+                            <div class="table-container">
+                                <table>
+                                    <tbody>
+                                        <tr><td>Pétrole et Gaz (Hydrocarbures)</td><td class="numeric font-bold text-brand-accent">~25,0%</td></tr>
+                                        <tr><td>Autres Services (Gouv, Santé, Éduc)</td><td class="numeric text-white">~21,5%</td></tr>
+                                        <tr><td>Construction et Immobilier</td><td class="numeric text-white">~15,0%</td></tr>
+                                        <tr><td>Commerce de Gors et de Détail</td><td class="numeric text-white">~12,0%</td></tr>
+                                        <tr><td>Industrie Manufacturière</td><td class="numeric text-white">~10,5%</td></tr>
+                                        <tr><td>Services Financiers et Assurance</td><td class="numeric text-white">~9,5%</td></tr>
+                                        <tr><td>Transport et Logistique</td><td class="numeric text-white">~6,5%</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-8">
+                            <div>
+                                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Revenus & Salaires Mensuels</h3>
+                                <div class="grid grid-cols-1 gap-4">
+                                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                                        <p class="text-xs text-slate-400 uppercase mb-1">Salaire Min. Citoyens Émiratis (Secteur privé)</p>
+                                        <p class="text-xl font-bold text-white">6 000 AED <span class="text-xs font-normal text-brand-accent">(~1 633 $)</span></p>
+                                        <p class="text-[10px] text-slate-500 mt-1">Aucun salaire minimum universel pour les expatriés.</p>
+                                    </div>
+                                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                                        <p class="text-xs text-slate-400 uppercase mb-1">Moyenne Mensuelle Globale</p>
+                                        <p class="text-xl font-bold text-white">13 845 – 16 000 AED</p>
+                                        <p class="text-xs text-brand-accent">(~3 770 $ – 4 356 $)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Commerce International</h3>
+                                <p class="text-sm font-bold text-white mb-2">Partenaires Majeurs (Top Monde) :</p>
+                                <p class="text-sm text-slate-300 mb-4">Chine, Inde, États-Unis, Arabie saoudite, Japon.</p>
+                                
+                                <div class="p-4 bg-blue-900/10 border border-blue-500/20 rounded-xl">
+                                    <p class="text-xs font-bold text-blue-400 uppercase mb-2">Focus France</p>
+                                    <p class="text-sm text-slate-300">La France est classée <strong class="text-white">15ème-18ème</strong> au niveau mondial, bien que les E.A.U. restent le <strong class="text-white">premier marché d'exportation de la France</strong> au Moyen-Orient.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

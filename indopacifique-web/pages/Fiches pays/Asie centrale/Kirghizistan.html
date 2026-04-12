@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirghizistan : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            teal: '#0d9488',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(13, 148, 136, 0.2); /* Teal Tint for Kyrgyzstan */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(225, 0, 15, 0.1); 
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(13, 148, 136, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(13, 148, 136, 0.12);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #0d9488);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        .accent-teal { color: #0d9488; }
+        .accent-red { color: #E1000F; }
+
+        @media (max-width: 768px) {
+            .site-header { flex-direction: column; gap: 10px; padding: 0.8rem 1rem; }
+            .logo-container { flex-wrap: wrap; justify-content: center; font-size: 0.85rem; }
+            .btn-glass { font-size: 0.75rem; padding: 6px 10px; }
+            .controls { flex-wrap: wrap; justify-content: center; }
+            .bento-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-500 opacity-20 blur-[100px] animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 opacity-10 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-teal-400 uppercase bg-teal-400/10 border border-teal-400/20 rounded-full">
+                Dossier Géopolitique
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Kirghizistan
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Analyse géopolitique, économique et historique de la République kirghize — Un pays traversé par de multiples révolutions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contenu Principal -->
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- Bento Grid d'informations de base -->
+        <div class="bento-grid mb-24">
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="accent-teal font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Interne</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Bichkek</div>
+                            <p class="text-slate-400 text-sm">Capitale nationale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">199 951 km²</span>
+                </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-teal-500/20 to-transparent">
+                <h3 class="accent-teal font-display font-bold text-xs uppercase tracking-widest mb-4">Régime Politique</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-4">République présidentielle</h4>
+                <div class="inline-block px-3 py-1 bg-yellow-900/50 text-yellow-200 border border-yellow-500/30 rounded-lg text-xs font-bold mb-4">TENDANCE AUTORITAIRE</div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Suite aux changements constitutionnels de 2021, le pays est passé d'un système parlementaire à un régime présidentiel fort.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-24">
+            <!-- Leadership -->
+            <section id="leadership" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Chronologie du Pouvoir</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Dirigeant Actuel</h3>
+                <div class="flex items-center p-4 bg-white/5 border border-teal-500/30 rounded-xl shadow-lg mb-8">
+                    <div class="w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center text-xl font-bold mr-4 text-white">SJ</div>
+                    <div>
+                        <p class="text-xl font-bold text-white">Sadyr Japarov</p>
+                        <p class="text-xs text-slate-400">Président (2020–Présent) · Mekenchil</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Post-Indépendance</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-sm font-medium text-white">Sooronbay Jeenbekov</span>
+                                <span class="text-xs text-slate-400">2017–2020</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-sm font-medium text-white">Almazbek Atambayev</span>
+                                <span class="text-xs text-slate-400">2011–2017</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-sm font-medium text-white">Roza Otounbaïeva</span>
+                                <span class="text-xs text-slate-400">2010–2011</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-sm font-medium text-white">Kourmanbek Bakiev</span>
+                                <span class="text-xs text-red-400">2005–2010 (Renversé)</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-sm font-medium text-white">Askar Akaïev</span>
+                                <span class="text-xs text-red-400">1990–2005 (Renversé)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Élections</h3>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 mb-4">
+                            <h4 class="text-white font-bold text-sm">Présidentielle</h4>
+                            <p class="text-xs text-slate-400">Dernière: <span class="text-white">Janv 2021</span> | Prochaine: <span class="text-white">Janv 2027</span></p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <h4 class="text-white font-bold text-sm">Parlementaire</h4>
+                            <p class="text-xs text-slate-400">Dernière: <span class="text-white">Nov 2025</span> | Prochaine: <span class="text-white">2030</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conflicts -->
+            <section id="conflicts" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Conflits Historiques & Géopolitique</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-teal-500 to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-teal-500 shadow-[0_0_10px_rgba(13,148,136,0.8)]"></div>
+                        <div class="glass-card rounded-2xl p-6 bg-teal-500/10 border-teal-500/30">
+                            <h4 class="text-teal-400 font-bold text-sm mb-1 uppercase tracking-wide">2021 & 2022</h4>
+                            <p class="text-white font-bold mb-2">Escarmouches frontalières Kirghizistan-Tadjikistan</p>
+                            <p class="text-xs text-slate-400">Escarmouches militaires autour de l'eau et des terres dans la vallée de Ferghana.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">Avril 2010</span>
+                            <span class="text-sm font-medium text-white block">Révolution d'Avril & affrontements ethniques à Och et Djalal-Abad.</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">2005</span>
+                            <span class="text-sm font-medium text-white block">Révolution des Tulipes — Chute d'Askar Akaïev.</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">1999–2000</span>
+                            <span class="text-sm font-medium text-white block">Conflit de Batken — Incursions du Mouvement Islamique d'Ouzbékistan (MIO).</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Infrastructure Économique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8 border-t-2 border-t-teal-500">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB <span class="text-slate-500 font-normal text-sm">(2025)</span></h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services</span>
+                                <span class="text-white font-bold">52,3 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-blue w-[52.3%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie</span>
+                                <span class="text-white font-bold">17,0 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-teal-500 w-[17.0%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture</span>
+                                <span class="text-white font-bold">8,6 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[8.6%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Construction</span>
+                                <span class="text-white font-bold">7,7 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-yellow-500 w-[7.7%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal (Estimé)</div>
+                        <div class="text-4xl font-display font-extrabold text-white">22,8 Md$ <span class="text-lg font-normal text-slate-400">USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-slate-600">
+                        <h4 class="accent-teal font-bold text-sm mb-2">Économie de Transition</h4>
+                        <p class="text-white font-bold mb-1">Chute de 60% post-1991</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Après l'indépendance, la perte des subventions soviétiques a causé une chute libre, avant une reprise lente orientée vers l'exploitation minière et agricole.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-teal-500">
+                        <h4 class="accent-teal font-bold text-sm mb-2">Piliers Contemporains</h4>
+                        <p class="text-white font-bold mb-1">Or, Échanges & Diaspora</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Le pays dépend structurellement des mines d'or (notamment Kumtor) et des envois de fonds des travailleurs émigrés (près de 30% du PIB).</p>
+                    </div>
+                    
+                    <!-- Currency Stats -->
+                    <div class="md:col-span-2 glass-card rounded-2xl p-6 bg-white/5 flex flex-wrap justify-around items-center border border-white/10">
+                        <div class="text-center">
+                            <span class="text-xs text-slate-500 font-bold uppercase tracking-widest block mb-1">Monnaie (Change actuel)</span>
+                            <span class="text-2xl font-bold text-white">1 USD = 87.45 KGS</span>
+                        </div>
+                        <div class="w-px h-8 bg-white/20 hidden md:block"></div>
+                        <div class="text-center">
+                            <span class="text-xs text-slate-500 font-bold uppercase tracking-widest block mb-1">Historique (1993)</span>
+                            <span class="text-lg font-bold text-slate-300">~4.00 KGS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Min.</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">3 280 KGS</div>
+                    <p class="text-sm accent-teal">~37,5 USD / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center border-t-2 border-t-teal-500 bg-teal-500/5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Moy.</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">45 797 KGS</div>
+                    <p class="text-sm accent-teal">~523 USD / Mois</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demography & Trade / Religion -->
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <section id="religion" class="glass-card rounded-3xl p-8 flex flex-col">
+                <h2 class="text-2xl font-display font-bold text-white mb-8">Mosaïque Religieuse</h2>
+                <div class="space-y-6 flex-grow">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-white">90 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Islam (Sunnite)</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-teal-500 h-full rounded-full" style="width: 90%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">7 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Christianisme</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-blue-400 h-full rounded-full" style="width: 7%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">3 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Autre</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 3%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="trade" class="glass-card rounded-3xl p-8">
+                <h2 class="text-2xl font-display font-bold text-white mb-6">Partenaires Commerciaux de 1er rang</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-teal-500 text-white font-bold rounded-full text-sm">1</span>
+                        <div>
+                            <p class="text-lg font-bold text-white mb-0">Chine</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-widest">Machines & Biens de conso</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-slate-600 text-white font-bold rounded-full text-sm">2</span>
+                        <div>
+                            <p class="text-lg font-bold text-white">Russie</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-widest">Énergie & Migration</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-slate-600 text-white font-bold rounded-full text-sm">3</span>
+                        <div>
+                            <p class="text-lg font-bold text-white">Kazakhstan</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-dashed border-white/20">
+                        <p class="text-xs font-bold text-teal-400 uppercase mb-2">Axes Stratégiques : France</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Pour les exportations kirghizes, la France se classe environ au <strong class="text-white">15e rang</strong> (généralement pièces aérospatiales). Les importations françaises vers le Kirghizistan se classent au <strong class="text-white">120e rang</strong>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Démographique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="glass-card rounded-3xl p-8 overflow-x-auto">
+                <table class="w-full text-left text-sm text-slate-300">
+                    <thead class="text-xs text-white uppercase bg-white/10">
+                        <tr>
+                            <th class="px-6 py-4 rounded-tl-xl font-bold">Année</th>
+                            <th class="px-6 py-4 rounded-tr-xl font-bold">Population Approximative (Millions)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">1950</td>
+                            <td class="px-6 py-3 font-mono">1.74 (Relance post-guerre)</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">1970</td>
+                            <td class="px-6 py-3 font-mono">2.93 (Urbanisation de Bichkek)</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">1990</td>
+                            <td class="px-6 py-3 font-mono">4.36 (Pic pré-chute URSS)</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">2000</td>
+                            <td class="px-6 py-3 font-mono">4.90 (Émigration massive post-soviétique)</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">2010</td>
+                            <td class="px-6 py-3 font-mono">5.44</td>
+                        </tr>
+                        <tr class="bg-teal-500/20">
+                            <td class="px-6 py-4 font-bold text-white rounded-bl-xl">2025</td>
+                            <td class="px-6 py-4 font-mono font-bold text-white rounded-br-xl">7.40 (Estimée)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Israël : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#0058B0', /* Israel Blue */
+                            red: '#E1000F',
+                            accent: '#64FFDA', /* Tech accent */
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(0, 88, 176, 0.15); /* Blue tint */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(100, 255, 218, 0.1); /* Accent tint */
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #0058B0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 88, 176, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 88, 176, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #0058B0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        .accent { color: #64FFDA; }
+        .blue-accent { color: #0058B0; }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-moyen-orient.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0058B0] opacity-20 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#64FFDA] uppercase bg-[#64FFDA]/10 border border-[#64FFDA]/20 rounded-full">
+                Dossier Géopolitique
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Israël
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Analyse géopolitique, économique et historique. Puissance technologique et militaire majeure du Proche-Orient, marquée par un contexte sécuritaire permanent depuis la création de l'État en 1948.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contenu Principal -->
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <div class="bento-grid mb-24">
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="accent font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Interne</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Jérusalem</div>
+                            <p class="text-slate-400 text-sm">Capitale politique et institutionnelle (Statut international disputé)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">22 145 km²</span>
+                </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-[#0058B0]/30 to-transparent">
+                <h3 class="accent font-display font-bold text-xs uppercase tracking-widest mb-4">Régime Politique</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-4">Démocratie parlementaire</h4>
+                <div class="inline-block px-3 py-1 bg-blue-900/50 text-blue-200 border border-blue-500/30 rounded-lg text-xs font-bold mb-4">SYSTÈME UNITAIRE</div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Le Premier Ministre exerce le pouvoir exécutif réel, la Knesset détenant le pouvoir législatif monocaméral.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-24">
+            <!-- Leadership -->
+            <section id="leadership" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Chronologie du Pouvoir</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Exécutif Actuel</h3>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center p-4 bg-white/5 border border-[#0058B0]/50 rounded-xl shadow-[0_0_15px_rgba(0,88,176,0.2)]">
+                        <div class="w-12 h-12 rounded-full bg-[#0058B0] flex items-center justify-center text-xl font-bold mr-4 text-white">BN</div>
+                        <div>
+                            <p class="text-xl font-bold text-white">Benjamin Netanyahu</p>
+                            <p class="text-xs text-slate-400">Premier Ministre (2022–Présent) · Likoud</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Gouvernance Historique</h3>
+                        <div class="h-[180px] overflow-y-auto pr-4 space-y-2 custom-scrollbar">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Yaïr Lapid</span><span class="text-xs text-slate-500 font-mono">2022</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Naftali Bennett</span><span class="text-xs text-slate-500 font-mono">2021-2022</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Benjamin Netanyahu</span><span class="text-xs text-slate-500 font-mono">2009-2021</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Ariel Sharon</span><span class="text-xs text-slate-500 font-mono">2001-2006</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Yitzhak Rabin</span><span class="text-xs text-slate-500 font-mono">1992-1995 (et 74-77)</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Menahem Begin</span><span class="text-xs text-slate-500 font-mono">1977-1983</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Golda Meir</span><span class="text-xs text-slate-500 font-mono">1969-1974</span></div>
+                            <div class="flex justify-between items-center pt-1"><span class="text-sm text-[#64FFDA] font-bold">David Ben-Gourion (Fondateur)</span><span class="text-xs text-slate-500 font-mono">1948-1954 (et 55-63)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conflicts -->
+            <section id="conflicts" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Conflits Historiques & Sécurité</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-[#64FFDA] to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-[#64FFDA] shadow-[0_0_10px_rgba(100,255,218,0.8)]"></div>
+                        <div class="glass-card rounded-2xl p-6 bg-[#64FFDA]/10 border-[#64FFDA]/30">
+                            <h4 class="text-[#64FFDA] font-bold text-sm mb-1 uppercase tracking-wide">Oct 2023 — Présent</h4>
+                            <p class="text-white font-bold mb-2">Guerre de Gaza (Glaives de Fer) & Front Nord</p>
+                            <p class="text-xs text-slate-400">Délenchée par l'attaque du Hamas le 7 octobre. Conflit majeur et régionalisation face au Hezbollah et à l'Iran.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">2006</span>
+                            <span class="text-sm font-medium text-white block">Seconde Guerre du Liban face au Hezbollah (34 jours).</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">1987 — 1993</span>
+                            <span class="text-sm font-medium text-white block">Première Intifada aboutissant aux Accords d'Oslo.</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">1973</span>
+                            <span class="text-sm font-medium text-white block">Guerre du Kippour. Attaque surprise de l'Égypte et de la Syrie.</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">1967 & 1948</span>
+                            <span class="text-sm font-medium text-white block">Guerre des Six Jours (Capture de territoires clés) ; Précédée par la Guerre d'Indépendance établissant les frontières de la Ligne Verte.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Infrastructure Économique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8 border-t-2 border-t-[#0058B0]">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB <span class="text-slate-500 font-normal text-sm"></span></h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services (Tech / Finance)</span>
+                                <span class="text-white font-bold">72,5 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#0058B0] w-[72.5%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie (Défense / Chimie)</span>
+                                <span class="text-white font-bold">18,9 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#64FFDA] w-[18.9%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture</span>
+                                <span class="text-white font-bold">~2,0 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-400 w-[2%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal (Estimé)</div>
+                        <div class="text-4xl font-display font-extrabold text-white">541,8 Md$ <span class="text-lg font-normal text-slate-400">USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-red-500">
+                        <h4 class="text-white font-bold text-sm mb-2">L'ère de l'Hyperinflation (1980-1985)</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Transition de l'Ancien Shekel vers le Nouveau Shekel après des pics d'inflation dépassant 400%, suivi d'un assainissement macroéconomique radical.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-[#64FFDA]">
+                        <h4 class="text-[#64FFDA] font-bold text-sm mb-2">La « Start-Up Nation »</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Depuis les années 1990, développement massif d'une économie high-tech (R&D, cybersécurité, logiciels) dopée par l'innovation militaire.</p>
+                    </div>
+                    
+                    <div class="md:col-span-2 glass-card rounded-2xl p-6 bg-white/5 flex flex-wrap justify-around items-center border border-white/10">
+                        <div class="text-center">
+                            <span class="text-xs text-slate-500 font-bold uppercase tracking-widest block mb-1">Devise Actuelle</span>
+                            <span class="text-2xl font-bold text-white">Nouveau Shekel (NIS / ILS)</span>
+                            <span class="text-xs text-slate-400 block mt-1">1 USD = ~3,60 – 3,85 ILS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Min. Légal</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">6 247 ILS</div>
+                    <p class="text-sm text-slate-400">~1 712 USD / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center border-t-2 border-t-[#0058B0] bg-[#0058B0]/5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Moy.</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">13 588 ILS</div>
+                    <p class="text-sm text-[#64FFDA]">~3 723 USD / Mois</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Religion & Trade -->
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <section id="religion" class="glass-card rounded-3xl p-8 flex flex-col">
+                <h2 class="text-2xl font-display font-bold text-white mb-8">Mosaïque Religieuse</h2>
+                <div class="space-y-6 flex-grow">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-white">73,6 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Judaïsme</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-[#0058B0] h-full rounded-full" style="width: 73.6%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">18,1 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Islam</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-green-500 h-full rounded-full" style="width: 18.1%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">1,9 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Christianisme</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-blue-300 h-full rounded-full" style="width: 1.9%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">1,6 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Druze</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-[#64FFDA] h-full rounded-full" style="width: 1.6%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="trade" class="glass-card rounded-3xl p-8">
+                <h2 class="text-2xl font-display font-bold text-white mb-6">Partenaires Commerciaux Récents</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-[#0058B0] text-white font-bold rounded-full text-sm">US</span>
+                        <div class="flex-grow">
+                            <p class="text-sm font-bold text-white mb-0">États-Unis</p>
+                        </div>
+                        <span class="text-xs font-mono text-[#64FFDA]">28,3% Exports</span>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-slate-600 text-white font-bold rounded-full text-sm">CN</span>
+                        <div class="flex-grow">
+                            <p class="text-sm font-bold text-white mb-0">Chine</p>
+                        </div>
+                        <span class="text-xs font-mono text-slate-400">13,5 Md$ Imports</span>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-dashed border-white/20">
+                        <p class="text-xs font-bold text-[#64FFDA] uppercase mb-2">Axes Stratégiques : France</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Dans les échanges bilatéraux, la France se classe au <strong class="text-white">10e rang</strong> des partenaires principaux.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Démographique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="glass-card rounded-3xl p-8 overflow-x-auto">
+                <table class="w-full text-left text-sm text-slate-300">
+                    <thead class="text-xs text-white uppercase bg-white/10">
+                        <tr>
+                            <th class="px-6 py-4 rounded-tl-xl font-bold">Année</th>
+                            <th class="px-6 py-4 rounded-tr-xl font-bold">Population estimée</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">1948</td>
+                            <td class="px-6 py-3 font-mono">0,8 M</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">1970</td>
+                            <td class="px-6 py-3 font-mono">3,0 M</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">1990</td>
+                            <td class="px-6 py-3 font-mono">4,8 M</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">2010</td>
+                            <td class="px-6 py-3 font-mono">7,7 M</td>
+                        </tr>
+                        <tr class="bg-[#0058B0]/20">
+                            <td class="px-6 py-4 font-bold text-white rounded-bl-xl">Aujourd'hui</td>
+                            <td class="px-6 py-4 font-mono font-bold text-[#64FFDA] rounded-br-xl">10,1 M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

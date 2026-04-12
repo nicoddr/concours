@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arménie : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            orange: '#F2A800', /* Armenian Orange */
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(217, 33, 33, 0.15); /* Red tint */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(0, 51, 160, 0.2); /* Blue tint */
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(225, 0, 15, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(225, 0, 15, 0.12);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #F2A800, #E1000F);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        .accent-red { color: #E1000F; }
+        .accent-blue { color: #3D5AFE; }
+        .accent-orange { color: #F2A800; }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-moyen-orient.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600 opacity-20 blur-[100px] animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 opacity-20 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#F2A800] uppercase bg-[#F2A800]/10 border border-[#F2A800]/20 rounded-full">
+                Dossier Géopolitique
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Arménie
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Analyse géopolitique, économique et historique. Un État du Caucase du Sud en pleine transition géostratégique et au secteur technologique émergent.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <div class="bento-grid mb-24">
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="accent-orange font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Interne</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Erevan</div>
+                            <p class="text-slate-400 text-sm">Capitale nationale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">28 203 km²</span>
+                </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-red-900/20 to-transparent">
+                <h3 class="accent-orange font-display font-bold text-xs uppercase tracking-widest mb-4">Régime Politique</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-4">République parlementaire</h4>
+                <div class="inline-block px-3 py-1 bg-blue-900/50 text-blue-200 border border-blue-500/30 rounded-lg text-xs font-bold mb-4">DÉMOCRATIE UNITAIRE</div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Le pouvoir exécutif est exercé par le Premier ministre, tandis que le Président a un rôle de représentation.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-24">
+            <!-- Leadership -->
+            <section id="leadership" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Chronologie du Pouvoir</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Exécutif Actuel</h3>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center p-4 bg-white/5 border border-blue-500/30 rounded-xl shadow-lg">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-xl font-bold mr-4 text-white">NP</div>
+                        <div>
+                            <p class="text-xl font-bold text-white">Nikol Pachinian</p>
+                            <p class="text-xs text-slate-400">Premier Ministre (2018–Présent) · Contrat Civil</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-white/5 border border-red-500/30 rounded-xl shadow-lg">
+                        <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-xl font-bold mr-4 text-white">VK</div>
+                        <div>
+                            <p class="text-xl font-bold text-white">Vahagn Khatchatourian</p>
+                            <p class="text-xs text-slate-400">Président (2022–Présent) · Indépendant</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Anciens Dirigeants (Post-1991)</h3>
+                        <div class="h-[200px] overflow-y-auto pr-4 space-y-2 custom-scrollbar">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Alen Simonian (Intérim)</span><span class="text-xs text-slate-500 font-mono">2022</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Armen Sarkissian</span><span class="text-xs text-slate-500 font-mono">2018–2022</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Serge Sarkissian</span><span class="text-xs text-slate-500 font-mono">2008–2018</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Robert Kotcharian</span><span class="text-xs text-slate-500 font-mono">1998–2008</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Levon Ter-Petrossian</span><span class="text-xs text-slate-500 font-mono">1991–1998</span></div>
+                            
+                            <!-- SSR Era -->
+                            <div class="pt-2"><span class="text-xs text-orange-400 font-bold uppercase">Époque Soviétique (Sélect)</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Aram Sarkissian</span><span class="text-xs text-slate-500 font-mono">1991</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">K. Demirtchian</span><span class="text-xs text-slate-500 font-mono">1974–1988</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Grigori Arutinov</span><span class="text-xs text-slate-500 font-mono">1937–1953</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Élections</h3>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 mb-4">
+                            <h4 class="text-white font-bold text-sm">Parlementaires</h4>
+                            <p class="text-xs text-slate-400">Prochaine: <span class="text-white font-bold text-orange-400">Juin 2026</span></p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <h4 class="text-white font-bold text-sm">Présidentielle</h4>
+                            <p class="text-xs text-slate-400">Prochaine: <span class="text-white">Mars 2029</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conflicts -->
+            <section id="conflicts" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Conflits Historiques & Géopolitique</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-red-500 to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-red-500 shadow-[0_0_10px_rgba(225,0,15,0.8)]"></div>
+                        <div class="glass-card rounded-2xl p-6 bg-red-600/10 border-red-600/30">
+                            <h4 class="text-red-400 font-bold text-sm mb-1 uppercase tracking-wide">Septembre 2023</h4>
+                            <p class="text-white font-bold mb-2">Dissolution de l'Artsakh</p>
+                            <p class="text-xs text-slate-400">Offensive par l'Azerbaïdjan menant à l'exode massif des Arméniens et à la dissolution administrative de la République d'Artsakh.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">Sept — Nov 2020</span>
+                            <span class="text-sm font-medium text-white block">Seconde guerre du Haut-Karabagh (44 jours). Cessions territoriales majeures.</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">Avril 2016</span>
+                            <span class="text-sm font-medium text-white block">Guerre de Quatre Jours — Affrontements frontaliers intenses.</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">1988 — 1994</span>
+                            <span class="text-sm font-medium text-white block">Première guerre du Haut-Karabagh — Victoire et indépendance de facto de l'Artsakh.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Infrastructure Économique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8 border-t-2 border-t-orange-500">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB <span class="text-slate-500 font-normal text-sm"></span></h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services (incl. Finance, Tourisme)</span>
+                                <span class="text-white font-bold">61,5 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 w-[61.5%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie / Mines</span>
+                                <span class="text-white font-bold">23,2 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-red-500 w-[23.2%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture / Viticulture</span>
+                                <span class="text-white font-bold">7,9 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-orange-500 w-[7.9%]"></div>
+                            </div>
+                        </div>
+                        <div class="pt-2 border-t border-white/5">
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400 font-bold">Secteur IT Spécialisé</span>
+                                <span class="text-green-400 font-bold">6,25 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[6.25%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal (Estimé)</div>
+                        <div class="text-4xl font-display font-extrabold text-white">29,24 Md$ <span class="text-lg font-normal text-slate-400">USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-slate-600">
+                        <h4 class="accent-orange font-bold text-sm mb-2">Choc post-indépendance</h4>
+                        <p class="text-white font-bold mb-1">1991–1993</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Chute de 60% du PIB suite à l'effondrement soviétique, le blocus frontalier, et le tremblement de terre de 1988.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-green-400">
+                        <h4 class="accent-orange font-bold text-sm mb-2">Pôle Numérique (Hub IT)</h4>
+                        <p class="text-white font-bold mb-1">Actuel (2026)</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">L'Arménie s'oriente vers la haute technologie, attirant des entreprises occidentales et cherchant à diversifier son réseau d'exportation.</p>
+                    </div>
+                    
+                    <div class="md:col-span-2 glass-card rounded-2xl p-6 bg-white/5 flex flex-wrap justify-around items-center border border-white/10">
+                        <div class="text-center">
+                            <span class="text-xs text-slate-500 font-bold uppercase tracking-widest block mb-1">Dram Arménien (AMD)</span>
+                            <span class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-300">1 USD = 381,5 AMD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Min.</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">75 000 AMD</div>
+                    <p class="text-sm text-slate-400">~196 USD / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center border-t-2 border-t-blue-500 bg-blue-500/5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Moy.</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">~306 000 AMD</div>
+                    <p class="text-sm text-blue-400">~803 USD / Mois (Secteur privé: 847$ / Public: 619$)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Religion & Trade -->
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <section id="religion" class="glass-card rounded-3xl p-8 flex flex-col">
+                <h2 class="text-2xl font-display font-bold text-white mb-8">Mosaïque Religieuse</h2>
+                <div class="space-y-6 flex-grow">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-white">97,5 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Église apostolique arménienne</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-red-600 h-full rounded-full" style="width: 97.5%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">2,5 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Yézidisme / Autres</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-orange-400 h-full rounded-full" style="width: 2.5%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="trade" class="glass-card rounded-3xl p-8">
+                <h2 class="text-2xl font-display font-bold text-white mb-6">Partenaires Commerciaux de 1er rang</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white font-bold rounded-full text-sm">1</span>
+                        <div>
+                            <p class="text-lg font-bold text-white mb-0">EAU / Russie / Chine</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-widest">Principales Exportations</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-red-600 text-white font-bold rounded-full text-sm">2</span>
+                        <div>
+                            <p class="text-lg font-bold text-white">Russie / Chine / Iran</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-widest">Principales Importations</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-dashed border-white/20">
+                        <p class="text-xs font-bold text-blue-400 uppercase mb-2">Axes Stratégiques : France</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            La France est le <strong class="text-white">3e partenaire commercial de l'Arménie au sein de l'Union Européenne</strong> (29e pour l'export, 116e pour l'import global).
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Démographique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="glass-card rounded-3xl p-8 overflow-x-auto">
+                <table class="w-full text-left text-sm text-slate-300">
+                    <thead class="text-xs text-white uppercase bg-white/10">
+                        <tr>
+                            <th class="px-6 py-4 rounded-tl-xl font-bold">Année</th>
+                            <th class="px-6 py-4 font-bold">Population</th>
+                            <th class="px-6 py-4 rounded-tr-xl font-bold">Tendance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">1945</td>
+                            <td class="px-6 py-3 font-mono">1 187 000</td>
+                            <td class="px-6 py-3 text-slate-500">Rétablissement d'après-guerre</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">1965</td>
+                            <td class="px-6 py-3 font-mono">2 184 000</td>
+                            <td class="px-6 py-3 text-slate-500">Baby-boom</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3 text-orange-400 font-bold">1985</td>
+                            <td class="px-6 py-3 font-mono font-bold text-orange-400">3 338 000</td>
+                            <td class="px-6 py-3 text-slate-400">Pic historique de population</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">2005</td>
+                            <td class="px-6 py-3 font-mono">3 155 000</td>
+                            <td class="px-6 py-3 text-slate-500 text-sm">Déclin post-soviétique</td>
+                        </tr>
+                        <tr class="bg-blue-600/20">
+                            <td class="px-6 py-4 font-bold text-white rounded-bl-xl">2026</td>
+                            <td class="px-6 py-4 font-mono font-bold text-white">2 931 000</td>
+                            <td class="px-6 py-4 text-white text-sm rounded-br-xl">Projection actuelle</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

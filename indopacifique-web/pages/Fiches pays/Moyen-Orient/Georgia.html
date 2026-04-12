@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Géorgie : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            accent: '#F2A800', 
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(225, 0, 15, 0.15); /* Red tint */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(255, 255, 255, 0.1); 
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(225, 0, 15, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(225, 0, 15, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #E1000F);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        .accent-red { color: #E1000F; }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-moyen-orient.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600 opacity-20 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-red-500 uppercase bg-red-500/10 border border-red-500/20 rounded-full">
+                Dossier Géopolitique
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Géorgie
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Analyse géopolitique, économique et historique. Nation clé du Caucase, partagée entre son ambition européenne, sa situation de transit et des défis géopolitiques persistants avec ses voisins.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contenu Principal -->
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <div class="bento-grid mb-24">
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="accent-red font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Interne</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Tbilissi</div>
+                            <p class="text-slate-400 text-sm">Capitale nationale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">69 700 km² <span class="text-xs text-slate-500 font-normal ml-2">(Inclut Ossétie du Sud & Abkhazie)</span></span>
+                </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-red-900/40 to-transparent">
+                <h3 class="accent-red font-display font-bold text-xs uppercase tracking-widest mb-4">Régime Politique</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-4">République parlementaire</h4>
+                <div class="inline-block px-3 py-1 bg-red-900/50 text-red-200 border border-red-500/30 rounded-lg text-xs font-bold mb-4">DÉMOCRATIE UNITAIRE</div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Transition complexe menée par des forces conservatrices (Rêve Géorgien) face à une forte aspiration pro-européenne de la population.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-24">
+            <!-- Leadership -->
+            <section id="leadership" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Chronologie du Pouvoir</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Exécutif Actuel</h3>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center p-4 bg-white/5 border border-red-500/30 rounded-xl shadow-lg">
+                        <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-xl font-bold mr-4 text-white">IK</div>
+                        <div>
+                            <p class="text-xl font-bold text-white">Irakli Kobakhidze</p>
+                            <p class="text-xs text-slate-400">Premier Ministre (2024–Présent) · Rêve Géorgien</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-white/5 border border-blue-500/30 rounded-xl shadow-lg">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-xl font-bold mr-4 text-white">SZ</div>
+                        <div>
+                            <p class="text-xl font-bold text-white">Salomé Zourabichvili</p>
+                            <p class="text-xs text-slate-400">Présidente (2018–Présent / Transition fin 2024)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Pouvoir (Post-1991)</h3>
+                        <div class="h-[200px] overflow-y-auto pr-4 space-y-2 custom-scrollbar">
+                            <span class="text-xs font-bold text-slate-400 block mb-2">Présidences passées</span>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Giorgi Margvelachvili</span><span class="text-xs text-slate-500 font-mono">2013-2018</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Mikheïl Saakachvili</span><span class="text-xs text-slate-500 font-mono">2004-2013</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Édouard Chevardnadzé</span><span class="text-xs text-slate-500 font-mono">1992-2003</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Zviad Gamsakhourdia</span><span class="text-xs text-slate-500 font-mono">1991-1992</span></div>
+                            
+                            <span class="text-xs font-bold text-slate-400 block mt-4 mb-2">Premiers Ministres clés récents</span>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Irakli Garibachvili</span><span class="text-xs text-slate-500 font-mono">2021-2024</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Bidzina Ivanichvili</span><span class="text-xs text-slate-500 font-mono">2012-2013</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Élections</h3>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 mb-4">
+                            <h4 class="text-white font-bold text-sm">Parlementaires</h4>
+                            <p class="text-xs text-slate-400">Dernière: <span class="text-white">Oct 2024</span></p>
+                            <p class="text-xs text-slate-400">Prochaine: <span class="text-white font-bold text-[#f2a800]">2028</span></p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <h4 class="text-white font-bold text-sm">Présidentielle</h4>
+                            <p class="text-xs text-slate-400">Prochaine: prévue en <span class="text-white">2029</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conflicts -->
+            <section id="conflicts" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Conflits Historiques & Géopolitique</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-red-500 to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-red-500 shadow-[0_0_10px_rgba(225,0,15,0.8)]"></div>
+                        <div class="glass-card rounded-2xl p-6 bg-red-600/10 border-red-600/30">
+                            <h4 class="text-red-400 font-bold text-sm mb-1 uppercase tracking-wide">2008</h4>
+                            <p class="text-white font-bold mb-2">Guerre russo-géorgienne (5 Jours)</p>
+                            <p class="text-xs text-slate-400">Intervention militaire directe de la Russie. Aboutit à la reconnaissance par Moscou de l'indépendance de l'Ossétie du Sud et de l'Abkhazie, figeant la situation territoriale.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">1998 & 2004</span>
+                            <span class="text-sm font-medium text-white block">Accrochages frontaliers & Guerre des Six Jours en Abkhazie.</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">1991 — 1993</span>
+                            <span class="text-sm font-medium text-white block">Première Guerre d'Ossétie du Sud & Guerre d'Abkhazie : conflits sécessionnistes post-indépendance.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Infrastructure Économique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8 border-t-2 border-t-blue-500">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB <span class="text-slate-500 font-normal text-sm"></span></h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services (Tourisme, Logistique)</span>
+                                <span class="text-white font-bold">68,5 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 w-[68.5%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie</span>
+                                <span class="text-white font-bold">24,3 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-red-500 w-[24.3%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture (Vin, etc.)</span>
+                                <span class="text-white font-bold">7,2 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[7.2%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal (Estimé)</div>
+                        <div class="text-4xl font-display font-extrabold text-white">34,5 Md$ <span class="text-lg font-normal text-slate-400">USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-slate-600">
+                        <h4 class="text-white font-bold text-sm mb-2">L'ère des Réformes (2004–2012)</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Libéralisation agressive du marché, privatisations massives et campagnes vigoureuses contre la corruption institutionnelle.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-blue-400">
+                        <h4 class="text-blue-400 font-bold text-sm mb-2">Stabilisation & Transit (2013–Présent)</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Croissance soutenue (5-10%/an) axée sur le tourisme et la transformation géostratégique en couloir logistique (Corridor Médian).</p>
+                    </div>
+                    
+                    <div class="md:col-span-2 glass-card rounded-2xl p-6 bg-white/5 flex flex-wrap justify-around items-center border border-white/10">
+                        <div class="text-center">
+                            <span class="text-xs text-slate-500 font-bold uppercase tracking-widest block mb-1">Coupure Locale</span>
+                            <span class="text-2xl font-bold text-white">Lari géorgien (GEL)</span>
+                            <span class="text-xs text-[#f2a800] block mt-1">1 USD = ~2,72 GEL (2024)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Min. Légal</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">20 / 115 GEL</div>
+                    <p class="text-sm text-slate-400">Privé (~7$) / Public (~42$) Mensuel</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center border-t-2 border-t-blue-500 bg-blue-500/5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Moy.</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">2 044 GEL</div>
+                    <p class="text-sm text-blue-400">~751 USD / Mois</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Religion & Trade -->
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <section id="religion" class="glass-card rounded-3xl p-8 flex flex-col">
+                <h2 class="text-2xl font-display font-bold text-white mb-8">Mosaïque Religieuse</h2>
+                <div class="space-y-6 flex-grow">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-white">83,4 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Christianisme Orthodoxe Géorgien</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-blue-600 h-full rounded-full" style="width: 83.4%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">10,7 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Islam</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-green-500 h-full rounded-full" style="width: 10.7%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">2,9 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Église Apostolique Arménienne</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-orange-500 h-full rounded-full" style="width: 2.9%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="trade" class="glass-card rounded-3xl p-8">
+                <h2 class="text-2xl font-display font-bold text-white mb-6">Partenaires Commerciaux Récents</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white font-bold rounded-full text-sm">#</span>
+                        <div>
+                            <p class="text-sm font-bold text-white mb-0">Turquie, Russie, États-Unis, Chine, Azerbaïdjan</p>
+                            <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Carrefour commercial majeur (Mer Noire & Caucase)</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-dashed border-white/20">
+                        <p class="text-xs font-bold text-blue-400 uppercase mb-2">Axes Stratégiques : France</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            La France maintient une présence constante (<strong class="text-white">17e rang commercial</strong>). Les échanges se chiffrent à environ 335 M$ et concernent prioritairement l'industrie pharmaceutique et agroalimentaire.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Démographique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="glass-card rounded-3xl p-8 overflow-x-auto">
+                <table class="w-full text-left text-sm text-slate-300">
+                    <thead class="text-xs text-white uppercase bg-white/10">
+                        <tr>
+                            <th class="px-6 py-4 rounded-tl-xl font-bold">Année</th>
+                            <th class="px-6 py-4 rounded-tr-xl font-bold">Population globale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">1950</td>
+                            <td class="px-6 py-3 font-mono">3 517 000</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">1970</td>
+                            <td class="px-6 py-3 font-mono">4 686 000</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">1989</td>
+                            <td class="px-6 py-3 font-mono text-white font-bold">5 400 000 (Pic historique)</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">2014</td>
+                            <td class="px-6 py-3 font-mono">3 713 000</td>
+                        </tr>
+                        <tr class="bg-blue-600/20">
+                            <td class="px-6 py-4 font-bold text-white rounded-bl-xl">2024</td>
+                            <td class="px-6 py-4 font-mono font-bold text-white rounded-br-xl">3 694 000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

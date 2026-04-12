@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier Géopolitique : Turquie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#0b1121', // Deep navy
+                            accent: '#0D9488', // Teal
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'floatanim': 'floatanim 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0b1121;
+            color: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(13, 148, 136, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(16, 42, 67, 0.1) 0%, transparent 20%);
+            background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 1.5rem;
+        }
+
+        .glass-header {
+            background: rgba(11, 17, 33, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .bento-col-span-12 { grid-column: span 12; }
+        .bento-col-span-8 { grid-column: span 8; }
+        .bento-col-span-4 { grid-column: span 4; }
+        .bento-col-span-6 { grid-column: span 6; }
+        .bento-col-span-7 { grid-column: span 7; }
+        .bento-col-span-5 { grid-column: span 5; }
+
+        @media (max-width: 1024px) {
+            .bento-col-span-8, .bento-col-span-4, .bento-col-span-6, .bento-col-span-7, .bento-col-span-5 {
+                grid-column: span 12;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        h2.section-title {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            color: #f8fafc;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #0D9488;
+            border-radius: 2px;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 1rem;
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: rgba(15, 23, 42, 0.5);
+            color: #94a3b8;
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem 1.25rem;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            color: #cbd5e1;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .numeric {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .timeline-container {
+            position: relative;
+            border-left: 2px solid rgba(13, 148, 136, 0.2);
+            margin-left: 1rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.55rem;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #0D9488;
+            border: 3px solid #0b1121;
+            box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.3);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(13, 148, 136, 0.15);
+            border: 1px solid rgba(13, 148, 136, 0.3);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #0D9488;
+            letter-spacing: 0.05em;
+        }
+        
+        .stat-value {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Sticky Header -->
+    <header class="glass-header sticky top-0 z-50 w-full">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-accent to-slate-800 flex items-center justify-center shadow-lg border border-white/10 text-white font-bold font-display">
+                    ME
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-white leading-tight">Moyen-Orient</h1>
+                    <p class="text-xs text-brand-accent uppercase tracking-widest font-semibold">Dossier Pays</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex gap-6">
+                <a href="#overview" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Aperçu</a>
+                <a href="#politics" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Politique</a>
+                <a href="#demographics" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Démographie</a>
+                <a href="#economy" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Économie</a>
+                <a href="#history" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Histoire</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        
+        <!-- Hero Section -->
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 animate-floatanim">
+            <div>
+                <span class="badge mb-4">Dossier de Renseignement 2026</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-2">Turquie</h1>
+                <p class="text-xl text-slate-400 font-light max-w-2xl">
+                    République de Türkiye. Analyse géopolitique et économique complète d'une puissance régionale charnière.
+                </p>
+            </div>
+            <div class="mt-6 md:mt-0 text-right">
+                <div class="text-sm text-slate-400 uppercase tracking-widest font-semibold mb-1">Mise à jour</div>
+                <div class="text-lg text-white font-medium">2026</div>
+            </div>
+        </div>
+
+        <!-- Section: Aperçu (Overview) -->
+        <section id="overview" class="mb-16">
+            <div class="bento-grid">
+                <div class="bento-col-span-8 glass-panel p-8">
+                    <h2 class="section-title">Aperçu Géopolitique</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                        <div>
+                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Capitale</h3>
+                            <p class="text-3xl font-semibold text-white">Ankara</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Superficie Totale</h3>
+                            <p class="text-3xl font-semibold text-white">783 562 km²</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-col-span-4 glass-panel p-8 relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-brand-accent/20 rounded-full blur-2xl"></div>
+                    <h3 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-4">Régime Politique</h3>
+                    <p class="text-xl font-bold text-white mb-4 leading-tight">République présidentielle unitaire</p>
+                    <p class="text-slate-400 text-sm italic">La Turquie est passée d'un système parlementaire à son modèle présidentiel actuel suite au référendum constitutionnel de 2018.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Politique (Politics) -->
+        <section id="politics" class="mb-16">
+            <h2 class="section-title">Gouvernance & Leadership (Depuis 1945)</h2>
+            
+            <div class="bento-grid">
+                <!-- Current Executive -->
+                <div class="bento-col-span-12 glass-panel p-8 bg-slate-800/30 border-l-4 border-brand-accent flex flex-col md:flex-row items-center justify-between">
+                    <div>
+                        <p class="text-xs text-brand-accent font-bold uppercase tracking-widest mb-1">Exécutif Actuel — Président (Depuis 2014)</p>
+                        <h3 class="text-3xl font-bold text-white mb-1">Recep Tayyip Erdoğan</h3>
+                        <p class="text-slate-400">Parti de la justice et du développement (AKP)</p>
+                    </div>
+                </div>
+
+                <!-- Historical Context -->
+                <div class="bento-col-span-7 glass-panel p-8">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Anciens Présidents</h3>
+                    <ul class="text-sm leading-relaxed space-y-2 text-slate-300">
+                        <li><strong class="text-white">Ismet İnönü</strong> (CHP, 1938–1950)</li>
+                        <li><strong class="text-white">Celâl Bayar</strong> (DP, 1950–1960)</li>
+                        <li><strong class="text-white">Cemal Gürsel</strong> (Militaire/Ind, 1960–1966)</li>
+                        <li><strong class="text-white">Cevdet Sunay</strong> (Indépendant, 1966–1973)</li>
+                        <li><strong class="text-white">Fahri Korutürk</strong> (Indépendant, 1973–1980)</li>
+                        <li><strong class="text-white">Kenan Evren</strong> (Militaire/Ind, 1980–1989)</li>
+                        <li><strong class="text-white">Turgut Özal</strong> (ANAP, 1989–1993)</li>
+                        <li><strong class="text-white">Süleyman Demirel</strong> (DYP, 1993–2000)</li>
+                        <li><strong class="text-white">Ahmet Necdet Sezer</strong> (Indépendant, 2000–2007)</li>
+                        <li><strong class="text-white">Abdullah Gül</strong> (AKP, 2007–2014)</li>
+                    </ul>
+                </div>
+
+                <div class="bento-col-span-5 flex flex-col gap-6">
+                    <div class="glass-panel p-8 flex-1">
+                        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Premiers Ministres Notables</h3>
+                        <p class="text-xs text-slate-500 mb-4">(Fonctions occupées jusqu'à la restructuration de 2018)</p>
+                        <ul class="text-sm leading-relaxed space-y-2 text-slate-300">
+                            <li><strong class="text-white">Adnan Menderes</strong> (Parti Démocrate)</li>
+                            <li><strong class="text-white">Bülent Ecevit</strong> (CHP/DSP)</li>
+                            <li><strong class="text-white">Tansu Çiller</strong> (DYP - Première femme)</li>
+                            <li><strong class="text-white">Mesut Yılmaz</strong> (ANAP)</li>
+                            <li><strong class="text-white">Binali Yıldırım</strong> (Dernier PM)</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-panel p-6 flex-1 bg-brand-accent/5 border border-brand-accent/20">
+                        <h3 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-3">Calendrier Électoral</h3>
+                        <div class="mb-3">
+                            <p class="text-[10px] text-slate-400 uppercase">Plus Récente</p>
+                            <p class="text-white font-medium text-sm">Mai 2023 (Présidentielle et législatives)</p>
+                            <p class="text-white font-medium text-sm">Mars 2024 (Municipales)</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400 uppercase">Prochaine Prévue</p>
+                            <p class="text-white font-bold">Mai 2028 (Présidentielle et Légis.)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Histoire & Démographie -->
+        <section id="history" class="mb-16">
+            <div class="bento-grid">
+                <!-- Conflicts -->
+                <div class="bento-col-span-7 glass-panel p-8">
+                    <h2 class="section-title">Chronologie des Conflits Majeurs</h2>
+                    <div class="timeline-container mt-6">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-white text-lg flex items-center gap-3">
+                                1950–1953
+                                <span class="text-xs font-mono bg-white/10 px-2 py-1 rounded text-slate-300">Guerre de Corée</span>
+                            </h4>
+                            <p class="text-slate-400 mt-2 text-sm">Implication active au nom du commandement de l'ONU.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-white text-lg flex items-center gap-3">
+                                1974
+                                <span class="text-xs font-mono bg-white/10 px-2 py-1 rounded text-slate-300">Chypre</span>
+                            </h4>
+                            <p class="text-slate-400 mt-2 text-sm">Intervention militaire à Chypre.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot !border-orange-500"></div>
+                            <h4 class="font-bold text-white text-lg flex items-center gap-3">
+                                1984–Présent
+                                <span class="text-xs font-mono bg-white/10 px-2 py-1 rounded text-orange-400">Conflit kurde (PKK)</span>
+                            </h4>
+                            <p class="text-slate-400 mt-2 text-sm">Conflit de longue date, interne et transfrontalier.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-white text-lg flex items-center gap-3">
+                                1990–1991
+                                <span class="text-xs font-mono bg-white/10 px-2 py-1 rounded text-slate-300">Guerre du Golfe</span>
+                            </h4>
+                            <p class="text-slate-400 mt-2 text-sm">Soutien logistique critique fourni aux forces de la coalition.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot !border-red-500"></div>
+                            <h4 class="font-bold text-brand-accent text-lg flex items-center gap-3">
+                                Depuis 2011
+                                <span class="text-xs font-mono bg-white/10 px-2 py-1 rounded text-red-400">Guerre civile syrienne</span>
+                            </h4>
+                            <p class="text-slate-300 mt-2 text-sm">Opérations Bouclier de l'Euphrate, Rameau d'olivier et Source de paix.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot !border-indigo-500"></div>
+                            <h4 class="font-bold text-brand-accent text-lg flex items-center gap-3">
+                                Depuis 2020
+                                <span class="text-xs font-mono bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded border border-indigo-500/30">Interventions régionales</span>
+                            </h4>
+                            <p class="text-slate-300 mt-2 text-sm">Soutien en Libye et dans le conflit du Haut-Karabagh.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demographics & Religion -->
+                <div class="bento-col-span-5 flex flex-col gap-6">
+                    <div class="glass-panel p-8 flex-1">
+                        <h2 class="section-title">Démographie</h2>
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Évolution Temporelle</h3>
+                        <div class="table-container mb-6">
+                            <table>
+                                <tbody>
+                                    <tr><td class="text-slate-400">1945</td><td class="numeric text-white">18 790 000</td></tr>
+                                    <tr><td class="text-slate-400">1980</td><td class="numeric text-white">44 440 000</td></tr>
+                                    <tr><td class="text-slate-400">2000</td><td class="numeric text-white">64 190 000</td></tr>
+                                    <tr><td class="text-slate-400">2020</td><td class="numeric text-white">83 380 000</td></tr>
+                                    <tr class="bg-brand-accent/10"><td class="font-bold text-brand-accent">2026 (Est.)</td><td class="numeric font-bold text-white">86 150 000</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-8 flex-1">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Composition Religieuse</h3>
+                        <div class="flex items-center gap-6 p-4 border border-white/5 rounded-xl bg-slate-800/40">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-end mb-2">
+                                    <span class="font-semibold text-white">Islam</span>
+                                    <span class="text-2xl font-bold text-white">98,5%</span>
+                                </div>
+                                <div class="w-full bg-slate-700 rounded-full h-3 mb-2">
+                                    <div class="bg-brand-accent h-3 rounded-full" style="width: 98.5%"></div>
+                                </div>
+                                <p class="text-[10px] text-slate-400">Principalement Sunnite, avec une minorité Alévi significative (10-15%).</p>
+                            </div>
+                            <div class="w-20 text-right border-l pl-4 border-slate-700">
+                                <div class="text-[10px] font-bold text-slate-500 uppercase">Autres</div>
+                                <div class="text-xl font-bold text-slate-300">1,5%</div>
+                                <div class="text-[8px] leading-tight text-slate-500 mt-1">Chrétiens, Juifs, Non ref.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Économie (Economy) -->
+        <section id="economy" class="mb-16">
+            <h2 class="section-title">Évolution Économique & Devise</h2>
+
+            <div class="bento-grid">
+                <!-- Transition -->
+                <div class="bento-col-span-12 glass-panel p-8">
+                    <p class="text-slate-300 leading-relaxed border-l-2 border-brand-accent pl-4 mb-6">
+                        La Turquie est passée de l'agrarisme contrôlé par l'État (étatisme) au milieu du 20ème siècle à une économie de marché libéralisée dans les années 1980 sous les réformes de Turgut Özal. Les années 2000 ont vu une industrialisation et une modernisation rapides. Cependant, la dernière décennie (2016-2026) a été marquée par une forte volatilité de la croissance et des défis inflationnistes persistants.
+                    </p>
+                </div>
+
+                <!-- GDP & Currency -->
+                <div class="bento-col-span-6 glass-panel p-8">
+                    <div class="bg-gradient-to-br from-brand-900 to-slate-900 text-white p-6 rounded-xl border border-brand-accent/30 text-center mb-8 relative overflow-hidden">
+                        <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-brand-accent/20 rounded-full blur-xl"></div>
+                        <div class="text-xs opacity-80 uppercase tracking-widest mb-2 font-bold text-brand-accent">PIB Nominal Total (Est. 2025/26)</div>
+                        <div class="text-4xl lg:text-5xl font-extrabold stat-value">1,59 Trillion $</div>
+                    </div>
+
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Valeur Historique de la Devise (TRY pour 1 USD)</h3>
+                    <div class="table-container">
+                        <table>
+                            <tbody>
+                                <tr><td>1946</td><td class="numeric">2,80 TL (Ancienne Lira)</td></tr>
+                                <tr><td>1990</td><td class="numeric">2 600 TL (Ancienne Lira)</td></tr>
+                                <tr><td>2000</td><td class="numeric">620 000 TL (Ancienne Lira)</td></tr>
+                                <tr><td>2010</td><td class="numeric">1,50 TRY (Post-Redénomination)</td></tr>
+                                <tr><td>2020</td><td class="numeric">7,00 TRY (TRY moderne)</td></tr>
+                                <tr class="bg-brand-accent/10"><td class="font-bold text-brand-accent">2026</td><td class="numeric font-bold text-white">~44,50 TRY (Taux pro.)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- GDP Breakdown & Income -->
+                <div class="bento-col-span-6 flex flex-col gap-6">
+                    <div class="glass-panel p-8 flex-1">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Répartition du PIB</h3>
+                        <div class="table-container">
+                            <table>
+                                <tbody>
+                                    <tr><td>Services (Tourisme, Finance, Logistique)</td><td class="numeric font-bold text-brand-accent">58,0%</td></tr>
+                                    <tr><td>Industrie (Manufacture, Textiles, Auto)</td><td class="numeric text-white">20,8%</td></tr>
+                                    <tr><td>Agriculture, Foresterie & Pêche</td><td class="numeric text-white">6,5%</td></tr>
+                                    <tr><td>Construction</td><td class="numeric text-white">6,4%</td></tr>
+                                    <tr><td>Autres</td><td class="numeric text-white">8,3%</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-8 flex-1">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Salaires (Avril 2026)</h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg">
+                                <span class="text-sm text-slate-300">Min. Net Mensuel</span>
+                                <div class="text-right">
+                                    <span class="block text-white font-bold">28 075 TRY</span>
+                                    <span class="text-xs text-brand-accent">(~630 $)</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg">
+                                <span class="text-sm text-slate-300">Min. Brut Mensuel</span>
+                                <div class="text-right">
+                                    <span class="block text-white font-bold">33 030 TRY</span>
+                                    <span class="text-xs text-brand-accent">(~740 $)</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-slate-800 rounded-lg border border-slate-700">
+                                <span class="text-sm text-white font-medium">Moyenne Brute</span>
+                                <div class="text-right">
+                                    <span class="block text-brand-accent font-bold">42 000 TRY</span>
+                                    <span class="text-xs text-slate-400">(~945 $)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trade Partners -->
+                <div class="bento-col-span-12 glass-panel p-8 flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <h3 class="text-brand-accent text-sm font-bold uppercase mb-4">Top Partenaires Export</h3>
+                        <ol class="space-y-2 list-decimal list-inside text-slate-300 text-sm pl-2">
+                            <li class="font-bold text-white bg-white/5 p-2 rounded">Allemagne <span class="text-[10px] text-brand-accent ml-2">TOP PARTENAIRE</span></li>
+                            <li class="p-2">Royaume-Uni</li>
+                            <li class="p-2">États-Unis</li>
+                            <li class="p-2">Italie</li>
+                            <li class="p-2">Irak</li>
+                            <li class="p-2 font-bold text-brand-accent border border-brand-accent/30 bg-brand-accent/10 rounded">France</li>
+                        </ol>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-blue-400 text-sm font-bold uppercase mb-4">Top Partenaires Import</h3>
+                        <ol class="space-y-2 list-decimal list-inside text-slate-300 text-sm pl-2">
+                            <li class="p-2">Chine</li>
+                            <li class="p-2">Russie</li>
+                            <li class="p-2">Allemagne</li>
+                            <li class="p-2">Italie</li>
+                            <li class="p-2">États-Unis</li>
+                        </ol>
+                        <div class="mt-4 p-4 border border-dashed border-slate-600 rounded-xl bg-slate-800/30">
+                            <p class="text-xs text-slate-400">Notes de Renseignement : La France constitue actuellement la <strong>7ème plus grande source d'importations</strong> mondiale pour la Turquie.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

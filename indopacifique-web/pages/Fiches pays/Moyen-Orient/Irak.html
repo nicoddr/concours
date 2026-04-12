@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irak : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            teal: '#0D9488',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(13, 148, 136, 0.15); /* Teal tint */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(31, 41, 55, 0.5); 
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #0D9488;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(13, 148, 136, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(13, 148, 136, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #0D9488);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        .accent-teal { color: #0D9488; }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-moyen-orient.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-600 opacity-20 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#0D9488] uppercase bg-[#0D9488]/10 border border-[#0D9488]/20 rounded-full">
+                Dossier Géopolitique
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Irak
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Analyse géopolitique, économique et historique. Nation pivot du Moyen-Orient, dotée d'une économie pétrolière structurante, avec une lente stabilisation politico-sécuritaire post-crises.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contenu Principal -->
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <div class="bento-grid mb-24">
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="accent-teal font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Interne</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Bagdad</div>
+                            <p class="text-slate-400 text-sm">Capitale nationale historique</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">438 317 km²</span>
+                </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-teal-900/30 to-transparent">
+                <h3 class="accent-teal font-display font-bold text-xs uppercase tracking-widest mb-4">Régime Politique</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-4">République parlementaire fédérale</h4>
+                <div class="inline-block px-3 py-1 bg-gray-800 text-gray-200 border border-gray-500/30 rounded-lg text-xs font-bold mb-4">POUVOIR CONSOCIATIF</div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Héritage post-2003 favorisant un partage du pouvoir (Muhasasa) entre les différentes communautés ethno-religieuses.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-24">
+            <!-- Leadership -->
+            <section id="leadership" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Chronologie du Pouvoir</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Fonctions Clés Actuelles</h3>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center p-4 bg-white/5 border border-teal-500/30 rounded-xl shadow-lg">
+                        <div class="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center text-xl font-bold mr-4 text-white">PM</div>
+                        <div>
+                            <p class="text-xl font-bold text-white">Mohammed Chia al-Soudani</p>
+                            <p class="text-xs text-slate-400">Premier Ministre (2022–Présent) · Exécutif fort</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <div class="w-10 h-10 rounded-full bg-slate-600 flex items-center justify-center text-lg font-bold mr-4 text-white">PR</div>
+                        <div>
+                            <p class="text-lg font-bold text-white">Abdel Latif Rachid</p>
+                            <p class="text-xs text-slate-400">Président de la République (Rôle formel)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Rétrospective Exécutive (Post-2003)</h3>
+                        <div class="h-[180px] overflow-y-auto pr-4 space-y-2 custom-scrollbar">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Moustafa al-Kazimi</span><span class="text-xs text-slate-500 font-mono">2020-2022</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Adel Abdel-Mehdi</span><span class="text-xs text-slate-500 font-mono">2018-2020</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Haïder al-Abadi</span><span class="text-xs text-slate-500 font-mono">2014-2018</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Nouri al-Maliki</span><span class="text-xs text-slate-500 font-mono">2006-2014</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Ibrahim al-Jaafari</span><span class="text-xs text-slate-500 font-mono">2005-2006</span></div>
+                            <div class="flex justify-between items-center pb-1 mt-2 text-xs text-slate-500 italic">Saddam Hussein (Président: 1979-2003)</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Élections</h3>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 mb-4">
+                            <h4 class="text-white font-bold text-sm">Générales</h4>
+                            <p class="text-xs text-slate-400">Dernière: <span class="text-white">Novembre 2025</span></p>
+                            <p class="text-xs text-slate-400">Prochaine: prévue en <span class="text-white font-bold text-teal-400">2029</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conflicts -->
+            <section id="conflicts" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Conflits Historiques & Géopolitique</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-teal-500 to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-teal-500 shadow-[0_0_10px_rgba(13,148,136,0.8)]"></div>
+                        <div class="glass-card rounded-2xl p-6 bg-teal-600/10 border-teal-600/30">
+                            <h4 class="text-teal-400 font-bold text-sm mb-1 uppercase tracking-wide">2013 — 2017</h4>
+                            <p class="text-white font-bold mb-2">Guerre contre Daech (OEI)</p>
+                            <p class="text-xs text-slate-400">Destructrice occupation de larges pans du territoire, suivie d'une coalition militaire d'envergure. Reste aujourd'hui une insurrection de faible intensité.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">2003 — 2011</span>
+                            <span class="text-sm font-medium text-white block">Invasion de l'Irak (Opération Iraqi Freedom) par les USA et effondrement du régime de Saddam Hussein.</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">1990 — 1991</span>
+                            <span class="text-sm font-medium text-white block">Guerre du Golfe déclenchée par l'invasion irakienne du Koweït, aboutissant aux dures sanctions de l'ONU ("Zones d'exclusion aérienne").</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">1980 — 1988</span>
+                            <span class="text-sm font-medium text-white block">Guerre Iran-Irak. Conflit régional dévastateur au coût humain et économique lourd.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Infrastructure Économique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8 border-t-2 border-t-teal-500">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB <span class="text-slate-500 font-normal text-sm"></span></h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie / Hydrocarbures</span>
+                                <span class="text-white font-bold">55,0% - 60,0%</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-500 w-[60%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services (Gouv, Telecom, Transports)</span>
+                                <span class="text-white font-bold">35,0% - 40,0%</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 w-[40%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture (Blé, Dattes)</span>
+                                <span class="text-white font-bold">4,0% - 5,0%</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[5%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal (Estimé)</div>
+                        <div class="text-4xl font-display font-extrabold text-white">~315 Md$ <span class="text-lg font-normal text-slate-400">USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-slate-600">
+                        <h4 class="text-white font-bold text-sm mb-2">Rente Pétrolière Post-2003</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Après des décennies de sanctions (90s) et la chute des infrastructures, l'économie s'est redressée presque exclusivement grâce à la relance de la production de brut.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-teal-400">
+                        <h4 class="text-teal-400 font-bold text-sm mb-2">Stabilité Macroéconomique</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">La déroute de Daech (2017) a permis une résurgence économique relative, bien que la diversification hors pétrole reste historiquement faible.</p>
+                    </div>
+                    
+                    <div class="md:col-span-2 glass-card rounded-2xl p-6 bg-white/5 flex flex-wrap justify-around items-center border border-white/10">
+                        <div class="text-center">
+                            <span class="text-xs text-slate-500 font-bold uppercase tracking-widest block mb-1">Dinar irakien (IQD)</span>
+                            <span class="text-2xl font-bold text-white">1 USD = 1 300 – 1 320 IQD</span>
+                            <span class="text-xs text-teal-400 block mt-1">Taux stabilisé (Valeur historique pré-1990 : ~3.20$)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Min. Légal</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">350 000 IQD</div>
+                    <p class="text-sm text-slate-400">~267 USD / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center border-t-2 border-t-teal-500 bg-teal-500/5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Moy.</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">~1 000 000 IQD</div>
+                    <p class="text-sm text-teal-400">~690-800 USD / Mois</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Religion & Trade -->
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <section id="religion" class="glass-card rounded-3xl p-8 flex flex-col">
+                <h2 class="text-2xl font-display font-bold text-white mb-8">Mosaïque Religieuse</h2>
+                <div class="space-y-6 flex-grow">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-white">~96,5 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Islam Total</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-teal-600 h-full rounded-full" style="width: 96.5%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 pl-12 -mt-4 opacity-80">
+                        <div class="flex-grow">
+                            <span class="text-xs text-slate-400 font-medium block">Chiite (~60-65%), Sunnite (~32-37%)</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">~3,5 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Christianisme, Yézidisme, Autres</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-orange-500 h-full rounded-full" style="width: 3.5%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="trade" class="glass-card rounded-3xl p-8">
+                <h2 class="text-2xl font-display font-bold text-white mb-6">Partenaires Commerciaux Récents</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-teal-600 text-white font-bold rounded-full text-sm">#</span>
+                        <div>
+                            <p class="text-sm font-bold text-white mb-0">Chine, Inde, USA, Corée du Sud, Turquie, EAU</p>
+                            <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Carrefour énergétique et commercial</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-dashed border-white/20">
+                        <p class="text-xs font-bold text-teal-400 uppercase mb-2">Axes Stratégiques : France</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            L'Irak est un acteur important avec la France (<strong class="text-white">8e marché mondial</strong> pour les exports irakiens et France 76e pour les imports de l'Irak). TotalEnergies y a notamment d'immenses investissements (GGIP).
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Démographique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="glass-card rounded-3xl p-8 overflow-x-auto">
+                <table class="w-full text-left text-sm text-slate-300">
+                    <thead class="text-xs text-white uppercase bg-white/10">
+                        <tr>
+                            <th class="px-6 py-4 rounded-tl-xl font-bold">Année</th>
+                            <th class="px-6 py-4 rounded-tr-xl font-bold">Population estimée</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">1945</td>
+                            <td class="px-6 py-3 font-mono">~4 500 000</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">1980</td>
+                            <td class="px-6 py-3 font-mono">~13 653 000</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">2000</td>
+                            <td class="px-6 py-3 font-mono">~23 497 000</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">2020</td>
+                            <td class="px-6 py-3 font-mono">~40 222 000</td>
+                        </tr>
+                        <tr class="bg-teal-600/20">
+                            <td class="px-6 py-4 font-bold text-white rounded-bl-xl">2026</td>
+                            <td class="px-6 py-4 font-mono font-bold text-white rounded-br-xl">~46 000 000 (Projection)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

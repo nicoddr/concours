@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russie : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(0, 0, 145, 0.3);
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(225, 0, 15, 0.15); /* Red tinted for Russia */
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(225, 0, 15, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(225, 0, 15, 0.12);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #E1000F);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        .accent-cyan { color: #00b0f0; }
+        .accent-blue { color: #000091; }
+        .accent-red { color: #E1000F; }
+
+        @media (max-width: 768px) {
+            .site-header { flex-direction: column; gap: 10px; padding: 0.8rem 1rem; }
+            .logo-container { flex-wrap: wrap; justify-content: center; font-size: 0.85rem; }
+            .btn-glass { font-size: 0.75rem; padding: 6px 10px; }
+            .controls { flex-wrap: wrap; justify-content: center; }
+            .bento-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <!-- Header MEAE standardisé -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../index.html">
+                <img src="../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <!-- Héros -->
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-meae-blue opacity-20 blur-[100px] animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-meae-red opacity-10 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-meae-red uppercase bg-meae-red/10 border border-meae-red/20 rounded-full">
+                Dossier Géopolitique
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Russie
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Analyse géopolitique, économique et historique de la Fédération de Russie — de la fin de l'Union Soviétique à l'économie de guerre moderne.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contenu Principal -->
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- Bento Grid d'informations de base -->
+        <div class="bento-grid mb-24">
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="accent-red font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Interne</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Moscou</div>
+                            <p class="text-slate-400 text-sm">Capitale fédérale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">17 098 242 km²</span>
+                </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-meae-red/20 to-transparent">
+                <h3 class="accent-red font-display font-bold text-xs uppercase tracking-widest mb-4">Régime Politique</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-4">République fédérale semi-présidentielle</h4>
+                <div class="inline-block px-3 py-1 bg-red-900/50 text-red-200 border border-red-500/30 rounded-lg text-xs font-bold mb-4">AUTORITAIRE DE FACTO</div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Le pouvoir est fortement centralisé autour de la figure du président en dépit d'une constitution fédérale.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-24">
+            <!-- Leadership -->
+            <section id="leadership" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Chronologie du Pouvoir</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Dirigeant Actuel</h3>
+                <div class="flex items-center p-4 bg-white/5 border border-meae-red/30 rounded-xl shadow-lg mb-8">
+                    <div class="w-12 h-12 rounded-full bg-meae-red flex items-center justify-center text-xl font-bold mr-4 text-white">VP</div>
+                    <div>
+                        <p class="text-xl font-bold text-white">Vladimir Poutine</p>
+                        <p class="text-xs text-slate-400">Indépendant / Russie Unie</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Fédération de Russie</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-sm font-medium text-white">Dmitri Medvedev</span>
+                                <span class="text-xs text-slate-400">2008–2012</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-sm font-medium text-white">Boris Eltsine</span>
+                                <span class="text-xs text-slate-400">1991–1999</span>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mt-8 mb-4">Élections</h3>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 mb-2">
+                            <h4 class="text-white font-bold text-sm">Présidentielle</h4>
+                            <p class="text-xs text-slate-400">Dernière: <span class="text-white">Mars 2024</span> | Prochaine: <span class="text-white">Mars 2030</span></p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <h4 class="text-white font-bold text-sm">Douma d'État</h4>
+                            <p class="text-xs text-slate-400">Dernière: <span class="text-white">Sept 2021</span> | Prochaine: <span class="text-white">Sept 2026</span></p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-4">Union Soviétique (Post-1945)</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Mikhaïl Gorbatchev</span><span class="text-xs text-slate-500 font-mono">1985–91</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Konstantin Tchernenko</span><span class="text-xs text-slate-500 font-mono">1984–85</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Iouri Andropov</span><span class="text-xs text-slate-500 font-mono">1982–84</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Léonid Brejnev</span><span class="text-xs text-slate-500 font-mono">1964–82</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Nikita Khrouchtchev</span><span class="text-xs text-slate-500 font-mono">1953–64</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Gueorgui Malenkov</span><span class="text-xs text-slate-500 font-mono">1953</span></div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-1"><span class="text-sm text-white/80">Joseph Staline</span><span class="text-xs text-slate-500 font-mono">1924–53</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conflicts -->
+            <section id="conflicts" class="glass-card rounded-3xl p-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Conflits Historiques & Géopolitique</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-meae-red to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-meae-red shadow-[0_0_10px_rgba(225,0,15,0.8)]"></div>
+                        <div class="glass-card rounded-2xl p-6 bg-meae-red/10 border-meae-red/30">
+                            <h4 class="text-meae-red font-bold text-sm mb-1 uppercase tracking-wide">2022–Présent</h4>
+                            <p class="text-white font-bold mb-2">Invasion de l'Ukraine</p>
+                            <p class="text-xs text-slate-400">Invasion militaire à grande échelle suite à des années de tensions et à l'annexion de la Crimée en 2014.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">2015–Présent</span>
+                            <span class="text-sm font-medium text-white block">Intervention militaire en Syrie</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">2014</span>
+                            <span class="text-sm font-medium text-white block">Annexion de la Crimée et création du conflit dans le Donbass</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">2008</span>
+                            <span class="text-sm font-medium text-white block">Guerre russo-géorgienne (Ossétie du Sud/Abkhazie)</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <div class="p-4 bg-white/5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block mb-1">1947–1991</span>
+                            <span class="text-sm font-medium text-white block">Guerre Froide, Guerre d'Afghanistan (1979-1989), Guerres de Tchétchénie (1999-2009)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Infrastructure Économique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8 border-t-2 border-t-meae-red">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB <span class="text-slate-500 font-normal text-sm">(2023)</span></h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services</span>
+                                <span class="text-white font-bold">57 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-blue w-[57%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie</span>
+                                <span class="text-white font-bold">38 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-red w-[38%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture</span>
+                                <span class="text-white font-bold">5 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[5%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal total</div>
+                        <div class="text-4xl font-display font-extrabold text-white">2 000 Md$ <span class="text-lg font-normal text-slate-400">USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-slate-600">
+                        <h4 class="accent-red font-bold text-sm mb-2">1945–1991</h4>
+                        <p class="text-white font-bold mb-1">Période Soviétique</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Économie commandée centralisée, grand focus sur l'industrie lourde, puis stagnation vers la fin des années 70.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-blue">
+                        <h4 class="accent-red font-bold text-sm mb-2">1991–1999</h4>
+                        <p class="text-white font-bold mb-1">Transition ("Thérapie de choc")</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Virage vers l'économie de marché, hyperinflation et émergence des oligarques.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-red">
+                        <h4 class="accent-red font-bold text-sm mb-2">2014–Présent</h4>
+                        <p class="text-white font-bold mb-1">Économie de Guerre</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Politique de "Forteresse Russie", focalisation sur l'autosuffisance et le secteur de la défense après 2022.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Min.</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">19 242 RUB</div>
+                    <p class="text-sm accent-red">~210 USD / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center border-t-2 border-t-meae-red bg-meae-red/5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Moy. (Brut)</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">~91 000 RUB</div>
+                    <p class="text-sm accent-red">~1 000 USD / Mois</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demography & Trade / Religion -->
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <section id="religion" class="glass-card rounded-3xl p-8 flex flex-col">
+                <h2 class="text-2xl font-display font-bold text-white mb-8">Mosaïque Religieuse</h2>
+                <div class="space-y-6 flex-grow">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-white">71 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Christianisme Orthodoxe</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-meae-blue h-full rounded-full" style="width: 71%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">15 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Irréligieux / Athée</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 15%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">10 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Islam</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 10%"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 text-right text-xs font-bold text-slate-500">4 %</div>
+                        <div class="flex-grow">
+                            <span class="text-sm text-white font-medium mb-1 block">Autre</span>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 4%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="trade" class="glass-card rounded-3xl p-8">
+                <h2 class="text-2xl font-display font-bold text-white mb-6">Partenaires Commerciaux de 1er rang</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-meae-red text-white font-bold rounded-full text-sm">1</span>
+                        <div>
+                            <p class="text-lg font-bold text-white mb-0">Chine</p>
+                            <p class="text-xs text-meae-cyan uppercase tracking-widest">35% du flux total</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-slate-600 text-white font-bold rounded-full text-sm">2</span>
+                        <p class="text-lg font-bold text-white">Inde</p>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                        <span class="w-8 h-8 flex items-center justify-center bg-slate-600 text-white font-bold rounded-full text-sm">3</span>
+                        <p class="text-lg font-bold text-white">Turquie</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-dashed border-white/20">
+                        <p class="text-xs italic text-slate-400">Note: La France est tombée à la <span class="text-white font-bold">15e place</span> en raison du régime continu de sanctions.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Démographique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="glass-card rounded-3xl p-8 overflow-x-auto">
+                <table class="w-full text-left text-sm text-slate-300">
+                    <thead class="text-xs text-white uppercase bg-white/10">
+                        <tr>
+                            <th class="px-6 py-4 rounded-tl-xl font-bold">Année</th>
+                            <th class="px-6 py-4 rounded-tr-xl font-bold">Population Approximative (Millions)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">1945</td>
+                            <td class="px-6 py-3 font-mono">100 - 110 (Post-WW2)</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">1959</td>
+                            <td class="px-6 py-3 font-mono">117.5</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">1970</td>
+                            <td class="px-6 py-3 font-mono">130.1</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-meae-blue/20">
+                            <td class="px-6 py-3">1989</td>
+                            <td class="px-6 py-3 font-mono font-bold text-white">147.4 (Pic)</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-6 py-3">2000</td>
+                            <td class="px-6 py-3 font-mono">146.6</td>
+                        </tr>
+                        <tr class="border-b border-white/5 bg-white/5">
+                            <td class="px-6 py-3">2010</td>
+                            <td class="px-6 py-3 font-mono">142.9 (Point bas)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-3">2024</td>
+                            <td class="px-6 py-3 font-mono">146.1 (Incl. Crimée)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
