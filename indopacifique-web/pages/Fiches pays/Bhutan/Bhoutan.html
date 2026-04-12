@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhoutan : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating blobs matching index.html dark theme */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(234, 179, 8, 0.15); /* Yellow (Bhutan flag) */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(249, 115, 22, 0.15); /* Orange (Bhutan flag) */
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatanim {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(0.9); }
+        }
+
+        /* MEAE Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: #000091; font-weight: bold; font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(249, 115, 22, 0.4); /* Orange border */
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #eab308, #fff, #f97316);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0.8rem 1rem;
+            }
+            .logo-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.85rem;
+            }
+            .logo-container span {
+                font-size: 0.8rem;
+            }
+            .btn-glass {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <!-- MEAE Header -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#f97316] uppercase bg-[#f97316]/10 border border-[#f97316]/30 rounded-full">
+                Royaume du Bhoutan (Druk Yul)
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Bhoutan
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Profil du royaume himalayen, pionnier du "Bonheur National Brut", cherchant un équilibre entre modernisation, souveraineté et préservation environnementale.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- Summary Bento Grid -->
+        <div class="bento-grid mb-24">
+            <!-- Capitals -->
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-[#f97316] font-display font-bold text-xs uppercase tracking-widest mb-4">Capitale & Centre du Pouvoir</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Thimphou</div>
+                            <p class="text-slate-400 text-sm">Cœur politique abritant palais et monastères fortifiés (Dzong)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">38 394 km²</span>
+                </div>
+            </div>
+
+            <!-- Political Type -->
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-[#f97316]/20 to-transparent border border-[#f97316]/20">
+                <h3 class="text-[#f97316] font-display font-bold text-xs uppercase tracking-widest mb-4">Régime & Pouvoir</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-2">Monarchie Constitutionnelle Démocratique</h4>
+                <p class="text-slate-400 text-sm mb-4">Transition initiée par la volonté royale en 2008 vers un système parlementaire bicaméral avec un Roi en tant que chef d'État.</p>
+                
+                <div class="pt-4 border-t border-white/10 mt-4 space-y-2">
+                    <div>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Élections Parlementaires</p>
+                        <p class="text-white font-bold text-sm">Dernières : 9 Janvier 2024</p>
+                        <p class="text-white font-bold text-sm">Prochaines : Début 2029</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Governance & Leaders -->
+        <section id="governance" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Continuité Politique (Monarques & PM)</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-[#eab308]/50 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Current Power -->
+                <div class="glass-card rounded-2xl p-8 border-t-2 border-t-[#eab308] bg-[#eab308]/5 flex flex-col justify-between h-auto self-start">
+                    <div class="mb-6 flex justify-between items-center">
+                        <span class="px-3 py-1 bg-[#eab308]/20 text-[#eab308] text-xs font-bold rounded uppercase">Pouvoir Actuel</span>
+                    </div>
+                    <div class="space-y-8">
+                        <div>
+                            <p class="text-slate-500 text-xs font-bold uppercase mb-1">Monarque (Druk Gyalpo)</p>
+                            <h4 class="text-3xl font-display font-bold text-white">Jigme Khesar Namgyel Wangchuck</h4>
+                            <p class="text-[#eab308] text-sm font-bold">Règne : 2006–Présent</p>
+                        </div>
+                        <div>
+                            <p class="text-slate-500 text-xs font-bold uppercase mb-1">Premier Ministre</p>
+                            <h4 class="text-2xl font-bold text-white">Tshering Tobgay</h4>
+                            <p class="text-sm font-bold mt-1 text-white border-l-2 border-l-[#eab308] pl-2">Parti Démocratique Populaire (PDP)</p>
+                            <p class="text-slate-400 text-sm mt-1">Nouveau mandat (2024–Présent). Ancien mandat (2013-2018).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historical Background -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Monarques & Gouvernements Historiques</h3>
+                    <div class="h-[400px] flex items-start flex-col gap-3 pr-4 custom-scrollbar overflow-y-auto w-full">
+                        <div class="w-full p-4 border-l-2 border-yellow-500 bg-white/5 rounded-r-xl">
+                            <p class="text-[10px] text-white bg-yellow-600 px-1 py-0.5 inline-block rounded mb-1 uppercase tracking-widest">Rois du Bhoutan (Wangchuck)</p>
+                            <p class="text-white font-bold text-sm block mt-2">• Jigme Wangchuck (1926–1952)</p>
+                            <p class="text-white font-bold text-sm block mt-1">• Jigme Dorji Wangchuck (1952–1972) <span class="block text-xs font-normal text-slate-400">Père du Bhoutan moderne</span></p>
+                            <p class="text-white font-bold text-sm block mt-1">• Jigme Singye Wangchuck (1972–2006) <span class="block text-xs font-normal text-slate-400">Créateur du BNB; a abdiqué pour encourager la démocratie.</span></p>
+                        </div>
+                        <div class="w-full p-4 border-l-2 border-orange-500 bg-white/5 rounded-r-xl mt-4">
+                            <p class="text-[10px] text-white bg-orange-600 px-1 py-0.5 inline-block rounded mb-1 uppercase tracking-widest">Premiers Ministres (Lyonchen)</p>
+                            <p class="text-white font-bold text-sm block mt-2">• Jigme Palden Dorji (1952–1964) <span class="text-slate-400 font-normal text-xs">(Assassiné)</span></p>
+                            <p class="text-white font-bold text-sm block mt-1 text-slate-400 italic">• 1964–1998 : Gouvernement direct par le Roi</p>
+                            <p class="text-white font-bold text-sm block mt-1">• Jigme Thinley (2008–2013) <span class="text-slate-400 font-normal text-xs">(1er Élu)</span></p>
+                            <p class="text-white font-bold text-sm block mt-1">• Lotay Tshering (2018–2023)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Économie et Bonheur National</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-orange-500/50 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB</h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services (Tourisme/IT)</span>
+                                <span class="text-white font-bold">51,3 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 w-[51.3%] shadow-[0_0_10px_rgba(59,130,246,0.6)]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie (Hydraulique)</span>
+                                <span class="text-white font-bold">34,5 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#f97316] w-[34.5%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture</span>
+                                <span class="text-white font-bold">14,2 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[14.2%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-[10px] text-slate-500 uppercase font-bold mb-1 tracking-widest">PIB nominal (2026)</div>
+                        <div class="text-4xl font-display font-extrabold text-white">3,77 <span class="text-xl font-normal text-slate-400">Md$ USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 glass-card rounded-3xl p-8 bg-gradient-to-br from-[#f97316]/10 to-transparent flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-display font-bold text-white mb-6">Un Modèle Unique</h3>
+                        <div class="space-y-4">
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Le Bhoutan se distingue par son concept de <strong>Bonheur National Brut (BNB)</strong>, une philosophie privilégiant le développement holistique, la préservation de l'environnement et l'identité culturelle plutôt que la croissance économique pure.
+                            </p>
+                            <p class="text-sm text-slate-300 leading-relaxed border-l-4 border-yellow-500 pl-4 bg-yellow-900/20 py-2">
+                                <em>En décembre 2023, le Bhoutan est officiellement sorti de la catégorie des Pays les Moins Avancés (PMA) de l'ONU.</em>
+                            </p>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Le pays génère d'importantes recettes via l'exportation d'hydroélectricité vers l'Inde. Actuellement, une mégalopole économique novatrice, la <strong>Gelephu Mindfulness City (GMC)</strong>, est en développement pour diversifier l'économie.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 border-t border-white/10 pt-6">
+                        <div class="flex items-center justify-between flex-wrap gap-2 text-center">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest flex-1">Ngultrum (BTN)</span>
+                            <div class="flex-1"><span class="text-[10px] text-gray-500 block">1974</span> <span class="font-mono text-white text-xs block truncate" title="Arrimé à 1:1 avec l'INR">Peg INR</span></div>
+                            <div class="flex-1"><span class="text-[10px] text-gray-500 block">2013</span> <span class="font-mono text-white text-sm">~65</span></div>
+                            <div class="flex-1"><span class="text-[10px] text-gray-500 block">2023-24</span> <span class="font-mono text-white text-sm">82-83</span></div>
+                            <div class="flex-1 border border-orange-500 rounded py-1 bg-orange-500/10"><span class="text-[10px] text-orange-400 block font-bold">Mars 2026</span> <span class="font-mono text-white text-sm font-bold">94,80</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wages -->
+            <div class="glass-card rounded-3xl p-8 border-t border-t-slate-600 bg-white/5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="text-center border-r md:border-white/10 pr-4">
+                        <span class="text-[10px] text-slate-500 uppercase block mb-1">Salaire Minimum</span>
+                        <div class="text-2xl font-display font-extrabold text-white mb-1">3 750 BTN</div>
+                        <p class="text-sm font-bold text-slate-400">~39,50 USD</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-[#f97316] uppercase block mb-1">Salaire Moyen (National)</span>
+                        <div class="text-2xl font-display font-extrabold text-white mb-1">~18 500 BTN</div>
+                        <p class="text-sm font-bold text-[#f97316]">~195 USD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demographics Chart Replacement -->
+        <section class="mb-24">
+            <div class="glass-card rounded-3xl p-8 border-t-2 border-[#f97316]">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="md:w-1/3">
+                        <h2 class="text-3xl font-display font-bold text-white mb-4">Évolution Démographique</h2>
+                        <p class="text-sm text-slate-400 mb-6">Une population maîtrisée et en transition, le Bhoutan est le pays le moins peuplé d'Asie du Sud. Cependant, l'exode des jeunes vers l'Australie est un défi récent et critique.</p>
+                        
+                    </div>
+                    
+                    <div class="md:w-2/3 w-full h-[250px] flex items-end justify-between gap-1 md:gap-3 relative px-4">
+                        <div class="absolute bottom-0 left-0 w-full h-px bg-white/10"></div>
+                        
+                        <div class="flex flex-col items-center flex-1 h-[22%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#f97316]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">176K</span>
+                            <span class="text-[9px] text-slate-500">1950</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[50%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#f97316]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">400K</span>
+                            <span class="text-[9px] text-slate-500">1980</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[73%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#f97316]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">591K</span>
+                            <span class="text-[9px] text-slate-500">2000</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[95%] group relative">
+                            <div class="w-full bg-slate-700 rounded-t-md h-full transition-colors group-hover:bg-[#f97316]/50"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">770K</span>
+                            <span class="text-[9px] text-slate-400">2020</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[100%] group relative border border-transparent hover:border-[#f97316]/50 rounded-t-md">
+                            <div class="w-full bg-gradient-to-t from-[#f97316]/80 to-[#f97316]/30 rounded-t-md h-full"></div>
+                            <span class="text-[10px] font-bold text-[#fdba74] mt-1 shadow-sm">0,8M</span>
+                            <span class="text-[9px] text-slate-300 font-bold">2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Demographics & History -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            
+            <!-- Conflict Timeline -->
+            <section id="history" class="xl:col-span-7">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Chronologie des Conflits et Traités</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-yellow-500/50 to-transparent"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-yellow-500 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-yellow-500/30 transition-all group-hover:bg-yellow-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1949 | Traité de Paix et d'Amitié avec l'Inde</h4>
+                            <p class="text-sm text-slate-400">Ce traité a formalisé les relations bilatérales et la coopération très étroite en matière de défense avec l'Inde après le retrait britannique.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-red-500 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-red-500/30 transition-all group-hover:bg-red-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1990–1996 | Conflit Ethnique Lhotshampa</h4>
+                            <p class="text-sm text-slate-400">Protestations violentes suivies d'une expulsion massive (exode) de populations d'origine népalaise dans le sud du Bhoutan vers des camps de réfugiés.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-orange-500 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-orange-500/30 transition-all group-hover:bg-orange-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">2003 | Opération "All Clear"</h4>
+                            <p class="text-sm text-slate-400">Première opération militaire majeure de l'armée royale du Bhoutan pour forcer des rebelles séparatistes indiens à quitter leurs camps dans les forêts frontalières.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-[#f97316] shadow-[0_0_10px_#f97316] group-hover:scale-150 transition-transform"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent border-[#f97316]/30 bg-[#f97316]/5">
+                            <h4 class="text-white font-bold leading-none mb-2">2017 | Impasse de Doklam</h4>
+                            <p class="text-sm text-slate-400">Une dangereuse confrontation militaire impliquant les troupes de l'Inde et de la Chine sur le plateau stratégique de Doklam, un territoire revendiqué par le Bhoutan et la Chine.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religious Breakdown -->
+            <section id="demographics" class="xl:col-span-5">
+                <div class="glass-card rounded-3xl p-8 h-full">
+                    <h2 class="text-2xl font-display font-bold text-white mb-8">Paysage Religieux</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-white">75,3 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-[#eab308] font-bold">Bouddhisme (Vajrayana)</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-[#eab308] h-full rounded-full shadow-[0_0_10px_rgba(234,179,8,0.5)]" style="width: 75.3%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-slate-300">22,1 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-[#f97316] font-medium">Hindouisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-[#f97316] h-full rounded-full" style="width: 22.1%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <p class="text-xs text-slate-400">Le bouddhisme Vajrayana est la religion d'État et imprègne la loi, la culture et l'architecture du pays.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Global Trade Relations -->
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Prisme Commercial : La Frontière Indienne</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-orange-500/50 to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- EXPORT -->
+                <div class="glass-card rounded-2xl p-6 border-t-2 border-t-[#f97316]">
+                    <p class="text-xs uppercase tracking-widest text-[#f97316] font-bold mb-4">Exportations Principales</p>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-white font-bold">1. Inde</span>
+                                <span class="font-bold text-[#f97316]">&gt;80 %</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#f97316]" style="width: 85%"></div>
+                            </div>
+                            <p class="text-[10px] text-slate-500 mt-1">Presque exclusivement dominé par l'hydroélectricité.</p>
+                        </div>
+                        <div class="pt-2 border-t border-white/5">
+                            <span class="text-sm text-slate-300 block mb-1">Autres Partenaires de Marge :</span>
+                            <span class="text-xs font-bold text-slate-500">2. Bangladesh | 3. Italie | 4. Népal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMPORT -->
+                <div class="glass-card rounded-2xl p-6 border-t-2 border-t-orange-700">
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">Importations Principales</p>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-white font-bold">1. Inde</span>
+                                <span class="font-bold text-orange-600">~80 %</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-orange-600" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 border-b border-white/5 pb-2">
+                            <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">2</span>
+                            <span class="text-sm text-slate-300">Chine</span>
+                        </div>
+                        <div class="flex items-center gap-3 border-b border-white/5 pb-2">
+                            <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">3</span>
+                            <span class="text-sm text-slate-300">Singapour</span>
+                        </div>
+                        <div class="flex items-center gap-3 border-b border-white/5 pb-2">
+                            <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">4</span>
+                            <span class="text-sm text-slate-300">Thaïlande</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-blue-900/40 border border-blue-500/30 text-xs font-bold flex items-center justify-center text-blue-400">5</span>
+                            <span class="text-sm font-bold text-blue-400">France</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- France Connection -->
+            <div class="glass-card rounded-xl p-6 border-l-4 border-l-[#000091] bg-blue-900/10">
+                <p class="text-sm text-slate-300 mt-1">
+                    <span class="font-bold text-white">Relation avec la France :</span> La France est actuellement le <b>5ème partenaire à l'importation</b> du Bhoutan, principalement grâce à des acquisitions stratégiques liées à la technologie et à l'aviation (comme l'achat d'Airbus pour Drukair). Le Bhoutan est en revanche le 201ème partenaire d'exportation de la France.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>

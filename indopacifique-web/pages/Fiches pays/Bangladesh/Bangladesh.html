@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangladesh : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating blobs matching index.html dark theme */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(13, 148, 136, 0.2); /* Teal accent */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(239, 68, 68, 0.1); /* Red/crimson accent from BD flag */
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatanim {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(0.9); }
+        }
+
+        /* MEAE Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: #000091; font-weight: bold; font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(13, 148, 136, 0.4); /* Teal border */
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(13, 148, 136, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #10b981, #fff, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0.8rem 1rem;
+            }
+            .logo-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.85rem;
+            }
+            .logo-container span {
+                font-size: 0.8rem;
+            }
+            .btn-glass {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <!-- MEAE Header -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#14b8a6] uppercase bg-[#14b8a6]/10 border border-[#14b8a6]/30 rounded-full">
+                République populaire du Bangladesh
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8">
+                <span class="text-white">Bangla</span><span class="text-[#14b8a6]">desh</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Profil global du géant du textile sud-asiatique, en pleine transition politique après le bouleversement du soulèvement d'août 2024.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- Summary Bento Grid -->
+        <div class="bento-grid mb-24">
+            <!-- Capitals -->
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-[#14b8a6] font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Capitale</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Dacca (Dhaka)</div>
+                            <p class="text-slate-400 text-sm">Mégapole tentaculaire et cœur de l'industrie textile</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">147 570 km²</span>
+                </div>
+            </div>
+
+            <!-- Political Type -->
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-[#0f766e]/40 to-transparent border border-[#0f766e]/30">
+                <h3 class="text-[#14b8a6] font-display font-bold text-xs uppercase tracking-widest mb-4">Régime & Pouvoir</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-2">République Parlementaire</h4>
+                <p class="text-slate-400 text-sm mb-4">Suite au "Mouvement de Juillet 2024" et l'intérim de M. Yunus, le pouvoir est actuellement dirigé par le <b class="text-teal-400">BNP</b> depuis les élections de février 2026.</p>
+                
+                <div class="pt-4 border-t border-white/10 mt-4 space-y-2">
+                    <div>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Législatives</p>
+                        <p class="text-white font-bold text-sm">Dernières : 12 Fév 2026</p>
+                        <p class="text-white font-bold text-sm">Prochaines : Fév 2031</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Governance & Leaders -->
+        <section id="governance" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Continuité Politique & Turbulences</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-[#14b8a6]/50 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Historical Background -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Indépendance & Figures Historiques</h3>
+                    <div class="h-[400px] flex items-start flex-col gap-3 pr-4 custom-scrollbar overflow-y-auto w-full">
+                        <div class="w-full p-4 border-l-4 border-green-600 bg-white/5 rounded-r-xl">
+                            <p class="text-xs text-green-400 font-bold mb-1">1971–1975</p>
+                            <p class="text-white font-bold">Sheikh Mujibur Rahman <span class="text-xs text-slate-500 font-normal ml-2">Awami League</span></p>
+                        </div>
+                        <div class="w-full p-4 border-l-4 border-blue-500 bg-white/5 rounded-r-xl">
+                            <p class="text-xs text-blue-400 font-bold mb-1">1977–1981</p>
+                            <p class="text-white font-bold">Ziaur Rahman <span class="text-xs text-slate-500 font-normal ml-2">BNP</span></p>
+                        </div>
+                        <div class="w-full p-4 border-l-4 border-yellow-500 bg-white/5 rounded-r-xl">
+                            <p class="text-xs text-yellow-400 font-bold mb-1">1982–1990</p>
+                            <p class="text-white font-bold">H. M. Ershad <span class="text-xs text-slate-500 font-normal ml-2">Jatiya Party</span></p>
+                        </div>
+                        <div class="w-full p-4 border-l-4 border-blue-500 bg-white/5 rounded-r-xl">
+                            <p class="text-xs text-blue-400 font-bold mb-1">1991–96, 2001–06</p>
+                            <p class="text-white font-bold">Khaleda Zia <span class="text-xs text-slate-500 font-normal ml-2">BNP</span></p>
+                        </div>
+                        <div class="w-full p-4 border-l-4 border-green-500 bg-white/5 rounded-r-xl">
+                            <p class="text-xs text-green-400 font-bold mb-1">1996–01, 2009–2024</p>
+                            <p class="text-white font-bold">Sheikh Hasina <span class="text-xs text-slate-500 font-normal ml-2">Awami League</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modern Era Leaders -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Transition et Ère Récente (Post-2024)</h3>
+                    
+                    <div class="w-full p-6 border-l-4 border-slate-400 bg-slate-800/50 rounded-r-xl mb-4">
+                        <p class="text-[10px] text-white bg-slate-600 px-1 py-0.5 inline-block rounded mb-1 uppercase tracking-widest">Gouvernement Intérimaire</p>
+                        <p class="text-xs text-slate-400 font-bold mb-1 block mt-1">2024–2026</p>
+                        <p class="text-2xl text-white font-display font-bold mb-1">Dr. Muhammad Yunus</p>
+                    </div>
+
+                    <div class="w-full p-6 border-l-4 border-teal-500 bg-teal-900/20 rounded-r-xl shadow-[0_0_20px_rgba(20,184,166,0.1)] relative overflow-hidden group">
+                        <p class="text-xs text-teal-400 font-bold mb-1 flex items-center gap-2 uppercase tracking-widest">Fév 2026–Présent <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span></p>
+                        <p class="text-3xl text-white font-display font-extrabold mb-2">Tarique Rahman</p>
+                        <p class="text-sm text-slate-300 font-medium">Premier Ministre</p>
+                        <div class="mt-4 bg-black/40 inline-flex flex-col border border-teal-500/30 rounded-lg px-4 py-2">
+                            <span class="text-xs font-bold text-slate-400 mb-1">Affiliation : </span>
+                            <span class="text-sm text-white font-bold border-l-2 border-l-teal-500 pl-2">Bangladesh Nationalist Party (BNP)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Puissance Textile & Remises</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-teal-500/50 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB (25-26)</h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services</span>
+                                <span class="text-white font-bold">51,2 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 w-[51.2%] shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie (RMG)</span>
+                                <span class="text-white font-bold">37,7 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#14b8a6] w-[37.7%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture</span>
+                                <span class="text-white font-bold">11,1 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-yellow-500 w-[11.1%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-[10px] text-slate-500 uppercase font-bold mb-1 tracking-widest">PIB nominal Est.</div>
+                        <div class="text-4xl font-display font-extrabold text-white">490 <span class="text-xl font-normal text-slate-400">Md$ USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 glass-card rounded-3xl p-8 bg-gradient-to-br from-slate-900 to-transparent flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-display font-bold text-white mb-6">Évolution Macroéconomique</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-2 border-slate-500 pl-4">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">1945–1971</span>
+                                <p class="text-sm font-bold text-white mt-1">L'ère de la Fibre d'Or</p>
+                                <p class="text-sm text-slate-400 mt-1">Économie majoritairement agraire; le jute était central. Forte disparité économique avec le Pakistan occidental.</p>
+                            </div>
+                            <div class="border-l-2 border-[#14b8a6] pl-4">
+                                <span class="text-[10px] font-bold text-[#14b8a6] uppercase tracking-widest">1990s–2020s</span>
+                                <p class="text-sm font-bold text-white mt-1">Montée du Textile & Remises</p>
+                                <p class="text-sm text-slate-400 mt-1">Domination mondiale dans le vêtement prêt-à-porter (RMG) et flux massifs de devises via la diaspora.</p>
+                            </div>
+                            <div class="border-l-2 border-red-400 pl-4">
+                                <span class="text-[10px] font-bold text-red-400 uppercase tracking-widest">2024–2026</span>
+                                <p class="text-sm font-bold text-white mt-1">Stabilisation & Inflation</p>
+                                <p class="text-sm text-slate-400 mt-1">Efforts de stabilisation post-crise, contrôle de la fuite des capitaux et gestion d'une inflation persistante (~9%).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 border-t border-white/10 pt-6">
+                        <div class="flex items-center justify-between flex-wrap gap-2 text-center">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest flex-1">Évolution Taka (BDT)</span>
+                            <div class="flex-1"><span class="text-[10px] text-gray-500 block">1972</span> <span class="font-mono text-white text-sm">7,30</span></div>
+                            <div class="flex-1"><span class="text-[10px] text-gray-500 block">1990</span> <span class="font-mono text-white text-sm">32,90</span></div>
+                            <div class="flex-1"><span class="text-[10px] text-gray-500 block">2010</span> <span class="font-mono text-white text-sm">69,60</span></div>
+                            <div class="flex-1 border border-[#14b8a6] rounded py-1 bg-[#14b8a6]/10"><span class="text-[10px] text-[#14b8a6] block font-bold">2026</span> <span class="font-mono text-white text-sm font-bold">122,50</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wages -->
+            <div class="glass-card rounded-3xl p-8 border-t border-t-slate-600 bg-white/5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="text-center border-r md:border-white/10 pr-4">
+                        <span class="text-[10px] text-slate-500 uppercase block mb-1">Salaire Minimum Textile (RMG)</span>
+                        <div class="text-2xl font-display font-extrabold text-white mb-1">12 500 BDT</div>
+                        <p class="text-sm font-bold text-slate-400">~102 USD</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-[#14b8a6] uppercase block mb-1">Salaire Mensuel Moyen</span>
+                        <div class="text-2xl font-display font-extrabold text-white flex items-center justify-center gap-2 mb-1">
+                            18,5k – 26k BDT 
+                        </div>
+                        <p class="text-sm font-bold text-slate-400">~151 à 212 USD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demographics Chart Replacement -->
+        <section class="mb-24">
+            <div class="glass-card rounded-3xl p-8 border-t-2 border-[#14b8a6]">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="md:w-1/3">
+                        <h2 class="text-3xl font-display font-bold text-white mb-4">Densité Démographique Massive</h2>
+                        <p class="text-sm text-slate-400 mb-6">Malgré l'un des territoires les plus petits d'Asie du Sud, le Bangladesh soutient une population vertigineuse tout en freinant son taux de croissance.</p>
+                        
+                    </div>
+                    
+                    <div class="md:w-2/3 w-full h-[250px] flex items-end justify-between gap-1 md:gap-2 relative px-2">
+                        <div class="absolute bottom-0 left-0 w-full h-px bg-white/10"></div>
+                        
+                        <div class="flex flex-col items-center flex-1 h-[22%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#14b8a6]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">39,7M</span>
+                            <span class="text-[9px] text-slate-500">1950</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[36%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#14b8a6]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">65M</span>
+                            <span class="text-[9px] text-slate-500">1970</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[60%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#14b8a6]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">106,1M</span>
+                            <span class="text-[9px] text-slate-500">1990</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[85%] group relative">
+                            <div class="w-full bg-slate-700 rounded-t-md h-full transition-colors group-hover:bg-[#14b8a6]/50"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">152,2M</span>
+                            <span class="text-[9px] text-slate-400">2010</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[100%] group relative border border-transparent hover:border-[#14b8a6]/50 rounded-t-md">
+                            <div class="w-full bg-gradient-to-t from-[#14b8a6]/80 to-[#14b8a6]/30 rounded-t-md h-full"></div>
+                            <span class="text-[10px] font-bold text-[#5eead4] mt-1 shadow-sm">177,8M</span>
+                            <span class="text-[9px] text-slate-300 font-bold">2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Demographics & History -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            
+            <!-- Conflict Timeline -->
+            <section id="history" class="xl:col-span-7">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Chronologie des Conflits Modernes</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-red-500/50 to-transparent"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-blue-500 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-blue-500/30 transition-all group-hover:bg-blue-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1947 | Partition des Indes</h4>
+                            <p class="text-sm text-slate-400">L'Inde britannique est divisée, créant le Pakistan oriental (futur Bangladesh).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-green-500 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-green-500/30 transition-all group-hover:bg-green-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1971 | Guerre de Libération</h4>
+                            <p class="text-sm text-slate-400">Guerre sanglante contre le Pakistan occidental permettant l'indépendance nationale totale.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-yellow-500 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-yellow-500/30 transition-all group-hover:bg-yellow-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1977–1997 | Insurrection des Chittagong</h4>
+                            <p class="text-sm text-slate-400">Rébellion militaire de faible intensité et tensions ethniques dans les régions vallonnées de l'Est.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-red-500 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-red-500/30 transition-all group-hover:bg-red-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">2017–Présent | Crise des Réfugiés Rohingyas</h4>
+                            <p class="text-sm text-slate-400">Afflux massif de réfugiés depuis le Myanmar, créant une immense pression frontalière et logistique.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-[#14b8a6] shadow-[0_0_10px_#14b8a6] group-hover:scale-150 transition-transform"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent border-[#14b8a6]/30 bg-[#14b8a6]/5">
+                            <h4 class="text-white font-bold leading-none mb-2">2024 | Soulèvement National de Juillet</h4>
+                            <p class="text-sm text-slate-400">Révolte étudiante massive et chute brutale du régime d'Awami League entraînant un bouleversement étatique.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religious Breakdown -->
+            <section id="demographics" class="xl:col-span-5">
+                <div class="glass-card rounded-3xl p-8 h-full">
+                    <h2 class="text-2xl font-display font-bold text-white mb-8">Paysage Religieux</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-white">91,04 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-[#14b8a6] font-bold">Islam</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-[#14b8a6] h-full rounded-full shadow-[0_0_10px_rgba(20,184,166,0.5)]" style="width: 91%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-slate-300">7,95 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Hindouisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-indigo-400 h-full rounded-full" style="width: 8%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-slate-500">0,61 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Bouddhisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-yellow-400 h-full rounded-full" style="width: 2%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-slate-500">0,30 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Christianisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-blue-400 h-full rounded-full" style="width: 2%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Global Trade Relations -->
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Partenaires Commerciaux Globaux</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- EXPORT -->
+                <div class="glass-card rounded-2xl p-6">
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">Exportations Principales (Textile Maj.)</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-blue-500 text-xs font-bold flex items-center justify-center text-white">1</span>
+                                <span class="font-bold text-white">États-Unis</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">2</span>
+                                <span class="text-sm text-slate-300">Allemagne</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-white/10 pb-2 border-l-4 border-l-[#14b8a6] pl-2 bg-[#14b8a6]/10">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-[#14b8a6] text-xs font-bold flex items-center justify-center text-white">3</span>
+                                <span class="text-sm text-[#5eead4] font-bold">France</span>
+                            </div>
+                            <span class="text-xs text-[#5eead4]">Client Majeur</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">4</span>
+                                <span class="text-sm text-slate-300">Royaume-Uni</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMPORT -->
+                <div class="glass-card rounded-2xl p-6">
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">Importations (Matières Premières)</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 border-b border-white/5 pb-2">
+                            <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">1</span>
+                            <span class="font-bold text-white">Chine</span>
+                        </div>
+                        <div class="flex items-center gap-3 border-b border-white/5 pb-2">
+                            <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">2</span>
+                            <span class="text-sm text-slate-300">Inde</span>
+                        </div>
+                        <div class="flex items-center gap-3 border-b border-white/5 pb-2">
+                            <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">3</span>
+                            <span class="text-sm text-slate-300">Indonésie</span>
+                        </div>
+                        <div class="flex items-center gap-3 border-b border-white/5 pb-2">
+                            <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">4</span>
+                            <span class="text-sm text-slate-300">Singapour</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>

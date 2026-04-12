@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corée du Sud : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating blobs matching index.html dark theme */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(0, 71, 160, 0.2); /* Korea Blue */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(205, 46, 58, 0.15); /* Korea Red */
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatanim {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(0.9); }
+        }
+
+        /* MEAE Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: #000091; font-weight: bold; font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 176, 240, 0.4); /* Cyan accent */
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 71, 160, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #0047A0, #CD2E3A);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        /* Accent helpers */
+        .accent-cyan { color: #38BDF8; }
+        .accent-blue { color: #0047A0; }
+        .accent-red { color: #CD2E3A; }
+        .bg-accent-blue { background-color: #0047A0; }
+        .bg-accent-red { background-color: #CD2E3A; }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0.8rem 1rem;
+            }
+            .logo-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.85rem;
+            }
+            .logo-container span {
+                font-size: 0.8rem;
+            }
+            .btn-glass {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <!-- MEAE Header -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-[#38BDF8]/10 border border-[#38BDF8]/30 rounded-full">
+                République de Corée (ROK)
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8">
+                <span class="text-white">Corée du</span> <br>
+                <span class="gradient-text">Sud</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Analyse de cette puissance technologique, confrontée à une contraction démographique inédite et à une géopolitique sous haute tension.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- Summary Bento Grid -->
+        <div class="bento-grid mb-24">
+            <!-- Capitals -->
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-[#38BDF8] font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Capitale</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Séoul</div>
+                            <p class="text-slate-400 text-sm">Capitale nationale et financière</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">100 410 km²</span>
+                </div>
+            </div>
+
+            <!-- Political Type -->
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-blue-900/40 to-transparent border border-blue-500/20">
+                <h3 class="text-[#38BDF8] font-display font-bold text-xs uppercase tracking-widest mb-4">Régime & Pouvoir</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-2">République Unitaire</h4>
+                <p class="text-slate-400 text-sm mb-4">Système présidentiel. Le <b>Parti du Pouvoir Populaire</b> occupe actuellement la présidence.</p>
+                
+                <div class="pt-4 border-t border-white/10 mt-4">
+                    <p class="text-xs text-slate-500 uppercase tracking-widest font-bold">Prochaine Élection Présidentielle</p>
+                    <p class="text-white font-bold text-lg">3 Mars 2027</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Governance & Leaders -->
+        <section id="governance" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Continuité du Pouvoir</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-[#0047A0]/50 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Transition context -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Figures de la Présidence (Sélection)</h3>
+                    <div class="space-y-4">
+                        <div class="glass-card rounded-2xl p-6 border-l-4 border-slate-500">
+                            <p class="text-xs text-slate-400 font-bold mb-1">1948–1960</p>
+                            <p class="text-white font-bold leading-none mb-1">Syngman Rhee</p>
+                            <p class="text-sm text-slate-500">Parti Libéral</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-6 border-l-4 border-emerald-600">
+                            <p class="text-xs text-emerald-500 font-bold mb-1">1963–1979</p>
+                            <p class="text-white font-bold leading-none mb-1">Park Chung-hee</p>
+                            <p class="text-sm text-slate-400">Parti Démocratique Républicain</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-6 border-l-4 border-blue-500">
+                            <p class="text-xs text-blue-400 font-bold mb-1">1998–2003</p>
+                            <p class="text-white font-bold leading-none mb-1">Kim Dae-jung</p>
+                            <p class="text-sm text-slate-400">Parti Démocrate du Millénaire</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modern Era Leaders -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Dirigeant Actuel</h3>
+                    <div class="h-[400px] flex items-center pr-4 custom-scrollbar">
+                        <div class="w-full p-8 border border-red-500/30 bg-red-900/10 rounded-2xl shadow-[0_0_20px_rgba(205,46,58,0.15)] relative overflow-hidden group">
+                            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-red-500/20 blur-[50px] group-hover:bg-red-500/30 transition-all"></div>
+                            <p class="text-xs text-[#CD2E3A] font-bold mb-2 flex items-center gap-2 uppercase tracking-widest text-[#CD2E3A]">2022–Présent <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span></p>
+                            <p class="text-4xl text-white font-display font-extrabold mb-2">Yoon Suk Yeol</p>
+                            <p class="text-sm text-slate-300 font-medium">Président de la République</p>
+                            <div class="mt-6 inline-block bg-white/5 border border-white/10 rounded-lg px-4 py-2">
+                                <span class="text-xs font-bold text-slate-400">Affiliation : </span>
+                                <span class="text-sm text-white font-bold">Parti du Pouvoir Populaire</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Puissance Économique (13ᵉ Mondial)</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB</h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services</span>
+                                <span class="text-white font-bold">58,4 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#0047A0] w-[58.4%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie</span>
+                                <span class="text-white font-bold">39,4 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#CD2E3A] w-[39.4%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture</span>
+                                <span class="text-white font-bold">2,2 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[2.2%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal (2026)</div>
+                        <div class="text-4xl font-display font-extrabold text-white">1 860 <span class="text-lg font-normal text-slate-400">Md$ USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Currency & Eras -->
+                <div class="lg:col-span-2 glass-card rounded-3xl p-8 bg-gradient-to-br from-[#1a1a24] to-transparent flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-display font-bold text-white mb-6">Évolution Monétaire (KRW pour 1 USD)</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                                <p class="text-xs text-gray-500 mb-1">1945</p>
+                                <p class="font-mono text-xl text-white">15</p>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                                <p class="text-xs text-gray-500 mb-1">1962</p>
+                                <p class="font-mono text-xl text-white">125</p>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                                <p class="text-xs text-gray-500 mb-1">1997 (Crise ASIE)</p>
+                                <p class="font-mono text-xl text-white">1 200</p>
+                            </div>
+                            <div class="p-4 bg-blue-500/10 rounded-xl border border-blue-500/30">
+                                <p class="text-xs text-blue-300 font-bold mb-1">Avril 2026</p>
+                                <p class="font-mono text-xl font-bold text-blue-400">1 515</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-4 rounded-xl border border-white/10 bg-white/5 text-sm text-slate-300 leading-relaxed italic border-l-4 border-l-red-500">
+                        La devise subit une tendance soutenue de <b>dépréciation significative</b>, soulignant les défis d'une économie fortement dépendante des exportations et de l'énergie importée.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wages -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center border-t-2 border-t-blue-500 bg-blue-900/5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block">Salaire Minimum</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">10 320 KRW <span class="text-xl font-light text-slate-400">/hr</span></div>
+                    <p class="text-sm text-blue-400">~6,81 USD / heure</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center border-t-2 border-t-green-500">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block">Salaire Mensuel Moyen</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">~3,89M KRW</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demographics Chart Replacement -->
+        <section class="mb-24">
+            <div class="glass-card rounded-3xl p-8 border-t-2 border-[#CD2E3A]">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="md:w-1/3">
+                        <h2 class="text-3xl font-display font-bold text-white mb-4">Contraction Démographique</h2>
+                        <p class="text-sm text-slate-400 mb-6">La population a atteint son sommet en 2020. Le pays détient le taux de fécondité le plus bas au monde et fait face à un vieillissement structurel très rapide.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/5 p-4 rounded-xl">
+                                <p class="text-[10px] text-slate-400 uppercase mb-1">Pic Historique</p>
+                                <p class="font-display font-bold text-lg text-white">51,84M <span class="text-xs font-normal text-slate-500">(2020)</span></p>
+                            </div>
+                            <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/20">
+                                <p class="text-[10px] text-red-400 uppercase mb-1">Prévision 2026</p>
+                                <p class="font-display font-bold text-lg text-white">51,5M</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-2/3 w-full h-[250px] flex items-end justify-between gap-2 md:gap-4 relative px-4">
+                        <div class="absolute bottom-0 left-0 w-full h-px bg-white/10"></div>
+                        
+                        <div class="flex flex-col items-center flex-1 h-[30%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-slate-700"></div>
+                            <span class="text-xs font-bold text-white mt-2">16M</span>
+                            <span class="text-[10px] text-slate-500">1945</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[48%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-slate-700"></div>
+                            <span class="text-xs font-bold text-white mt-2">25M</span>
+                            <span class="text-[10px] text-slate-500">1960</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[73%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-slate-700"></div>
+                            <span class="text-xs font-bold text-white mt-2">38M</span>
+                            <span class="text-[10px] text-slate-500">1980</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[90%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-slate-700"></div>
+                            <span class="text-xs font-bold text-white mt-2">47M</span>
+                            <span class="text-[10px] text-slate-500">2000</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[100%] group relative">
+                            <div class="w-full bg-slate-700 rounded-t-md h-full transition-colors group-hover:bg-slate-600"></div>
+                            <span class="text-xs font-bold text-white mt-2">51,8M</span>
+                            <span class="text-[10px] text-slate-400">2020</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[99%] group relative border border-transparent hover:border-red-500/50 rounded-t-md">
+                            <div class="w-full bg-gradient-to-t from-[#CD2E3A] to-red-500/50 rounded-t-md h-full"></div>
+                            <span class="text-xs font-bold text-red-400 mt-2">51,5M</span>
+                            <span class="text-[10px] text-slate-300 font-bold">2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Demographics & History -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            
+            <!-- Conflict Timeline -->
+            <section id="history" class="xl:col-span-7">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Conflits Historiques & Tensions</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-red-500/50 to-transparent"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-slate-600 to-slate-700"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-[#CD2E3A] shadow-[0_0_10px_#CD2E3A] group-hover:scale-150 transition-transform"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-[#CD2E3A]/30 transition-all group-hover:bg-[#CD2E3A]/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1950–1953 | Guerre de Corée</h4>
+                            <p class="text-sm text-slate-400">Conflit fondateur aboutissant à la division actuelle au niveau de la zone démilitarisée (DMZ).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1966–1969 | Conflit de la DMZ</h4>
+                            <p class="text-sm text-slate-400">Escarmouches intenses et raid sur la Maison Bleue.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-[#CD2E3A] group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-[#CD2E3A]/30 transition-all group-hover:bg-[#CD2E3A]/5">
+                            <h4 class="text-white font-bold leading-none mb-2">2010 | ROKS Cheonan & Yeonpyeong</h4>
+                            <p class="text-sm text-slate-400">Attaque mortelle à la torpille et bombardement d'artillerie navale.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-white animate-pulse group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-[#38BDF8]/30 transition-all group-hover:bg-[#38BDF8]/5">
+                            <h4 class="text-[#38BDF8] font-bold leading-none mb-2">Déc 2025 | Crise de la Loi Martiale</h4>
+                            <p class="text-sm text-slate-400">Brève crise politique interne impliquant le Président Yoon Suk Yeol avec révocation sous 24h.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-[#E1000F] group-hover:scale-150 transition-all animate-ping"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent border-[#E1000F]/30 transition-all bg-[#E1000F]/5">
+                            <h4 class="text-white font-bold leading-none mb-2">Présent | Maintien des tensions post-DMZ</h4>
+                            <p class="text-sm text-slate-400">Techniquement toujours en guerre ; tests balistiques au Nord et guerre psychologique persistante.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religious Breakdown -->
+            <section id="demographics" class="xl:col-span-5">
+                <div class="glass-card rounded-3xl p-8 h-full">
+                    <h2 class="text-2xl font-display font-bold text-white mb-8">Paysage Religieux</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-white">60 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Non affiliés / Athées</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 60%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-slate-500">17 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Protestantisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-blue-500 h-full rounded-full" style="width: 17%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-slate-500">15 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Bouddhisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-yellow-500 h-full rounded-full" style="width: 15%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-slate-500">5 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Catholicisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-red-500 h-full rounded-full" style="width: 5%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-right text-xs font-bold text-slate-500">3 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Autres (Chamanisme...)</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-purple-500 h-full rounded-full" style="width: 3%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Global Trade Relations -->
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Hub Commercial & Tech</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-8">
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all flex flex-col items-center text-center">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Export #1</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Chine</p>
+                    <p class="text-xs text-blue-400 mt-1">19%</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all flex flex-col items-center text-center">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Export #2</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">États-Unis</p>
+                    <p class="text-xs text-blue-400 mt-1">18%</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all flex flex-col items-center text-center">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Export #3</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Vietnam</p>
+                    <p class="text-xs text-blue-400 mt-1">9%</p>
+                </div>
+                <div class="p-6 bg-[#0047A0]/20 rounded-2xl border border-[#0047A0]/40 flex flex-col items-center text-center justify-center">
+                    <span class="text-[10px] font-bold text-white/50 tracking-widest uppercase">Export France</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Rang 20-22</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maldives : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating blobs matching index.html dark theme */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(13, 148, 136, 0.2); /* Teal (Oceanic vibe) */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(185, 28, 28, 0.15); /* Red (Maldives flag) */
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatanim {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(0.9); }
+        }
+
+        /* MEAE Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: #000091; font-weight: bold; font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(20, 184, 166, 0.4); /* Teal border hover */
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #14b8a6, #fff, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0.8rem 1rem;
+            }
+            .logo-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.85rem;
+            }
+            .logo-container span {
+                font-size: 0.8rem;
+            }
+            .btn-glass {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <!-- MEAE Header -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#14b8a6] uppercase bg-[#14b8a6]/10 border border-[#14b8a6]/30 rounded-full">
+                République des Maldives
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Maldives
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                L'archipel de l'Océan Indien en première ligne du changement climatique, caractérisé par une forte dépendance au tourisme et une haute volatilité politique.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- Summary Bento Grid -->
+        <div class="bento-grid mb-24">
+            <!-- Capitals -->
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-[#14b8a6] font-display font-bold text-xs uppercase tracking-widest mb-4">Architecture Géographique</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Malé</div>
+                            <p class="text-slate-400 text-sm">Capitale ultra-dense située sur l'atoll de Kaafu.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie terrestre</span>
+                    <span class="text-white font-display font-bold text-xl">~300 km² <span class="text-sm font-normal text-slate-400">(1 190 îles, 26 atolls)</span></span>
+                </div>
+            </div>
+
+            <!-- Political Type -->
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-[#14b8a6]/20 to-transparent border border-[#14b8a6]/20">
+                <h3 class="text-[#14b8a6] font-display font-bold text-xs uppercase tracking-widest mb-4">Régime & Pouvoir</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-2">République Constitutionnelle Présidentielle Unitaire</h4>
+                <p class="text-slate-400 text-sm mb-4">Le Président détient les fonctions de chef de l'État, chef du gouvernement, et commandant en chef des forces armées.</p>
+                
+                <div class="pt-4 border-t border-white/10 mt-4 space-y-2">
+                    <div>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Cycle Électoral</p>
+                        <p class="text-white font-bold text-sm">Dernières : 21 Avr 2024 (Légis.)</p>
+                        <p class="text-white font-bold text-sm">Prochaines : 4 Avr 2026 (Locales/Réf.)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Governance & Leaders -->
+        <section id="governance" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Continuité Politique (Gouvernance)</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-teal-500/50 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Current Power -->
+                <div class="glass-card rounded-2xl p-8 border-t-2 border-t-teal-500 bg-teal-900/10 flex flex-col justify-between h-auto self-start">
+                    <div class="mb-6 flex justify-between items-center">
+                        <span class="px-3 py-1 bg-teal-900/40 text-teal-400 text-xs font-bold rounded uppercase border border-teal-500/30">Pouvoir Actuel</span>
+                    </div>
+                    <div class="space-y-8">
+                        <div>
+                            <p class="text-slate-500 text-xs font-bold uppercase mb-1">Président de la République</p>
+                            <h4 class="text-3xl font-display font-bold text-white">Mohamed Muizzu</h4>
+                            <p class="text-teal-400 text-sm font-bold mt-1">2023–Présent</p>
+                            <div class="inline-block px-3 py-1 bg-black/40 border border-teal-500/30 rounded mt-3">
+                                <p class="text-white text-xs font-bold">Congrès National du Peuple (PNC)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historical Background -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Dirigeants Post-1945</h3>
+                    <div class="h-[400px] flex items-start flex-col gap-3 pr-4 custom-scrollbar overflow-y-auto w-full">
+                        <div class="w-full p-4 border-l-2 border-slate-500 bg-white/5 rounded-r-xl">
+                            <p class="text-[10px] text-white bg-slate-600 px-1 py-0.5 inline-block rounded mb-1 uppercase tracking-widest">Sultanats et Transition (1945-1968)</p>
+                            <p class="text-white font-bold text-sm block mt-2">• Sultan Amin Abdel Majid Didi (1945–1952)</p>
+                            <p class="text-white font-bold text-sm block mt-1">• Mohamed Amin Didi (1953) <span class="text-slate-500 text-xs font-normal">Première République</span></p>
+                            <p class="text-white font-bold text-sm block mt-1">• Sultan Muhammad Fareed Didi (1954–1968)</p>
+                        </div>
+                        <div class="w-full p-4 border-l-2 border-red-500 bg-white/5 rounded-r-xl mt-4">
+                            <p class="text-[10px] text-white bg-red-600 px-1 py-0.5 inline-block rounded mb-1 uppercase tracking-widest">Seconde République (1968 - Présent)</p>
+                            <p class="text-white font-bold text-sm block mt-2">• Ibrahim Nasir (1968–1978)</p>
+                            <p class="text-white font-bold text-sm block mt-1">• Maumoon Abdul Gayoom (1978–2008)</p>
+                            <p class="text-white font-bold text-sm block mt-1">• Mohamed Nasheed (2008–2012) <span class="text-slate-500 text-xs font-normal">MDP</span></p>
+                            <p class="text-white font-bold text-sm block mt-1">• Mohamed Waheed Hassan (2012–2013)</p>
+                            <p class="text-white font-bold text-sm block mt-1">• Abdulla Yameen (2013–2018) <span class="text-slate-500 text-xs font-normal">PPM</span></p>
+                            <p class="text-white font-bold text-sm block mt-1">• Ibrahim Mohamed Solih (2018–2023) <span class="text-slate-500 text-xs font-normal">MDP</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Économie de l'Atoll</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-blue-400/50 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB</h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Tourisme (Direct)</span>
+                                <span class="text-white font-bold">28 à 40 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#14b8a6] w-[40%] shadow-[0_0_10px_rgba(20,184,166,0.6)]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Autres Services</span>
+                                <span class="text-white font-bold">~33 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 w-[33%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Construction / Infra</span>
+                                <span class="text-white font-bold">10 à 12 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-yellow-500 w-[12%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture & Pêche</span>
+                                <span class="text-white font-bold">~10 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[10%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-[10px] text-slate-500 uppercase font-bold mb-1 tracking-widest">PIB nominal (Proj. 2026)</div>
+                        <div class="text-4xl font-display font-extrabold text-white">8,1 <span class="text-xl font-normal text-slate-400">Md$ USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 glass-card rounded-3xl p-8 bg-gradient-to-br from-teal-900/20 to-transparent flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-display font-bold text-white mb-6">Évolution & Défis</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-2 border-slate-500 pl-4">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Avant 1970</span>
+                                <p class="text-sm text-slate-300 mt-1">L'économie était presque exclusivement construite autour de la pêche et de l'exportation du "poisson des Maldives" (Maldive fish) vers le Sri Lanka.</p>
+                            </div>
+                            <div class="border-l-2 border-[#14b8a6] pl-4">
+                                <span class="text-[10px] font-bold text-[#14b8a6] uppercase tracking-widest">Années 1970 à 2011</span>
+                                <p class="text-sm text-slate-300 mt-1">L'introduction du tourisme en 1972 a transformé l'archipel en une économie de services. En 2011, le pays sort de la liste des Pays les Moins Avancés (PMA).</p>
+                            </div>
+                            <div class="border-l-2 border-red-500 pl-4">
+                                <span class="text-[10px] font-bold text-red-500 uppercase tracking-widest">Actuellement</span>
+                                <p class="text-sm text-slate-300 mt-1">Une économie lourdement endettée (dette/PIB > 110%) très dépendante d'un tourisme mondial vulnérable (ex: crise COVID).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 border-t border-white/10 pt-6">
+                        <div class="flex items-center justify-between flex-wrap gap-2 text-center">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest flex-1">Rufiyaa (MVR) vis-à-vis USD</span>
+                            <div class="flex-1"><span class="text-[10px] text-gray-500 block">Années 1970</span> <span class="font-mono text-white text-sm">4,75 – 7,50</span></div>
+                            <div class="flex-1 border border-teal-500 rounded py-1 bg-teal-500/10"><span class="text-[10px] text-teal-400 block font-bold">2011–2026 (Fixé/Géré)</span> <span class="font-mono text-white text-sm font-bold">15,42</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wages -->
+            <div class="glass-card rounded-3xl p-8 border-t border-t-slate-600 bg-white/5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="text-center border-r md:border-white/10 pr-4">
+                        <span class="text-[10px] text-slate-500 uppercase block mb-1">Salaire Minimum (Tourisme)</span>
+                        <div class="text-2xl font-display font-extrabold text-white mb-1">8 000 MVR</div>
+                        <p class="text-sm font-bold text-slate-400">~519 USD</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-teal-400 uppercase block mb-1">Salaire Mensuel Moyen</span>
+                        <div class="text-2xl font-display font-extrabold text-white mb-1">19 200 MVR</div>
+                        <p class="text-sm font-bold text-teal-400">~1 245 USD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demographics Chart Replacement -->
+        <section class="mb-24">
+            <div class="glass-card rounded-3xl p-8 border-t-2 border-teal-500">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="md:w-1/3">
+                        <h2 class="text-3xl font-display font-bold text-white mb-4">Évolution Démographique</h2>
+                        <p class="text-sm text-slate-400 mb-6">Une population concentrée et en croissance très lente comparée à ses voisins asiatiques, confrontée à la menace de la montée des eaux.</p>
+                        
+                    </div>
+                    
+                    <div class="md:w-2/3 w-full h-[250px] flex items-end justify-between gap-1 md:gap-3 relative px-4">
+                        <div class="absolute bottom-0 left-0 w-full h-px bg-white/10"></div>
+                        
+                        <div class="flex flex-col items-center flex-1 h-[15%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#14b8a6]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">74k</span>
+                            <span class="text-[9px] text-slate-500">1950</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[25%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#14b8a6]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">123k</span>
+                            <span class="text-[9px] text-slate-500">1970</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[45%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#14b8a6]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">224k</span>
+                            <span class="text-[9px] text-slate-500">1990</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[70%] group relative">
+                            <div class="w-full bg-slate-700 rounded-t-md h-full transition-colors group-hover:bg-[#14b8a6]/50"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">360k</span>
+                            <span class="text-[9px] text-slate-400">2010</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[95%] group relative">
+                            <div class="w-full bg-slate-700 rounded-t-md h-full transition-colors group-hover:bg-[#14b8a6]/50"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">502k</span>
+                            <span class="text-[9px] text-slate-400">2020</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[100%] group relative border border-transparent hover:border-[#14b8a6]/50 rounded-t-md">
+                            <div class="w-full bg-gradient-to-t from-[#14b8a6]/80 to-[#14b8a6]/30 rounded-t-md h-full"></div>
+                            <span class="text-[10px] font-bold text-[#5eead4] mt-1 shadow-sm">0,53M</span>
+                            <span class="text-[9px] text-slate-300 font-bold">2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Demographics & History -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            
+            <!-- Conflict Timeline -->
+            <section id="history" class="xl:col-span-7">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Chronologie des Troubles</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-red-500/50 to-transparent"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-[#14b8a6] group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-teal-500/30 transition-all group-hover:bg-teal-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1953 | Proclamation de la Première République</h4>
+                            <p class="text-sm text-slate-400">Éphémère, elle s'est effondrée en moins d'un an avant le retour au pouvoir du sultanat.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-red-500 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-red-500/30 transition-all group-hover:bg-red-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1959–1963 | Sécession de Suvadive</h4>
+                            <p class="text-sm text-slate-400">Révolte séparatiste d'atolls du sud formant la "République Unie de Suvadive", finalement réprimée par le gouvernement central.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-yellow-500 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-yellow-500/30 transition-all group-hover:bg-yellow-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1965 et 1968 | Indépendance & Seconde République</h4>
+                            <p class="text-sm text-slate-400">Indépendance vis-à-vis du Royaume-Uni en 1965, suivie de l'abolition définitive du Sultanat en 1968 pour former la Seconde République étudiée aujourd'hui.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-red-600 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-red-600/30 transition-all group-hover:bg-red-600/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1988 | Opération Cactus</h4>
+                            <p class="text-sm text-slate-400">Tentative de coup d'État armé par des mercenaires srilankais (PLOTE) contre Gayooum, repoussée via une intervention militaire d'urgence de l'Inde.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-[#14b8a6] shadow-[0_0_10px_#14b8a6] group-hover:scale-150 transition-transform"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent border-[#14b8a6]/30 bg-[#14b8a6]/5">
+                            <h4 class="text-white font-bold leading-none mb-2">2008–2018 | Instabilité Chronique</h4>
+                            <p class="text-sm text-slate-400">Période de réformes démocratiques ayant engendré une série de crises électorales sévères, l'instauration d'États d'Urgence et des luttes géopolitiques (Inde vs Chine).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religious Breakdown -->
+            <section id="demographics" class="xl:col-span-5">
+                <div class="glass-card rounded-3xl p-8 h-full flex flex-col items-center justify-center text-center">
+                    <h2 class="text-2xl font-display font-bold text-white mb-8 border-b-2 border-[#14b8a6] pb-2">Paysage Religieux</h2>
+                    <div class="p-8 bg-teal-900/20 border border-teal-500/30 rounded-full w-48 h-48 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(20,184,166,0.2)]">
+                        <p class="text-5xl font-display font-bold text-white mb-1">~100%</p>
+                        <p class="text-sm font-bold text-[#5eead4]">Islam Sunnite</p>
+                    </div>
+                    <div class="mt-8 pt-6">
+                        <p class="text-sm text-slate-400 leading-relaxed italic">L'Islam est la religion d'État absolue. La constitution des Maldives stipule formellement que tous les citoyens maldiviens doivent obligatoirement être de confession musulmane.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Global Trade Relations -->
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Partenaires Commerciaux Globaux</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- EXPORT -->
+                <div class="glass-card rounded-2xl p-6">
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">Moteur de Sécurité & d'Importation</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-white/10 text-xs font-bold flex items-center justify-center text-white">1</span>
+                                <span class="font-bold text-white">Chine</span>
+                            </div>
+                            <span class="text-xs text-slate-400 font-bold">Importations (Infra)</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-[#14b8a6]/20 border border-[#14b8a6] text-xs font-bold flex items-center justify-center text-[#5eead4]">2</span>
+                                <span class="text-sm text-[#5eead4] font-bold">Inde</span>
+                            </div>
+                            <span class="text-xs text-[#5eead4]">Partenaire Sécuritaire / Import</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">3</span>
+                                <span class="text-sm text-slate-300">Émirats Arabes Unis</span>
+                            </div>
+                            <span class="text-xs text-slate-500">Pétrole (Import)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMPORT -->
+                <div class="glass-card rounded-2xl p-6">
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">Exportations de Marge</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">1</span>
+                                <span class="text-sm text-white font-bold">Thaïlande</span>
+                            </div>
+                            <span class="text-xs text-slate-400">Exportations de Poissons</span>
+                        </div>
+                        <div class="flex items-center justify-between pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">2</span>
+                                <span class="text-sm text-slate-300 font-bold">Singapour</span>
+                            </div>
+                            <span class="text-xs text-slate-500">Électronique</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- France Connection -->
+            <div class="glass-card rounded-xl p-6 border-l-4 border-l-[#000091] bg-blue-900/10">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <p class="text-sm text-slate-300 mb-2 font-bold text-white">Position Spécifique de la France :</p>
+                        <p class="text-sm text-slate-400">
+                            La France est le <b>10ème fournisseur mondial</b> des Maldives (produits de luxe pour resorts, pièces d'aéronautique, produits pharmaceutiques) et son <b>7ème client mondial</b> concernant les exportations (achat de poisson en conserve et transformé).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>

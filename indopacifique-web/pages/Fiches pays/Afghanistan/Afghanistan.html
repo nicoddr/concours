@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afghanistan : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating blobs */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(16, 185, 129, 0.15); /* Emerald (Islamic Emirate / Flag green) */
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(185, 28, 28, 0.15); /* Red Component */
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatanim {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(0.9); }
+        }
+
+        /* MEAE Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: #000091; font-weight: bold; font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.4); /* Emerald border on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #10b981, #fff, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0.8rem 1rem;
+            }
+            .logo-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.85rem;
+            }
+            .logo-container span {
+                font-size: 0.8rem;
+            }
+            .btn-glass {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased text-slate-200">
+
+    <!-- MEAE Header -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#10b981] uppercase bg-[#10b981]/10 border border-[#10b981]/30 rounded-full">
+                Émirat Islamique (Dirigé par les Talibans)
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Afghanistan
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                L'« Empire des Tombes » : Un territoire stratégique enclavé, sujet à d'incessants conflits dont la récente guerre ouverte avec le Pakistan.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- Summary Bento Grid -->
+        <div class="bento-grid mb-24">
+            <!-- Capitals -->
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between border-l-4 border-l-[#10b981]">
+                <div>
+                    <h3 class="text-[#10b981] font-display font-bold text-xs uppercase tracking-widest mb-4">Centre Administratif Actuel</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Kaboul</div>
+                            <p class="text-slate-400 text-sm">Capitale historique abritant l'administration de l'Émirat Islamique.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie (territoire enclavé)</span>
+                    <span class="text-white font-display font-bold text-xl">652 864 km²</span>
+                </div>
+            </div>
+
+            <!-- Political Type -->
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-[#10b981]/20 to-transparent border border-[#10b981]/20">
+                <h3 class="text-[#10b981] font-display font-bold text-xs uppercase tracking-widest mb-4">Nature du Régime</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-2">Émirat Islamique Théocratique Totalitaire</h4>
+                <p class="text-slate-400 text-sm mb-4">Gouvernance exclusive par les Talibans sous l'application stricte de la charia depuis le retrait occidental en 2021.</p>
+                
+                <div class="pt-4 border-t border-white/10 mt-4 space-y-2">
+                    <div class="p-3 bg-red-900/30 border border-red-500/30 rounded-lg">
+                        <p class="text-[10px] text-red-400 uppercase tracking-widest font-bold mb-1">Statut Électoral</p>
+                        <p class="text-white font-bold text-sm">Totalement Suspendues</p>
+                        <p class="text-xs text-slate-300 mt-1">L'IEC a été dissoute; le vote démocratique est considéré illégitime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Governance & Leaders -->
+        <section id="governance" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">L'Instabilité Endémique du Pouvoir</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-emerald-500/50 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Current Power -->
+                <div class="glass-card rounded-2xl p-8 border-t-2 border-t-[#10b981] bg-[#10b981]/5 flex flex-col justify-between h-auto self-start">
+                    <div class="mb-6 flex justify-between items-center">
+                        <span class="px-3 py-1 bg-[#10b981]/20 text-[#10b981] text-xs font-bold rounded uppercase border border-[#10b981]/30">Guide Suprême (Actuel)</span>
+                    </div>
+                    <div class="space-y-8">
+                        <div>
+                            <p class="text-slate-500 text-xs font-bold uppercase mb-1">Leader Politique et Spirituel</p>
+                            <h4 class="text-3xl font-display font-bold text-white">Hibatullah Akhundzada</h4>
+                            <p class="text-[#10b981] text-sm font-bold mt-2">Gouvernance depuis 2021</p>
+                            <div class="mt-4 px-3 py-2 bg-black/40 border-l-2 border-emerald-500 text-sm text-slate-300">
+                                Représente la ligne dure des conservateurs, menant le second Émirat Islamique d'Afghanistan.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historical Background -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Chefs d'État & Époques (Post-1945)</h3>
+                    <div class="h-[400px] flex items-start flex-col gap-3 pr-4 custom-scrollbar overflow-y-auto w-full">
+                        <div class="w-full p-4 border-l-2 border-slate-500 bg-white/5 rounded-r-xl">
+                            <p class="text-[10px] text-white bg-slate-600 px-1 py-0.5 inline-block rounded mb-1 uppercase tracking-widest">Monarchie & Première République</p>
+                            <p class="text-white font-bold text-sm block mt-2">• Mohammed Zahir Shah (1933–1973) <span class="text-xs text-slate-400 font-normal">Monarque</span></p>
+                            <p class="text-white font-bold text-sm block mt-1">• Mohammed Daoud Khan (1973–1978) <span class="text-xs text-slate-400 font-normal">République</span></p>
+                        </div>
+                        <div class="w-full p-4 border-l-2 border-red-600 bg-white/5 rounded-r-xl mt-4">
+                            <p class="text-[10px] text-white bg-red-600 px-1 py-0.5 inline-block rounded mb-1 uppercase tracking-widest">Période Communiste (PDPA)</p>
+                            <p class="text-white font-bold text-sm block mt-2">• Nur Muhammad Taraki (1978–1979) <span class="text-xs text-slate-400 font-normal">Faction Khalq</span></p>
+                            <p class="text-white font-bold text-sm block mt-1">• Babrak Karmal (1979–1986) <span class="text-xs text-slate-400 font-normal">Faction Parcham</span></p>
+                        </div>
+                        <div class="w-full p-4 border-l-2 border-emerald-600 bg-white/5 rounded-r-xl mt-4">
+                            <p class="text-[10px] text-emerald-900 bg-emerald-500 px-1 py-0.5 inline-block rounded mb-1 uppercase tracking-widest font-bold">Premier Émirat des Talibans</p>
+                            <p class="text-white font-bold text-sm block mt-2">• Mullah Mohammad Omar (1996–2001)</p>
+                        </div>
+                        <div class="w-full p-4 border-l-2 border-blue-500 bg-white/5 rounded-r-xl mt-4">
+                            <p class="text-[10px] text-white bg-blue-600 px-1 py-0.5 inline-block rounded mb-1 uppercase tracking-widest">République Islamique (Soutenue par l'Otan)</p>
+                            <p class="text-white font-bold text-sm block mt-2">• Hamid Karzai (2001-2014)</p>
+                            <p class="text-white font-bold text-sm block mt-1">• Ashraf Ghani (2014–2021) <span class="text-xs text-slate-400 font-normal">Chute de Kaboul</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: History / Conflicts -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 mb-24">
+            <!-- Conflict Timeline -->
+            <section id="history" class="xl:col-span-8">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Séquence des Guerres Majeures</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-red-500/50 to-transparent"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-red-500/50 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-red-500 group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-red-500/30 transition-all group-hover:bg-red-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1979–1989 | Invasion et Guerre Soviétique</h4>
+                            <p class="text-sm text-slate-400">Intervention militaire majeure de l'Armée Rouge pour soutenir le gouvernement communiste afghan, se heurtant à une féroce résistance des Moudjahidines armés par les États-Unis.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-slate-300 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-white group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-slate-500/30 transition-all group-hover:bg-slate-500/5">
+                            <h4 class="text-white font-bold leading-none mb-2">2001–2021 | Guerre d'Afghanistan (Invasion Américaine)</h4>
+                            <p class="text-sm text-slate-400">Suite aux attentats du 11 Septembre, coalition menée par les États-Unis renversant le premier régime Taliban. S'ensuivent 20 années de guerre asymétrique et d'insurrection qui s'achèvent par le retrait chaotique de l'OTAN et la chute de Kaboul en août 2021.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 group">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-red-600 shadow-[0_0_10px_#dc2626] animate-[pulse_1.5s_ease-in-out_infinite]"></div>
+                        <div class="glass-card rounded-2xl p-6 border-red-500/50 bg-red-900/20">
+                            <h4 class="text-red-400 font-bold leading-none mb-2">2026–Présent | Guerre Ouverte Afghanistan-Pakistan</h4>
+                            <p class="text-sm text-slate-300">Conflit de haute intensité déclenché par des frappes aériennes pakistanaises ciblées sur Kaboul et Kandahar, résultant en de violents affrontements aux frontières et de lourdes pertes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religious Breakdown -->
+            <section id="demographics" class="xl:col-span-4">
+                <div class="glass-card rounded-3xl p-8 h-full">
+                    <h2 class="text-xl font-display font-bold text-white mb-8 border-b border-white/10 pb-4">Démographie Spirituelle</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm text-[#10b981] font-bold">Islam Sunnite</span>
+                                <span class="text-xs font-bold text-white">84,7 % à 90 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-[#10b981] h-full rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]" style="width: 87%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm text-[#34d399] font-medium">Islam Chiite</span>
+                                <span class="text-xs font-bold text-slate-300">7,0 % à 15 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-[#34d399] h-full rounded-full" style="width: 11%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm text-slate-400 font-medium">Autres (Sikhs, Hindous)</span>
+                                <span class="text-xs font-bold text-slate-500">&lt; 0,3 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-600 h-full rounded-full" style="width: 2%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Économie sous Sanctions</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-[#10b981]/50 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-2 glass-card rounded-3xl p-8 border-l-4 border-l-[#10b981]">
+                    <div class="flex flex-wrap justify-between items-start mb-8 gap-4">
+                        <div>
+                            <h3 class="text-xl font-display font-bold text-white">Répartition du PIB</h3>
+                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest mt-1">Estimations Pré-Guerre (2026)</p>
+                        </div>
+                        <div class="px-4 py-2 bg-red-900/30 border border-red-500/50 rounded-lg">
+                            <p class="text-xs text-red-500 font-bold animate-pulse">IMPACT GUERRE : RÉCESSION PROFONDE</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-5 bg-white/5 rounded-2xl border border-white/5">
+                            <div class="text-3xl font-bold text-[#10b981] mb-1">46,4 %</div>
+                            <div class="text-sm font-bold text-white mb-2">Services</div>
+                            <p class="text-xs text-slate-400">Transport informel, commerce de détail, télécoms sous-développés.</p>
+                        </div>
+                        <div class="p-5 bg-white/5 rounded-2xl border border-white/5">
+                            <div class="text-3xl font-bold text-yellow-500 mb-1">34,7 %</div>
+                            <div class="text-sm font-bold text-white mb-2">Agriculture</div>
+                            <p class="text-xs text-slate-400">Blé, fruits secs, noix, coton. Fortement dépendante des moussons.</p>
+                        </div>
+                        <div class="p-5 bg-white/5 rounded-2xl border border-white/5">
+                            <div class="text-3xl font-bold text-slate-400 mb-1">13,4 %</div>
+                            <div class="text-sm font-bold text-white mb-2">Industrie</div>
+                            <p class="text-xs text-slate-400">Mines (charbon, cuivre), textiles, construction rudimentaire.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Economic Status -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8 bg-[#10b981]/10 flex flex-col justify-center">
+                    <div class="text-center mb-6">
+                        <div class="text-[10px] text-[#34d399] uppercase font-bold tracking-widest mb-2">PIB Nominal Estimé (2026)</div>
+                        <div class="text-5xl font-display font-extrabold text-white">18,08 <span class="text-xl font-normal text-slate-300">Md$</span></div>
+                    </div>
+                    <div class="pt-6 border-t border-white/10">
+                        <p class="text-sm text-slate-300 text-center">Une économie asphyxiée par le gel des avoirs internationaux depuis 2021, coupée du système bancaire mondial, et désormais en guerre ouverte contre un voisin nucléaire.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Currency & Wages -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Wages -->
+                <div class="glass-card rounded-3xl p-8 border-t border-t-slate-600">
+                    <h3 class="text-lg font-bold text-white mb-6 border-b border-white/10 pb-2">Niveaux de Revenus</h3>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm text-slate-400 font-medium">Salaire Mensuel Moyen</span>
+                        <div class="text-right">
+                            <div class="text-xl font-display font-bold text-white">~210 USD</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-slate-400 font-medium">Salaire Minimum Public</span>
+                        <div class="text-right">
+                            <div class="text-xl font-display font-bold text-[#34d399]">6 000 AFN</div>
+                            <p class="text-[10px] text-slate-500">Maintien difficile face à l'inflation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Currency -->
+                <div class="bg-slate-800 rounded-3xl p-8 relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-[#10b981] opacity-20 blur-[50px] rounded-full"></div>
+                    <h3 class="text-lg font-bold text-white mb-6">L'Afghani (AFN) face à l'USD</h3>
+                    <div class="text-4xl font-display font-bold text-white mb-6 font-mono">63,00 – 64,57</div>
+                    
+                    <div class="space-y-2">
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-2">Historique d'effondrement</p>
+                        <div class="flex items-center gap-4">
+                            <div class="bg-black/30 px-3 py-1 rounded text-xs font-mono text-slate-300">1945 : 13,40</div>
+                            <div class="bg-black/30 px-3 py-1 rounded text-xs font-mono text-slate-300">2020 : 77,10</div>
+                        </div>
+                        <p class="text-[10px] text-slate-500 mt-4 leading-relaxed">Nota: Les contrôles stricts de capitaux par les Talibans ont paradoxalement renforcé facialement l'AFN entre 2024 et 2026, bien que l'économie réelle soit paralysée.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demographics Chart Replacement -->
+        <section class="mb-24">
+            <div class="glass-card rounded-3xl p-8 border-t-2 border-[#10b981]">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="md:w-1/3">
+                        <h2 class="text-3xl font-display font-bold text-white mb-4">Évolution Démographique</h2>
+                        <p class="text-sm text-slate-400 mb-6">La population a explosé malgré des décennies de guerre ininterrompue, caractérisée par une très forte proportion de jeunes et des crises de réfugiés récurrentes.</p>
+                        
+                    </div>
+                    
+                    <div class="md:w-2/3 w-full h-[250px] flex items-end justify-between gap-1 md:gap-3 relative px-4">
+                        <div class="absolute bottom-0 left-0 w-full h-px bg-white/10"></div>
+                        
+                        <div class="flex flex-col items-center flex-1 h-[15%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#10b981]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">7,1M</span>
+                            <span class="text-[9px] text-slate-500">1945</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[22%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#10b981]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">10M</span>
+                            <span class="text-[9px] text-slate-500">1965</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[38%] group relative">
+                            <div class="w-full bg-slate-800 rounded-t-md h-full transition-colors group-hover:bg-[#10b981]/40"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">17M</span>
+                            <span class="text-[9px] text-slate-500">1995</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[54%] group relative">
+                            <div class="w-full bg-slate-700 rounded-t-md h-full transition-colors group-hover:bg-[#10b981]/50"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">24,4M</span>
+                            <span class="text-[9px] text-slate-400">2005</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[75%] group relative">
+                            <div class="w-full bg-slate-700 rounded-t-md h-full transition-colors group-hover:bg-[#10b981]/50"></div>
+                            <span class="text-[10px] font-bold text-white mt-1">33,8M</span>
+                            <span class="text-[9px] text-slate-400">2015</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-[100%] group relative border border-transparent hover:border-[#10b981]/50 rounded-t-md">
+                            <div class="w-full bg-gradient-to-t from-[#10b981]/80 to-[#10b981]/30 rounded-t-md h-full"></div>
+                            <span class="text-[10px] font-bold text-[#6ee7b7] mt-1 shadow-sm">45M</span>
+                            <span class="text-[9px] text-slate-300 font-bold">2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Trade Relations -->
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Commerce Fragilisé par le Conflit</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-[#10b981]/50 to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- EXPORT -->
+                <div class="glass-card rounded-2xl p-6">
+                    <p class="text-xs uppercase tracking-widest text-[#34d399] font-bold mb-4">Exportations (Fortement impactées en 2026)</p>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-white font-bold">1. Pakistan</span>
+                                <span class="font-bold text-red-500">34 % (BLOCAGE DE GUERRE)</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-red-600" style="width: 34%"></div>
+                            </div>
+                            <p class="text-[10px] text-slate-500 mt-1">Frontière fermée en raison du conflit ouvert.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300">2. Inde</span>
+                                <span class="font-bold text-slate-400">22 %</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#10b981]" style="width: 22%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300">3. Chine</span>
+                                <span class="font-bold text-slate-400">15 %</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-600" style="width: 15%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMPORT -->
+                <div class="glass-card rounded-2xl p-6">
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">Dépendance aux Importations</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-between border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-amber-900/40 border border-amber-500/30 text-amber-400 text-xs font-bold flex items-center justify-center">1</span>
+                                <span class="font-bold text-white">Iran</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-white/5 text-xs font-bold flex items-center justify-center text-slate-400">2</span>
+                                <span class="text-sm text-slate-300">Chine</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center justify-between pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-red-900/40 text-xs font-bold flex items-center justify-center text-red-500">3</span>
+                                <span class="text-sm text-slate-400 line-through">Pakistan</span>
+                            </div>
+                            <span class="text-[10px] text-red-500 font-bold">DISRUPTÉ</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- France Connection -->
+            <div class="glass-card rounded-xl p-6 border-l-4 border-l-slate-700">
+                <p class="text-sm text-slate-300 mt-1">
+                    <span class="font-bold text-white">Relation Inexistante avec la France :</span> En raison de la non-reconnaissance diplomatique du régime des Talibans, les flux sont marginaux. La France figure aux alentours de la <b>10ème place pour les exportations</b> (très faibles volumes) et représente <b>moins de 0,5 % des importations</b> de l'Afghanistan.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>
