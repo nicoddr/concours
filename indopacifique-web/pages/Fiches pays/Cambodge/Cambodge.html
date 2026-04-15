@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambodge : Dossier Géopolitique & Économique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meae: {
+                            blue: '#000091',
+                            red: '#E1000F',
+                            cyan: '#00b0f0',
+                            lightblue: '#e3e3fd',
+                            dark: '#0a0a1a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'floatanim 20s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        floatanim: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(5vw, 10vh) scale(1.1)' },
+                            '100%': { transform: 'translate(-5vw, 5vh) scale(0.9)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating blobs matching index.html dark theme */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatanim 20s infinite alternate ease-in-out;
+        }
+        body::before {
+            width: 40vw; height: 40vw;
+            background: rgba(0, 0, 145, 0.3);
+            top: -10vw; left: -10vw;
+        }
+        body::after {
+            width: 30vw; height: 30vw;
+            background: rgba(0, 210, 255, 0.1);
+            bottom: -5vw; right: -5vw;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatanim {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(0.9); }
+        }
+
+        /* MEAE Header – identical to index.html */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #E1000F;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn-glass {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .controls {
+            display: flex; gap: 15px; align-items: center;
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(10, 10, 40, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 176, 240, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 210, 255, 0.12);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #00b0f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        /* Accent helpers */
+        .accent-cyan { color: #00b0f0; }
+        .accent-blue { color: #000091; }
+        .accent-red { color: #E1000F; }
+        .bg-accent-cyan { background-color: #00b0f0; }
+        .bg-accent-blue { background-color: #000091; }
+        .bg-accent-red { background-color: #E1000F; }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0.8rem 1rem;
+            }
+            .logo-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.85rem;
+            }
+            .logo-container span {
+                font-size: 0.8rem;
+            }
+            .btn-glass {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../../images/Logo.ico">
+</head>
+<body class="antialiased">
+
+    <!-- MEAE Header -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../../../index.html">
+                <img src="../../../images/Logo.png" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
+                <span>Portail Indopacifique</span>
+            </a>
+            <a href="../../pays-asie.html" class="btn-glass" style="margin-left: 20px;">🌏 Fiches pays</a>
+        </div>
+        <div class="controls">
+            <a href="../../glossaire.html" class="btn-glass">📚 Glossaire & Organigrammes</a>
+            <a href="../../../../index.html" class="btn-glass">🏠 Accueil</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-meae-blue opacity-20 blur-[100px] animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-meae-red opacity-10 blur-[100px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-meae-cyan uppercase bg-meae-cyan/10 border border-meae-cyan/20 rounded-full">
+                Royaume du Cambodge
+            </span>
+            <h1 class="text-7xl md:text-9xl font-display font-extrabold tracking-tight mb-8 gradient-text">
+                Cambodge
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Profil géopolitique, économique et historique complet du Royaume du Cambodge.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- Summary Bento Grid -->
+        <div class="bento-grid mb-24">
+            <!-- Capitals -->
+            <div class="col-span-12 md:col-span-8 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="accent-cyan font-display font-bold text-xs uppercase tracking-widest mb-4">Infrastructure Capitale</h3>
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div>
+                            <div class="text-4xl font-display font-bold text-white mb-1">Phnom Penh</div>
+                            <p class="text-slate-400 text-sm">Capitale politique et centre économique</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-slate-500 text-sm">Superficie totale</span>
+                    <span class="text-white font-display font-bold text-xl">181 035 km²</span>
+                </div>
+            </div>
+
+            <!-- Political Type -->
+            <div class="col-span-12 md:col-span-4 glass-card rounded-3xl p-8 bg-gradient-to-br from-meae-blue/20 to-transparent">
+                <h3 class="accent-cyan font-display font-bold text-xs uppercase tracking-widest mb-4">Régime</h3>
+                <h4 class="text-2xl font-display font-bold text-white leading-tight mb-6">Monarchie constitutionnelle à parti dominant</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Le roi Norodom Sihamoni règne, mais le pouvoir exécutif est détenu par le gouvernement dirigé par le Parti du Peuple Cambodgien (CPP).
+                </p>
+            </div>
+        </div>
+
+        <!-- Section: Governance & Leaders -->
+        <section id="governance" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Chronologie du Pouvoir (Depuis 1945)</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Earlier eras -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Monarchie, République & Khmers Rouges</h3>
+                    <div class="space-y-4">
+                        <div class="glass-card rounded-2xl p-6">
+                            <p class="text-xs accent-cyan font-bold mb-1">1945–1970 | Indépendance & Sangkum</p>
+                            <p class="text-white font-medium">Norodom Sihanouk</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-blue">
+                            <p class="text-xs text-slate-400 font-bold mb-1">1970–1975 | République Khmère</p>
+                            <p class="text-white font-medium">Lon Nol</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-red">
+                            <p class="text-xs accent-red font-bold mb-1">1975–1979 | Kampuchéa Démocratique</p>
+                            <p class="text-white font-medium">Pol Pot <span class="text-slate-500 text-sm">(Khmers Rouges)</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modern Era -->
+                <div class="space-y-4">
+                    <h3 class="text-slate-500 font-bold uppercase text-xs tracking-tighter mb-6">Transition et Ère Hun Sen</h3>
+                    <div class="h-[400px] overflow-y-auto pr-4 space-y-3 custom-scrollbar">
+                        <div class="p-4 border-l-2 border-meae-red bg-white/5 rounded-r-xl">
+                            <p class="text-xs accent-red font-bold">1979–1993 | République Populaire de Kampuchéa</p>
+                            <p class="text-white font-bold">Heng Samrin & Hun Sen (CPP)</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-white/20 bg-white/5 rounded-r-xl">
+                            <p class="text-xs text-slate-400 font-bold">1993–1998 | Double Premier Ministre</p>
+                            <p class="text-white font-bold">Norodom Ranariddh & Hun Sen</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-meae-blue bg-white/5 rounded-r-xl">
+                            <p class="text-xs font-bold" style="color: #6366f1;">1998–2023 | Consolidation (Royaume Moderne)</p>
+                            <p class="text-white font-bold">Hun Sen (CPP)</p>
+                        </div>
+                        <div class="p-4 border-l-2 border-meae-cyan bg-white/5 rounded-r-xl">
+                            <p class="text-xs accent-cyan font-bold">2023–Présent</p>
+                            <p class="text-white font-bold">Hun Manet <span class="text-slate-400 font-normal">(CPP)</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Economy -->
+        <section id="economy" class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Évolution Économique</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- GDP Breakdown -->
+                <div class="lg:col-span-1 glass-card rounded-3xl p-8">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Répartition du PIB <span class="text-slate-500 font-normal text-sm">(2024 est.)</span></h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Services</span>
+                                <span class="text-white font-bold">36,5 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-blue w-[36.5%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Industrie</span>
+                                <span class="text-white font-bold">36,2 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-meae-red w-[36.2%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Agriculture</span>
+                                <span class="text-white font-bold">21,5 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[21.5%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Taxes/Autres</span>
+                                <span class="text-white font-bold">5,8 %</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-500 w-[5.8%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2 tracking-widest">PIB nominal total</div>
+                        <div class="text-4xl font-display font-extrabold text-white">~32,4 Md$ <span class="text-lg font-normal text-slate-400">USD</span></div>
+                    </div>
+                </div>
+
+                <!-- Economic Eras -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-slate-600">
+                        <h4 class="accent-cyan font-bold text-sm mb-2">1950s–1960s</h4>
+                        <p class="text-white font-bold mb-1">Âge d'or agricole</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Économie basée sur l'exportation de riz et de caoutchouc avant la guerre civile.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-red">
+                        <h4 class="accent-cyan font-bold text-sm mb-2">1975–1989</h4>
+                        <p class="text-white font-bold mb-1">Abolition & Isolement</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">La monnaie est abolie par les Khmers Rouges. Suivi d'une économie planifiée lors de l'occupation vietnamienne.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-blue">
+                        <h4 class="accent-cyan font-bold text-sm mb-2">Années 1990</h4>
+                        <p class="text-white font-bold mb-1">Transition APRONUC</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Introduction de l'économie de marché sous l'égide de l'ONU, stabilisation monétaire progressive.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border-l-4 border-l-meae-cyan">
+                        <h4 class="accent-cyan font-bold text-sm mb-2">2000s–Présent</h4>
+                        <p class="text-white font-bold mb-1">Croissance Élevée</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Moyenne de +7% de croissance, tirée par le secteur textile (vêtements), le tourisme et la construction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Currency & Wages -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center flex flex-col items-center justify-center">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Min. (Textile)</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">204 USD</div>
+                    <p class="text-sm accent-cyan">~832 000 KHR / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center border-t-2 border-t-meae-cyan bg-meae-cyan/5">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Salaire Moy.</span>
+                    <div class="text-3xl font-display font-extrabold text-white mb-1">300 USD</div>
+                    <p class="text-sm accent-cyan">~1 224 000 KHR / Mois</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8 overflow-hidden relative group">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 block">Évolution monétaire (vs USD)</span>
+                    <div class="flex items-end gap-2 text-2xl font-display font-bold text-white">
+                        ~4 100 <span class="text-xs text-slate-400 pb-1">KHR (2024)</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2">La monnaie KHR avait été abolie dans les années 70 avant d'être réintroduite.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: History -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            
+            <!-- Conflict Timeline -->
+            <section id="history" class="xl:col-span-7">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-display font-bold text-white">Guerres et Conflits</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1946-1954')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-meae-red to-transparent"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-meae-cyan group-hover:scale-150 transition-transform"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1946–1954 | Guerre d'Indochine</h4>
+                            <p class="text-sm text-slate-400">Guerre d'indépendance contre le protectorat français.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1967-1975')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1967–1975 | Guerre civile cambodgienne</h4>
+                            <p class="text-sm text-slate-400">République Khmère contre les Khmers Rouges, marquée par l'Opération Menu des États-Unis (Bombardements 1970-1973).</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1975-1979')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-meae-red shadow-[0_0_10px_rgba(225,0,15,0.8)] group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-meae-red/20 bg-meae-red/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1975–1979 | Génocide Cambodgien</h4>
+                            <p class="text-sm text-slate-400">Régime brutal des Khmers Rouges, environ 1,7 à 2 millions de morts causant un grave déclin démographique.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1978–1989')">
+                        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1978–1989 | Guerre Cambodge-Vietnam</h4>
+                            <p class="text-sm text-slate-400">Invasion et occupation par le Vietnam pour renverser les Khmers Rouges.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1989–1998')">
+                        <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-meae-cyan group-hover:scale-150 transition-all"></div>
+                        <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-meae-cyan/30 transition-all group-hover:bg-meae-cyan/5">
+                            <h4 class="text-white font-bold leading-none mb-2">1989–1998 | Conflit interne post-occupation</h4>
+                            <p class="text-sm text-slate-400">Conflits armés résiduels jusqu'à la politique "Gagnant-Gagnant" qui met fin à la rébellion des Khmers Rouges.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religious Breakdown -->
+            <section id="demographics" class="xl:col-span-5">
+                <div class="glass-card rounded-3xl p-8 h-full">
+                    <h2 class="text-2xl font-display font-bold text-white mb-8">Démographie & Religions</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold accent-cyan">97,1 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Bouddhisme Theravāda</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-meae-blue h-full rounded-full" style="width: 97.1%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">2,0 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Islam</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 2.0%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">0,3 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Christianisme</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 0.3%"></div></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 text-right text-xs font-bold text-slate-500">0,6 %</div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-white font-medium">Autres</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/5 rounded-full"><div class="bg-slate-400 h-full rounded-full" style="width: 0.6%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 pt-8 border-t border-white/10">
+                        <h3 class="text-lg font-display font-bold text-white mb-2">Population Totale</h3>
+                        <div class="text-4xl font-display font-bold text-white">17,1 <span class="text-xl text-slate-500">Millions (2024)</span></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Global Trade Relations -->
+        <section class="mt-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-display font-bold text-white">Hub Commercial</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">1er Importateur</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">États-Unis</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">1er Exportateur</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Chine</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Régionaux</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Vietnam, Thaïlande</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <span class="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Piliers UE</span>
+                    <p class="text-xl font-display font-bold text-white mt-1">Allemagne, France</p>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 border-l-4 border-l-meae-blue">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">Relations Économiques Franco-Cambodgiennes</h3>
+                        <p class="text-slate-400 max-w-2xl text-sm leading-relaxed">
+                            La France occupe le <span class="text-white font-bold">2ᵉ rang au sein de l'UE</span> parmi les partenaires commerciaux du Cambodge, principalement pour les chaussures et les exportations agricoles de haute valeur.
+                        </p>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="px-6 py-4 bg-white/5 rounded-2xl text-center">
+                            <span class="text-xs text-slate-500 uppercase font-bold">Rang UE</span>
+                            <div class="text-2xl font-display font-extrabold text-white">#2</div>
+                        </div>
+                        <div class="px-6 py-4 bg-white/5 rounded-2xl text-center">
+                            <span class="text-xs text-slate-500 uppercase font-bold">Rang mondial</span>
+                            <div class="text-2xl font-display font-extrabold text-white">#15-18</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script src="./data.js"></script>
+    
+    <!-- Modal Structure -->
+    <div id="conflictModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeConflictModal()"></div>
+        <div class="relative w-full max-w-4xl max-h-[90vh] glass-card rounded-3xl overflow-hidden flex flex-col transform scale-95 transition-transform duration-300 border border-white/10 shadow-[0_0_50px_-12px_rgba(0,0,0,1)]" id="conflictModalContent">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-meae-blue/20 to-meae-red/20 opacity-50"></div>
+                <h3 id="modalTitle" class="text-2xl font-display font-bold text-white relative z-10 drop-shadow-md">Titre du conflit</h3>
+                <button onclick="closeConflictModal()" class="relative z-10 text-slate-300 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10 cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-4 bg-[#0a0a1a] border-b border-white/5 shadow-inner">
+               <audio id="modalAudio" controls class="w-full h-10 rounded-full" controlsList="nodownload">
+                   <source src="" type="audio/mp4">
+                   Votre navigateur ne supporte pas l'élément audio.
+               </audio>
+            </div>
+            <div id="modalBody" class="p-8 overflow-y-auto custom-scrollbar prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-[#00b0f0] prose-h1:text-[#00b0f0] prose-a:text-[#00b0f0] hover:prose-a:text-white prose-strong:text-white prose-table:border-collapse prose-th:border prose-th:border-white/20 prose-th:p-3 prose-th:bg-white/10 prose-td:border prose-td:border-white/10 prose-td:p-3 bg-[#0a0a1a]/90">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openConflictModal(id) {
+            const modal = document.getElementById('conflictModal');
+            const modalContent = document.getElementById('conflictModalContent');
+            const title = document.getElementById('modalTitle');
+            const audio = document.getElementById('modalAudio');
+            const body = document.getElementById('modalBody');
+            
+            const data = conflictData[id];
+            if (!data) return;
+            
+            title.innerHTML = data.title;
+            audio.innerHTML = '<source src="' + data.audio + '" type="audio/mp4">';
+            audio.load();
+            
+            body.innerHTML = marked.parse(data.content);
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConflictModal() {
+            const modal = document.getElementById('conflictModal');
+            const modalContent = document.getElementById('conflictModalContent');
+            const audio = document.getElementById('modalAudio');
+            
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            audio.pause();
+            audio.currentTime = 0;
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
