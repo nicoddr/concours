@@ -65,7 +65,8 @@ conflicts.forEach(c => {
     // Escaping backticks for JS template literal
     section = section.replace(/`/g, '\\`');
 
-    result += `  '${c.id}': {\n    title: '${c.title}',\n    audio: '${c.audio}',\n    content: \`\n${section}\n\`\n  },\n`;
+    const safeTitle = c.title.replace(/'/g, "\\'");
+    result += `  '${c.id}': {\n    title: '${safeTitle}',\n    audio: '${c.audio}',\n    content: \`\n${section}\n\`\n  },\n`;
 });
 
 result += '};\n';

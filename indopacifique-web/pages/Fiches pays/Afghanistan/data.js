@@ -77,7 +77,7 @@ Contrairement à certaines simplifications chronologiques, la chute de 1992 a ma
 `
   },
   '2001-2021': {
-    title: '2001–2021 | Guerre d'Afghanistan (Invasion Américaine)',
+    title: '2001–2021 | Guerre d\'Afghanistan (Invasion Américaine)',
     audio: '2001-2021.m4a',
     content: `
 # **Conflit en Afghanistan (2001–2021) : De l'Intervention Internationale au Retour des Talibans**
