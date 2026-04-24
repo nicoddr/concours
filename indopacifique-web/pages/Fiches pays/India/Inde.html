@@ -512,7 +512,7 @@
                     <div class="h-px flex-grow bg-gradient-to-r from-red-500/50 to-transparent"></div>
                 </div>
                 <div class="space-y-4">
-                    <div class="relative pl-8 pb-4 group">
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1947-1948')">
                         <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
                         <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-red-500 group-hover:scale-150 transition-all"></div>
                         <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-red-500/30 transition-all group-hover:bg-red-500/5">
@@ -521,7 +521,7 @@
                         </div>
                     </div>
                     
-                    <div class="relative pl-8 pb-4 group">
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1962')">
                         <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
                         <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-[#FF9933] group-hover:scale-150 transition-all"></div>
                         <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-[#FF9933]/30 transition-all group-hover:bg-[#FF9933]/5">
@@ -530,7 +530,7 @@
                         </div>
                     </div>
 
-                    <div class="relative pl-8 pb-4 group">
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1965')">
                         <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
                         <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-red-500 group-hover:scale-150 transition-all"></div>
                         <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-red-500/30 transition-all group-hover:bg-red-500/5">
@@ -539,7 +539,7 @@
                         </div>
                     </div>
 
-                    <div class="relative pl-8 pb-4 group">
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1971')">
                         <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-700 group-hover:bg-white/30 transition-colors"></div>
                         <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-slate-500 group-hover:bg-blue-500 group-hover:scale-150 transition-all"></div>
                         <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-blue-500/30 transition-all group-hover:bg-blue-500/5">
@@ -548,7 +548,7 @@
                         </div>
                     </div>
 
-                    <div class="relative pl-8 pb-4 group">
+                    <div class="relative pl-8 pb-4 cursor-pointer group" onclick="openConflictModal('1999')">
                         <div class="absolute left-0 top-0 bottom-0 w-px bg-transparent"></div>
                         <div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-[#E1000F] shadow-[0_0_10px_#E1000F] group-hover:scale-150 transition-transform"></div>
                         <div class="glass-card rounded-2xl p-6 border-transparent group-hover:border-[#E1000F]/30 transition-all bg-[#E1000F]/5">
@@ -652,5 +652,80 @@
         </section>
 
     </main>
+
+    
+    <script src="./data.js"></script>
+    
+    <!-- Modal Structure -->
+    <div id="conflictModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeConflictModal()"></div>
+        <div class="relative w-full max-w-4xl max-h-[90vh] glass-card rounded-3xl overflow-hidden flex flex-col transform scale-95 transition-transform duration-300 border border-white/10 shadow-[0_0_50px_-12px_rgba(0,0,0,1)]" id="conflictModalContent">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-meae-blue/20 to-meae-red/20 opacity-50"></div>
+                <h3 id="modalTitle" class="text-2xl font-display font-bold text-white relative z-10 drop-shadow-md">Titre du conflit</h3>
+                <button onclick="closeConflictModal()" class="relative z-10 text-slate-300 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10 cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-4 bg-[#0a0a1a] border-b border-white/5 shadow-inner">
+               <audio id="modalAudio" controls class="w-full h-10 rounded-full" controlsList="nodownload">
+                   <source src="" type="audio/mp4">
+                   Votre navigateur ne supporte pas l'élément audio.
+               </audio>
+            </div>
+            <div id="modalBody" class="p-8 overflow-y-auto custom-scrollbar prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-[#00b0f0] prose-h1:text-[#00b0f0] prose-a:text-[#00b0f0] hover:prose-a:text-white prose-strong:text-white prose-table:border-collapse prose-th:border prose-th:border-white/20 prose-th:p-3 prose-th:bg-white/10 prose-td:border prose-td:border-white/10 prose-td:p-3 bg-[#0a0a1a]/90">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openConflictModal(id) {
+            const modal = document.getElementById('conflictModal');
+            const modalContent = document.getElementById('conflictModalContent');
+            const title = document.getElementById('modalTitle');
+            const audio = document.getElementById('modalAudio');
+            const body = document.getElementById('modalBody');
+            
+            const data = conflictData[id];
+            if (!data) return;
+            
+            title.innerHTML = data.title;
+            audio.innerHTML = '<source src="' + data.audio + '" type="audio/mp4">';
+            audio.load();
+            
+            body.innerHTML = marked.parse(data.content);
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConflictModal() {
+            const modal = document.getElementById('conflictModal');
+            const modalContent = document.getElementById('conflictModalContent');
+            const audio = document.getElementById('modalAudio');
+            
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            audio.pause();
+            audio.currentTime = 0;
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
 </body>
 </html>
