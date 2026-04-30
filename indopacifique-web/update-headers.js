@@ -30,8 +30,8 @@ function getPageName(html, filePath) {
     let title = titleMatch[1].trim();
     
     // Clean up common patterns
-    // "Indopacifique | Dynamiques & Stratégies" -> "Accueil"
-    if (title === 'Indopacifique | Dynamiques & Stratégies') return 'Accueil';
+    // "Indopacifique | Dynamiques & Stratégies" -> "Portail Indopacifique"
+    if (title === 'Indopacifique | Dynamiques & Stratégies') return 'Portail Indopacifique';
     // "Indopacifique | Module" -> "Module"
     if (title === 'Indopacifique | Module') return 'Module';
     // "Glossaire des Enjeux Indopacifiques" -> "Glossaire"
@@ -253,7 +253,7 @@ document.addEventListener('click', function(e) {
     const headerTag = headerMatch[0].match(/<header([^>]*)>/)?.[1] || '';
     const headerClass = headerTag.includes('site-header') ? ' class="site-header"' : '';
     
-    const newHeader = `<header${headerClass}>${newHeaderContent}
+    const newHeader = `<header class="site-header">${newHeaderContent}
     </header>`;
     
     html = html.replace(headerRegex, newHeader);
