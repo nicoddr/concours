@@ -31,13 +31,15 @@ function getPageName(html, filePath) {
     
     // Clean up common patterns
     // "Indopacifique | Dynamiques & Stratégies" -> "Portail Indopacifique"
-    if (title === 'Indopacifique | Dynamiques & Stratégies') return 'Portail Indopacifique';
+    if (title === 'Indopacifique | Dynamiques & Stratégies') return 'Leçons';
     // "Indopacifique | Module" -> "Module"
     if (title === 'Indopacifique | Module') return 'Module';
     // "Glossaire des Enjeux Indopacifiques" -> "Glossaire"
     if (title.includes('Glossaire')) return 'Glossaire';
     // "Fiches Pays - Asie | Portail Indopacifique" -> "Fiches Pays"
     if (title.includes('Fiches Pays')) return 'Fiches Pays';
+    // "Annales | Portail Indopacifique" -> "Annales"
+    if (title.includes('Annales')) return 'Annales';
     // "Afghanistan : Dossier Géopolitique & Économique" -> "Afghanistan"
     const colonMatch = title.match(/^([^:]+)\s*:/);
     if (colonMatch) return colonMatch[1].trim();
@@ -82,6 +84,7 @@ function processFile(filePath) {
     const leconPath = `${rootPrefix}lecon.html`; // Point to lessons dashboard
     const paysAsiePath = `${pagesPrefix}pays-asie.html`;
     const glossairePath = `${pagesPrefix}glossaire.html`;
+    const annalesPath = `${pagesPrefix}Annales/Annales.html`;
     
     // Module pages relative to this file
     const mod1Path = `${pagesPrefix}mod1_strategie.html`;
@@ -111,14 +114,7 @@ function processFile(filePath) {
                 <a href="${leconPath}" class="dropdown-item">📚 Leçons</a>
                 <a href="${paysAsiePath}" class="dropdown-item">🌏 Fiches Pays</a>
                 <a href="${glossairePath}" class="dropdown-item">📚 Glossaire & Organigrammes</a>
-                <div class="dropdown-separator"></div>
-                <span class="dropdown-label">Modules</span>
-                <a href="${mod1Path}" class="dropdown-item">1. Stratégie Indopacifique</a>
-                <a href="${mod2Path}" class="dropdown-item">2. L'Émergence de la Chine</a>
-                <a href="${mod3Path}" class="dropdown-item">3. Japon & Corée</a>
-                <a href="${mod4Path}" class="dropdown-item">4. ASEAN & Asie du SE</a>
-                <a href="${mod5Path}" class="dropdown-item">5. Asie du Sud & Inde</a>
-                <a href="${mod6Path}" class="dropdown-item">6. Enjeux Transversaux</a>
+                <a href="${annalesPath}" class="dropdown-item">📑 Annales</a>
             </div>
         </div>`;
 
