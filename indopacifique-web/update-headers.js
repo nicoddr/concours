@@ -78,7 +78,8 @@ function processFile(filePath) {
     
     // Determine paths
     const logoPath = `${rootPrefix}images/Logo.png`;
-    const indexPath = `${rootPrefix}index.html`;
+    const homePath = `${rootPrefix}../index.html`; // Point to root portal
+    const leconPath = `${rootPrefix}lecon.html`; // Point to lessons dashboard
     const paysAsiePath = `${pagesPrefix}pays-asie.html`;
     const glossairePath = `${pagesPrefix}glossaire.html`;
     
@@ -96,7 +97,7 @@ function processFile(filePath) {
     
     const newHeaderContent = `
         <div class="${isTailwindPage ? 'logo-container' : 'logo-container'}" style="display:flex; align-items:center; gap:15px;">
-            <a href="${indexPath}" style="display:flex; align-items:center; gap:15px; text-decoration:none; color:inherit;">
+            <a href="${homePath}" style="display:flex; align-items:center; gap:15px; text-decoration:none; color:inherit;">
                 <img src="${logoPath}" alt="Logo Indopacifique" style="height: 40px; width: auto; object-fit: contain;">
                 <span>${pageName}</span>
             </a>
@@ -106,7 +107,8 @@ function processFile(filePath) {
                 ☰ Menu
             </button>
             <div id="dropdownNav" class="dropdown-menu">
-                <a href="${indexPath}" class="dropdown-item">🏠 Accueil</a>
+                <a href="${homePath}" class="dropdown-item">🏠 Accueil</a>
+                <a href="${leconPath}" class="dropdown-item">📚 Leçons</a>
                 <a href="${paysAsiePath}" class="dropdown-item">🌏 Fiches Pays</a>
                 <a href="${glossairePath}" class="dropdown-item">📚 Glossaire & Organigrammes</a>
                 <div class="dropdown-separator"></div>
@@ -289,6 +291,35 @@ document.addEventListener('click', function(e) {
             html = html.substring(0, lastStyleClose) + fullCssBlock + html.substring(lastStyleClose);
         } else if (html.includes('</head>')) {
             html = html.replace('</head>', `<style>${fullCssBlock}</style>\n</head>`);
+        }
+    }
+    
+    // Build new footer HTML
+    const newFooterContent = `
+    <!-- START_FOOTER -->
+    <footer class="glass-panel" style="margin: 6rem auto 2rem; max-width: 1200px; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <p style="margin: 0; font-size: 0.85rem; opacity: 0.8;">© 2026 Nicolas Didier</p>
+        <div style="display: flex; gap: 24px; align-items: center;">
+            <a href="https://www.linkedin.com/in/nicolas-didier-france/" target="_blank" style="display: flex; align-items: center; gap: 8px; color: var(--meae-cyan); font-size: 0.85rem; text-decoration: none; transition: 0.3s;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LinkedIn
+            </a>
+            <a href="mailto:nicolas.didier2001@gmail.com" style="display: flex; align-items: center; gap: 8px; color: var(--meae-cyan); font-size: 0.85rem; text-decoration: none; transition: 0.3s;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Me contacter
+            </a>
+        </div>
+    </footer>
+    <!-- END_FOOTER -->`;
+
+    // Inject or Update Footer
+    if (html.includes('<!-- START_FOOTER -->')) {
+        const footerRegex = /<!-- START_FOOTER -->[\s\S]*?<!-- END_FOOTER -->/g;
+        html = html.replace(footerRegex, newFooterContent.trim());
+    } else {
+        // Try to inject before first <script> or before </body>
+        if (html.includes('</body>')) {
+            html = html.replace('</body>', `${newFooterContent}\n</body>`);
         }
     }
     
